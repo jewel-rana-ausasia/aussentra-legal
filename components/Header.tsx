@@ -37,7 +37,7 @@ const Header: React.FC = () => {
               </h3>
               <a
                 href="#"
-                className="inline-block relative px-8 py-3 text-white font-medium border border-white rounded hover:bg-[#ac835d] transition duration-300 button-3"
+                className="inline-block relative px-8 py-3 text-white font-medium border border-[#ac835d] rounded-full hover:bg-[#ac835d] transition duration-300 button-3"
               >
                 Explore Company
                 <span></span>

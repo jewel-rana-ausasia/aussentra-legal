@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Courgette } from "next/font/google";
 import "./globals.css";
+
+
+const courgette = Courgette({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-courgette",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${courgette.variable}`}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
