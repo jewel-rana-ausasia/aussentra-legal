@@ -15,7 +15,9 @@ export default function AboutSection() {
             {/* Subtitle */}
             <div className="flex items-center text-[#ac835d] text-lg font-medium">
               <div className="mr-2 text-2xl">
-                <FaGavel />
+                <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-2">
+                  <FaGavel className="w-5 h-5 text-white text-xl" />
+                </span>
               </div>
               <span>About law firm</span>
             </div>
@@ -28,8 +30,8 @@ export default function AboutSection() {
 
             {/* Paragraph */}
             <p className="text-gray-600 leading-relaxed">
-              Lawyer sit amet risus ac duin auctor posuere fanish amet the acinia
-              lecratusan risus facilis semper etiam fermen.
+              Lawyer sit amet risus ac duin auctor posuere fanish amet the
+              acinia lecratusan risus facilis semper etiam fermen.
             </p>
 
             {/* List */}
@@ -74,7 +76,9 @@ export default function AboutSection() {
               }}
             >
               <div className="absolute top-[-60px] left-[-10px] w-36 h-36 bg-[#ac835d] rounded-full -z-10"></div>
-              <div className="text-6xl font-bold text-white relative z-10">20</div>
+              <div className="text-6xl font-bold text-white relative z-10">
+                20
+              </div>
               <div className="text-gray-900 font-serif italic text-lg relative z-10">
                 Years of experience
               </div>
