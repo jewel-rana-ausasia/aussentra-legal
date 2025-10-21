@@ -11,7 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   /* 🩷 NEW: Courgette font variable */
-  --font-courgette: var(--font-courgette), cursive;
+  --font-playfair: var(--font-playfair), serif; /* 🩵 Replaced Courgette */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,7 +27,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* 🪄 Optional utility class if you want to use Courgette manually */
-.courgette {
-  font-family: var(--font-courgette);
+/* ✨ Optional utility class if you want to use Playfair Display manually */
+.playfair {
+  font-family: var(--font-playfair);
 }
+

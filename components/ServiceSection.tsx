@@ -66,20 +66,20 @@ export default function ServiceSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <div className="flex items-center text-[#ac835d] text-lg font-medium">
+            <div className="flex items-center text-[#ac835d] text-lg font-medium font-playfair">
               <div className="w-12 h-12 rounded-full bg-[#ac835d] flex items-center justify-center mr-3">
                 <Gavel className="w-5 h-5 text-white" />
               </div>
-              <span>Areas of Service</span>
+              <span className="italic text-lg">Areas of Service</span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-4xl font-bold text-gray-900 leading-tight font-playfair">
               Our <span className="italic text-[#ac835d]">Services</span>
             </h2>
             <p className="text-gray-600">
               Lawyer sit amet risus ac duin auctor posuere fanish amet the
               acinia lecra fermen.
             </p>
-            <button className="bg-[#ac835d] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#9a7350] transition-all duration-300 hover:shadow-lg">
+            <button className="bg-[#ac835d] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#7f5633] transition-all duration-300 hover:shadow-lg">
               Discover more
             </button>
           </div>
@@ -101,7 +101,7 @@ export default function ServiceSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-lg"></div>
 
                     <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white z-10">
-                      <div className="text-2xl md:text-2xl font-serif whitespace-pre-line leading-tight">
+                      <div className="text-2xl md:text-2xl whitespace-pre-line leading-tight font-playfair">
                         {item.title}
                       </div>
                       <a

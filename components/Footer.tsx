@@ -1,5 +1,6 @@
 "use client";
 
+import { Phone } from "lucide-react";
 import Image from "next/image";
 import {
   FaInstagram,
@@ -34,24 +35,25 @@ export default function Footer() {
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6">
               {/* Text */}
               <div className="lg:col-span-8 text-white text-center lg:text-left">
-                <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-                  All people are equal before the law.{" "}
-                  <span className="text-[#ac835d]">A good attorney</span> is
-                  what makes a difference.
+                <h2 className="text-3xl md:text-4xl font-bold leading-snug font-playfair">
+                  All people are equal before the law.
+                  <br />
+                  <span className="text-[#ac835d] italic">A good attorney</span>
+                  &nbsp;is what makes a difference.
                 </h2>
               </div>
 
               {/* Call Center */}
               <div className="lg:col-span-3 lg:col-start-10 flex items-center justify-center lg:justify-start mt-6 lg:mt-0">
-                <div className="flex items-center bg-[#ac835d] rounded-lg p-4 gap-4">
-                  <div className="text-3xl">
-                    <FaPhone />
+                <div className="flex items-center rounded-lg p-4 gap-4">
+                  <div className="text-3xl bg-[#ac835d] w-14 h-14 rounded-full flex justify-center items-center">
+                    <Phone className="text-white w-6 h-6"/>
                   </div>
                   <div className="text-white">
-                    <p className="text-sm md:text-base">Get in touch</p>
+                    <p className="text-sm md:text-xl font-playfair italic text-[#ac835d] mb-1">Get in touch</p>
                     <a
                       href="tel:1234567890"
-                      className="font-semibold text-lg md:text-xl hover:underline"
+                      className="font-semibold text-2xl md:text-xl hover:underline"
                     >
                       123 456 7890
                     </a>

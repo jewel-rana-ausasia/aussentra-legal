@@ -32,10 +32,10 @@ export default function CaseStudyBox() {
             >
               <div className="icon">{item.icon}</div>
               <div className="cont">
-                <h5 className="text-[21px] font-semibold text-gray-900 mb-2">
+                <h5 className="text-[21px] font-semibold font-playfair text-gray-900 mb-2">
                   {item.title}
                 </h5>
-                <p className="text-[18px] text-gray-600">
+                <p className="text-[16px] text-gray-600">
                   {item.desc}
                 </p>
               </div>

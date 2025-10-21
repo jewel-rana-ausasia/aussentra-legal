@@ -22,17 +22,17 @@ const Header: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full v-middle">
-        <div className="container mx-auto px-4">
+      <div className="relative z-10 flex items-center justify-center h-full v-middle font-playfair">
+        <div className="max-w-7xl mx-auto">
           <div className="flex justify-center items-center">
             <div className="text-center lg:w-7/12 md:w-full">
-              <h5 className="flex items-center justify-center mb-2 text-white text-xl italic font-normal">
+              <h5 className="flex items-center justify-center mb-2 text-white text-2xl italic font-normal">
                 <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-2">
                   <FaGavel className="w-6 h-6 text-white text-xl" />
                 </span>
                 Realiable legal solution
               </h5>
-              <h3 className="text-white text-5xl lg:text-6xl font-medium mb-8">
+              <h3 className="text-white text-5xl lg:text-7xl font-medium mb-10">
                 We are here for the <span className="text-[#ac835d] italic font-bold">voice of justice</span>
               </h3>
               <a

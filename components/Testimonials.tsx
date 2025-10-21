@@ -43,14 +43,14 @@ const Testimonials: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-5">
-          <div className="section-subtitle flex justify-center items-center gap-2 text-[#ac835d] font-medium uppercase tracking-wider">
+          <div className="section-subtitle flex justify-center items-center gap-2 text-lg text-gray-800 font-medium tracking-wider font-playfair italic">
             <span className="flex items-center justify-center w-10 h-10 bg-[#ac835d] rounded-full mr-1">
               <FaGavel className="w-5 h-5 text-white text-xl" />
             </span>
             Our satisfied clients
           </div>
-          <h2 className="section-title text-4xl font-bold mt-4">
-            What Our <span className="text-[#ac835d]">Clients Say</span>?
+          <h2 className="section-title text-4xl font-bold mt-4 font-playfair">
+            What Our <span className="text-[#ac835d] italic">Clients Say</span>?
           </h2>
         </div>
 
@@ -74,7 +74,7 @@ const Testimonials: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <h6 className="text-lg font-medium text-gray-900">
+                    <h6 className="text-lg font-medium text-gray-900 font-playfair">
                       {t.name}
                     </h6>
                     <div className="icons flex text-[#fd961e] mt-1">
@@ -92,13 +92,13 @@ const Testimonials: React.FC = () => {
         {/* Footer Info */}
         <div className="text-center mt-10">
           <div className="section-info">
-            {/* <div className="tag text-[#ac835d] font-medium uppercase tracking-wider mb-2">
-              Trust
-            </div> */}
-            <div className="desc text-gray-700 text-lg">
-              <span className="bg-[#ac835d] text-white px-4 py-2 rounded-full mr-1">Trust</span> Genuine 1000+ people trusting{" "}
-              <span className="border-b-2 border-[#ac835d]">Lawdit</span> law
-              firm.
+            <div className="desc text-gray-700 text-lg font-playfair italic space-x-1">
+              <span className="not-italic bg-[#ac835d] text-white px-4 py-2 rounded-full">
+                Trust
+              </span>
+              <span>Genuine 1000+ people trusting</span>
+              <span className="border-b-2 border-[#ac835d]">Lawdit</span>
+              <span>law firm.</span>
             </div>
           </div>
         </div>

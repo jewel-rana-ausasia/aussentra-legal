@@ -54,14 +54,14 @@ const Team: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="section-subtitle flex justify-center items-center gap-1 text-[#ac835d] font-medium uppercase tracking-wider">
+          <div className="section-subtitle flex justify-center items-center gap-1 text-lg text-[#ac835d] font-medium tracking-wider font-playfair italic">
             <span className="flex items-center justify-center w-10 h-10 bg-[#ac835d] rounded-full mr-2">
               <FaGavel className="w-5 h-5 text-white text-xl" />
             </span>
             Qualified experts
           </div>
-          <h2 className="section-title text-4xl font-bold mt-2">
-            Meet Our <span className="text-[#ac835d]">Attorneys</span>
+          <h2 className="section-title text-4xl font-bold mt-2 font-playfair">
+            Meet Our <span className="text-[#ac835d] italic">Attorneys</span>
           </h2>
         </div>
 
@@ -101,10 +101,10 @@ const Team: React.FC = () => {
                 </div>
               </div>
               <div className="info mt-4">
-                <h5 className="text-xl font-semibold text-gray-900 hover:text-[#ac835d]">
+                <h5 className="text-xl font-semibold text-gray-800 font-playfair hover:text-[#ac835d]">
                   <a href="#">{member.name}</a>
                 </h5>
-                <p className="text-gray-500">{member.role}</p>
+                <p className="text-gray-500 text-sm">{member.role}</p>
               </div>
             </div>
           ))}
