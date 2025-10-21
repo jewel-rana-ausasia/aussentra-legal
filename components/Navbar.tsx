@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
@@ -31,10 +31,29 @@ const navItems: NavItem[] = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-[120px] px-4">
+    <nav
+      className={`w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "fixed top-0 left-0 bg-[#14100c] shadow-md"
+          : "absolute top-0 left-0 bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-[85px] px-4">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
