@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import GetInTouchFooter from "@/components/GetInTouchFooter";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
+import ServiceSection from "@/components/ServiceSection";
 import Team from "@/components/TeamMember ";
 import Testimonials from "@/components/Testimonials";
 import VideoSection from "@/components/VideoSection";
@@ -19,7 +20,8 @@ export default function Home() {
     <AboutSection />
     <CaseStudyBox />
     <AboutSection2 />
-    <CaseStudy />
+    {/* <CaseStudy /> */}
+    <ServiceSection />
     <VideoSection />
     <Testimonials />
     <Team />
