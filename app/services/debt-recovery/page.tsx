@@ -9,8 +9,8 @@ const DebtRecoveryPage: React.FC = () => {
   return (
     <div>
       <BannerHeader
-        title="Debt"
-        subtitle="Recovery"
+        title="Debt Recovery"
+        subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
         backgroundImage="/case/7.jpg"

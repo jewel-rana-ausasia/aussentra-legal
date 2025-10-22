@@ -11,7 +11,7 @@ const ConveyancingPage: React.FC = () => {
     <div>
       <BannerHeader
         title="Conveyancing"
-        subtitle=""
+        subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
         backgroundImage="/case/7.jpg"
