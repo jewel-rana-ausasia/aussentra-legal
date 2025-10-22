@@ -10,12 +10,12 @@ const ServicesPage: React.FC = () => {
       img: "/case/4.jpg",
       link: "/services/conveyancing",
     },
-    { title: "Immigration\nLaw", img: "/case/5.jpg", link: "#" },
-    { title: "Debt\nRecovery", img: "/case/6.jpg", link: "#" },
-    { title: "Insolvency", img: "/case/3.jpg", link: "#" },
-    { title: "Family\nLaw", img: "/case/1.jpg", link: "#" },
-    { title: "Wills", img: "/case/2.jpg", link: "#" },
-    { title: "Probate\n& Estate", img: "/case/6.jpg", link: "#" },
+    { title: "Immigration\nLaw", img: "/case/5.jpg", link: "/services/immigration-law" },
+    { title: "Debt\nRecovery", img: "/case/6.jpg", link: "/services/debt-recovery" },
+    { title: "Insolvency", img: "/case/3.jpg", link: "/services/insolvency" },
+    { title: "Family\nLaw", img: "/case/1.jpg", link: "/services/family-law" },
+    { title: "Wills", img: "/case/2.jpg", link: "/services/wills" },
+    { title: "Probate\n& Estate", img: "/case/6.jpg", link: "/services/probate-estate" },
   ];
   return (
     <div>

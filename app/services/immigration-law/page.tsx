@@ -1,28 +1,26 @@
 "use client";
 import BannerHeader from "@/components/BannerHeader";
 import ServiceDetailsContent from "@/components/ServiceDetailsContent";
-import { conveyancingData } from "@/lib/data/services/conveyancing";
-import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
+import { immigrationLawData } from "@/lib/data/services/immigration";
 
-const ConveyancingPage: React.FC = () => {
+const ImmigrationLayPage: React.FC = () => {
   
   return (
     <div>
       <BannerHeader
-        title="Conveyancing"
-        subtitle=""
+        title="Immigration"
+        subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
         backgroundImage="/case/7.jpg"
         overlayDark={4}
       />
 
-       <ServiceDetailsContent sections={conveyancingData.sections} />
+       <ServiceDetailsContent sections={immigrationLawData.sections} />
 
      
     </div>
   );
 };
 
-export default ConveyancingPage;
+export default ImmigrationLayPage;
