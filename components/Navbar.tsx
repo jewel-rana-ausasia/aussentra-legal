@@ -16,13 +16,14 @@ const navItems: NavItem[] = [
   { label: "About Us", href: "/about" },
   {
     label: "Services",
-    submenu: [
+   /*  submenu: [
       { label: "Conveyancing", href: "/services/conveyancing" },
       { label: "Immigration Law", href: "/services/immigration" },
       { label: "Debt Recovery", href: "/services/debt-recovery" },
       { label: "Family Law", href: "/services/family-law" },
       { label: "Wills & Estate", href: "/services/wills-estate" },
-    ],
+    ], */
+    href: "/services"
   },
   { label: "Faq", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
