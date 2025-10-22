@@ -38,8 +38,8 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
         <div className="row">
           <div className="col-md-12 caption mt-30  text-center">
             <h6 className="inline-flex items-center justify-center font-italic text-white mb-2 text-[21px]">
-              <div className="flex items-center justify-center w-14 h-14 bg-[#ac835d] rounded-full mr-1">
-                <FaGavel className="w-7 h-7 text-white text-xl" />
+              <div className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-1">
+                <FaGavel className="w-6 h-6 text-white text-xl" />
               </div>
               <div className="font-playfair italic text-2xl">{caption}</div>
             </h6>
