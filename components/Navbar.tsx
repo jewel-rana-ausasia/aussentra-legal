@@ -58,10 +58,10 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/aussentra-legal-logo-white.png"
               alt="Logo"
               width={135}
-              height={50}
+              height={60}
               className="object-contain"
             />
           </Link>

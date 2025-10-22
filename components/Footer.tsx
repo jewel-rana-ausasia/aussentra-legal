@@ -47,10 +47,12 @@ export default function Footer() {
               <div className="lg:col-span-3 lg:col-start-10 flex items-center justify-center lg:justify-start mt-6 lg:mt-0">
                 <div className="flex items-center rounded-lg p-4 gap-4">
                   <div className="text-3xl bg-[#ac835d] w-14 h-14 rounded-full flex justify-center items-center">
-                    <Phone className="text-white w-6 h-6"/>
+                    <Phone className="text-white w-6 h-6" />
                   </div>
                   <div className="text-white">
-                    <p className="text-sm md:text-xl font-playfair italic text-[#ac835d] mb-1">Get in touch</p>
+                    <p className="text-sm md:text-xl font-playfair italic text-[#ac835d] mb-1">
+                      Get in touch
+                    </p>
                     <a
                       href="tel:1234567890"
                       className="font-semibold text-2xl md:text-xl hover:underline"
@@ -73,7 +75,12 @@ export default function Footer() {
             {/* Logo + Description + Social */}
             <div className="space-y-4">
               <div className="logo mb-5">
-                <Image src="/logo.png" alt="Logo" width={150} height={50} />
+                <Image
+                  src="/aussentra-legal-logo-white.png"
+                  alt="Logo"
+                  width={150}
+                  height={80}
+                />
               </div>
               <p className="text-gray-400">
                 Lorem ipsum is simply dummy text of the rinte and type settin in
