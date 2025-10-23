@@ -14,8 +14,8 @@ const ConveyancingPage: React.FC = () => {
         subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/case/7.jpg"
-        overlayDark={4}
+        backgroundImage="/services/conveyancing-banner.jpg"
+        overlayDark={5}
       />
 
        <ServiceDetailsContent sections={conveyancingData.sections} />

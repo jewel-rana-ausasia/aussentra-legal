@@ -60,7 +60,7 @@ const FaqPage: React.FC = () => {
         subtitle="Questions"
         caption="Popular questions"
         iconClass="flaticon-courthouse"
-        backgroundImage="/slider/4.jpg"
+        backgroundImage="/about/about-law-firm.jpg"
         overlayDark={5}
       />
 

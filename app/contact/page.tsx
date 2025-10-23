@@ -18,7 +18,7 @@ const ContactPage: React.FC = () => {
         subtitle="Info"
         caption="Get in touch"
         iconClass="flaticon-courthouse"
-        backgroundImage="/slider/1.jpg"
+        backgroundImage="/about/about-law-firm.jpg"
         overlayDark={5}
       />
 

@@ -5,13 +5,13 @@ import { FaArrowRight } from "react-icons/fa";
 
 const ServicesPage: React.FC = () => {
   const services = [
-    { title: "Conveyancing", img: "/case/4.jpg", link: "/services/conveyancing" },
-    { title: "Immigration\nLaw", img: "/case/5.jpg", link: "/services/immigration-law" },
+    { title: "Conveyancing", img: "/services/conveyancing-banner.jpg", link: "/services/conveyancing" },
+    { title: "Immigration\nLaw", img: "/services/immigration-law.jpg", link: "/services/immigration-law" },
     { title: "Debt\nRecovery", img: "/case/6.jpg", link: "/services/debt-recovery" },
-    { title: "Insolvency", img: "/case/3.jpg", link: "/services/insolvency" },
-    { title: "Family\nLaw", img: "/case/1.jpg", link: "/services/family-law" },
-    { title: "Wills", img: "/case/2.jpg", link: "/services/wills" },
-    { title: "Probate\n& Estate", img: "/case/6.jpg", link: "/services/probate-estate" },
+    { title: "Insolvency", img: "/services/insolvency-thum.jpg", link: "/services/insolvency" },
+    { title: "Family\nLaw", img: "/services/family-law.jpg", link: "/services/family-law" },
+    { title: "Wills", img: "/services/wills.jpg", link: "/services/wills" },
+    { title: "Probate\n& Estate", img: "/services/probate-and-estate-banner.jpg", link: "/services/probate-estate" },
   ];
 
   return (
@@ -21,7 +21,7 @@ const ServicesPage: React.FC = () => {
         subtitle="Services"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/slider/1.jpg"
+        backgroundImage="/about/about-law-firm.jpg"
         overlayDark={5}
       />
 

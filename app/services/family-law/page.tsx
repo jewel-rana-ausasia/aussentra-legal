@@ -12,8 +12,8 @@ const FamilyLawPage: React.FC = () => {
         subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/case/7.jpg"
-        overlayDark={4}
+        backgroundImage="/services/family-law.jpg"
+        overlayDark={5}
       />
 
        <ServiceDetailsContent sections={familyLawData.sections} />
