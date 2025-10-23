@@ -26,7 +26,7 @@ export default function Footer() {
       <section className="relative">
         <div
           className="bg-fixed bg-contain lg:bg-cover  bg-center relative py-16 lg:py-20"
-          style={{ backgroundImage: "url('/slider/12.jpg')" }}
+          style={{ backgroundImage: "url('/home/all-people-are-equal-before-the-law.jpg')" }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>

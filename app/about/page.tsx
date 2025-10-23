@@ -17,7 +17,7 @@ const About: React.FC = () => {
         subtitle="Aussentra Legal"
         caption="Who we are"
         iconClass="flaticon-courthouse"
-        backgroundImage="/slider/1.jpg"
+        backgroundImage="/about/about-law-firm.jpg"
         overlayDark={5}
       />
 

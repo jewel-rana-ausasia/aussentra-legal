@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import { Gavel, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
-  { title: "Conveyancing", img: "/case/4.jpg" },
-  { title: "Immigration\nLaw", img: "/case/5.jpg" },
-  { title: "Debt\nRecovery", img: "/case/6.jpg" },
-  { title: "Insolvency", img: "/case/3.jpg" },
-  { title: "Family\nLaw", img: "/case/1.jpg" },
-  { title: "Wills", img: "/case/2.jpg" },
-  { title: "Probate\n& Estate", img: "/case/6.jpg" },
+  { title: "Conveyancing", img: "/services/conveyancing-banner.jpg" },
+  { title: "Immigration\nLaw", img: "/services/immigration-law.jpg" },
+  { title: "Debt\nRecovery", img: "/services/wills-banner.jpg" },
+  { title: "Insolvency", img: "/services/insolvency.jpg" },
+  { title: "Family\nLaw", img: "/services/family-law.jpg" },
+  { title: "Wills", img: "/services/wills.jpg" },
+  { title: "Probate\n& Estate", img: "/services/probate-and-estate.jpg" },
 ];
 
 export default function ServiceSection() {

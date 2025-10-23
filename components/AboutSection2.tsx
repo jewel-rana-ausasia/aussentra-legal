@@ -36,7 +36,7 @@ export default function AboutSection2() {
             variants={fadeInLeft}
           >
             <Image
-              src="/about-02.jpg"
+              src="/home/we-here-for-provide-legal-consultancy.jpg"
               alt="About Image"
               width={500}
               height={500}

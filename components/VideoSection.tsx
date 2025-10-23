@@ -7,7 +7,7 @@ const VideoSection: React.FC = () => {
   return (
     <section
       className="w-full h-[420px] flex justify-center items-center section-padding video-wrapper relative bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/slider/2.jpg')" }}
+      style={{ backgroundImage: "url('/home/law-firm-promo-video.jpg')" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
