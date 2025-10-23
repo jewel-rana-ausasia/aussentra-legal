@@ -55,7 +55,12 @@ export default function AboutSection2() {
             {/* Subtitle */}
             <div className="flex items-center text-lg font-medium">
               <div className="mr-2 text-2xl bg-[#ac835d] h-12 w-12 flex justify-center items-center rounded-full">
-                <FaGavel className="text-white size-6" />
+                <Image
+                  src="/balance-icon.svg"
+                  alt="balance-icon"
+                  width={30}
+                  height={30}
+                />
               </div>
               <span className="italic text-xl">People make the difference</span>
             </div>

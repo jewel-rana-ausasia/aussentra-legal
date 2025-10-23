@@ -16,7 +16,12 @@ export default function AboutSection() {
             <div className="flex items-center justify-center lg:justify-start text-lg font-medium font-playfair">
               <div className="mr-2 text-2xl">
                 <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#ac835d] rounded-full mr-2">
-                  <FaGavel className="w-5 h-5 text-white text-xl" />
+                  <Image
+                    src="/balance-icon.svg"
+                    alt="balance-icon"
+                    width={30}
+                    height={30}
+                  />
                 </span>
               </div>
               <span className="italic text-xl lg:text-2xl">About us</span>

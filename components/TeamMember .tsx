@@ -56,7 +56,12 @@ const Team: React.FC = () => {
         <div className="text-center mb-20">
           <div className="section-subtitle flex justify-center items-center gap-1 text-lg text-[#ac835d] font-medium tracking-wider font-playfair italic">
             <span className="flex items-center justify-center w-10 h-10 bg-[#ac835d] rounded-full mr-2">
-              <FaGavel className="w-5 h-5 text-white text-xl" />
+              <Image
+                src="/balance-icon.svg"
+                alt="balance-icon"
+                width={30}
+                height={30}
+              />{" "}
             </span>
             Qualified experts
           </div>

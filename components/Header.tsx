@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 import { FaGavel } from "react-icons/fa"; // from Font Awesome
 
@@ -10,7 +11,8 @@ const Header: React.FC = () => {
       <div
         className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage: "url('/home/all-people-are-equal-before-the-law.jpg')", // ✅ fallback image
+          backgroundImage:
+            "url('/home/all-people-are-equal-before-the-law.jpg')", // ✅ fallback image
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -35,7 +37,12 @@ const Header: React.FC = () => {
             <div className="text-center lg:w-7/12 md:w-full">
               <h5 className="flex items-center justify-center mb-2 text-white text-2xl italic font-normal">
                 <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-2">
-                  <FaGavel className="w-6 h-6 text-white text-lg lg:text-xl" />
+                  <Image
+                    src="/balance-icon.svg"
+                    alt="balance-icon"
+                    width={30}
+                    height={30}
+                  />
                 </span>
                 Realiable legal solution
               </h5>

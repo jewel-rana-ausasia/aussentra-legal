@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Gavel, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   { title: "Conveyancing", img: "/services/conveyancing-banner.jpg" },
@@ -82,7 +83,12 @@ export default function ServiceSection() {
           <div className="space-y-6">
             <div className="flex items-center text-[#ac835d] text-lg font-medium font-playfair">
               <div className="w-12 h-12 rounded-full bg-[#ac835d] flex items-center justify-center mr-3">
-                <Gavel className="w-5 h-5 text-white" />
+                <Image
+                  src="/balance-icon.svg"
+                  alt="balance-icon"
+                  width={30}
+                  height={30}
+                />{" "}
               </div>
               <span className="italic text-lg">Areas of Service</span>
             </div>
