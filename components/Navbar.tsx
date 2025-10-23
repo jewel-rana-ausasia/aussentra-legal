@@ -3,45 +3,30 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, Home, Info, Briefcase, HelpCircle, Mail } from "lucide-react";
 
 interface NavItem {
   label: string;
-  href?: string;
-  submenu?: { label: string; href: string }[];
+  href: string;
+  icon?: React.ReactNode;
 }
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  {
-    label: "Services",
-   /*  submenu: [
-      { label: "Conveyancing", href: "/services/conveyancing" },
-      { label: "Immigration Law", href: "/services/immigration" },
-      { label: "Debt Recovery", href: "/services/debt-recovery" },
-      { label: "Family Law", href: "/services/family-law" },
-      { label: "Wills & Estate", href: "/services/wills-estate" },
-    ], */
-    href: "/services"
-  },
-  { label: "Faq", href: "/faq" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Home", href: "/", icon: <Home className="w-4 h-4 mr-2" /> },
+  { label: "About Us", href: "/about", icon: <Info className="w-4 h-4 mr-2" /> },
+  { label: "Services", href: "/services", icon: <Briefcase className="w-4 h-4 mr-2" /> },
+  { label: "Faq", href: "/faq", icon: <HelpCircle className="w-4 h-4 mr-2" /> },
+  { label: "Contact Us", href: "/contact", icon: <Mail className="w-4 h-4 mr-2" /> },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -56,71 +41,45 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center h-[85px] px-4">
         {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/aussentra-legal-logo-white.png"
-              alt="Logo"
-              width={135}
-              height={60}
-              className="object-contain"
-            />
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/aussentra-legal-logo-white.png"
+            alt="Logo"
+            width={135}
+            height={60}
+            className="object-contain"
+          />
+        </Link>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-white text-3xl focus:outline-none"
+          className="lg:hidden text-white text-2xl focus:outline-none"
         >
-          <i className="ti-menu"></i>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
         {/* Nav Links */}
         <div
           className={`${
             isOpen
-              ? "block absolute top-[120px] left-0 w-full bg-[#14100c] p-6"
+              ? "block absolute top-[85px] left-0 w-full bg-[#14100c] p-6"
               : "hidden"
           } lg:flex lg:items-center lg:static lg:w-auto lg:bg-transparent transition-all duration-300`}
         >
-          <ul className="flex flex-col lg:flex-row lg:items-center gap-6 text-white text-[18px]">
+          <ul className="flex flex-col lg:flex-row lg:items-center gap-6 text-[18px]">
             {navItems.map((item) => (
-              <li
-                key={item.label}
-                className={`relative group`}
-                onMouseEnter={() =>
-                  item.submenu ? setActiveDropdown(item.label) : null
-                }
-                onMouseLeave={() =>
-                  item.submenu ? setActiveDropdown(null) : null
-                }
-              >
-                {item.submenu ? (
-                  <>
-                    <button className="flex items-center gap-1 hover:text-[#ac835d]">
-                      {item.label} <ChevronDown className="w-3 h-3" />
-                    </button>
-                    <ul
-                      className={`absolute left-0 mt-2 bg-[#14100c] rounded-md shadow-md w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300`}
-                    >
-                      {item.submenu.map((sub) => (
-                        <li key={sub.label}>
-                          <Link
-                            href={sub.href}
-                            className="block px-4 py-2 hover:text-[#ac835d]"
-                          >
-                            {sub.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <Link href={item.href!} className="hover:text-[#ac835d]">
-                    {item.label}
-                  </Link>
-                )}
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className={`flex items-center hover:text-[#ac835d] ${
+                    pathname === item.href ? "text-[#ac835d]" : "text-white"
+                  }`}
+                >
+                  {/* Show icon only on mobile */}
+                  {item.icon && <span className="block lg:hidden">{item.icon}</span>}
+                  <span className="mb-0">{item.label}</span>
+                </Link>
               </li>
             ))}
           </ul>

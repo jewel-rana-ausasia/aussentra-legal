@@ -7,7 +7,14 @@ const Header: React.FC = () => {
   return (
     <header className="relative min-h-screen flex justify-center items-center overflow-hidden header">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full video-fullscreen-video" data-overlay-dark="5">
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: "url('/home/all-people-are-equal-before-the-law.jpg')", // ✅ fallback image
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <video
           className="w-full h-full object-cover"
           playsInline
@@ -15,10 +22,10 @@ const Header: React.FC = () => {
           loop
           muted
         >
-          <source src="https://duruthemes.com/demo/html/lawdit/video.mp4" type="video/mp4" />
-          <source src="https://duruthemes.com/demo/html/lawdit/video.webm" type="video/webm" />
+          <source src="/home/lawyer-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/50"></div> {/* Optional overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>{" "}
+        {/* Optional overlay */}
       </div>
 
       {/* Content */}
@@ -33,7 +40,10 @@ const Header: React.FC = () => {
                 Realiable legal solution
               </h5>
               <h3 className="text-white text-5xl lg:text-7xl font-medium mb-10">
-                We are here for the <span className="text-[#ac835d] italic font-bold">voice of justice</span>
+                We are here for the{" "}
+                <span className="text-[#ac835d] italic font-bold">
+                  voice of justice
+                </span>
               </h3>
               <a
                 href="#"
