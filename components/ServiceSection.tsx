@@ -61,7 +61,7 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative px-10 lg:px-0 py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           {/* Left Content */}

@@ -7,23 +7,23 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section className="relative py-20 max-w-7xl mx-auto bg-white about">
+    <section className="relative py-20 px-10 lg:px-0 max-w-7xl mx-auto bg-white about">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             {/* Subtitle */}
-            <div className="flex items-center text-lg font-medium font-playfair">
+            <div className="flex items-center justify-center lg:justify-start text-lg font-medium font-playfair">
               <div className="mr-2 text-2xl">
-                <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-2">
+                <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#ac835d] rounded-full mr-2">
                   <FaGavel className="w-5 h-5 text-white text-xl" />
                 </span>
               </div>
-              <span className="italic text-2xl">About law firm</span>
+              <span className="italic text-xl lg:text-2xl">About law firm</span>
             </div>
 
             {/* Title */}
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight font-playfair">
+            <h2 className="text-3xl md:text-5xl text-center lg:text-start font-bold text-gray-900 leading-tight font-playfair">
               We are here to fight against{" "}
               <span className="text-[#ac835d] italic">any violance</span>
             </h2>

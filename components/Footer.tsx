@@ -25,17 +25,17 @@ export default function Footer() {
       {/* Get in Touch */}
       <section className="relative">
         <div
-          className="bg-fixed bg-cover bg-center relative py-20"
+          className="bg-fixed bg-contain lg:bg-cover  bg-center relative py-16 lg:py-20"
           style={{ backgroundImage: "url('/slider/12.jpg')" }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>
 
-          <div className="max-w-7xl mx-auto h-[180px]  flex justify-between items-center px-4 relative z-10">
+          <div className="max-w-7xl mx-auto h-[180px] flex justify-between items-center relative z-10 px-8 lg:px-0">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6">
               {/* Text */}
               <div className="lg:col-span-8 text-white text-center lg:text-left">
-                <h2 className="text-3xl md:text-4xl font-bold leading-snug font-playfair">
+                <h2 className="text-2xl lg:text-4xl font-bold leading-snug font-playfair">
                   All people are equal before the law.
                   <br />
                   <span className="text-[#ac835d] italic">A good attorney</span>
@@ -68,7 +68,7 @@ export default function Footer() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#14100c] text-white">
+      <footer className="bg-[#14100c] text-white px-10 lg:px-0">
         {/* Top */}
         <div className="max-w-7xl mx-auto py-[100px] pb-5">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

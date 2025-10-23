@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="testimonials section-padding py-20 bg-[#f8f4f0]"
+      className="testimonials section-padding px-10 lg:px-0 py-20 bg-[#f8f4f0]"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}

@@ -22,7 +22,7 @@ export default function CaseStudyBox() {
   ];
 
   return (
-    <section className="relative max-w-7xl mx-auto py-8 case-study-box bg-white">
+    <section className="relative max-w-7xl mx-auto px-10 lg:px-0 py-8 case-study-box bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.map((item, index) => (
