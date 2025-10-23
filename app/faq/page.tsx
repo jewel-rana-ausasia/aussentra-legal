@@ -64,7 +64,7 @@ const FaqPage: React.FC = () => {
         overlayDark={5}
       />
 
-      <section className="max-w-7xl mx-auto grid grid-cols-2 py-20 gap-20 items-center">
+      <section className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 px-8 lg:0 py-20 gap-20 items-center">
         <div>
           <div className="max-w-xl mx-auto bg-white shadow-2xl rounded-3xl p-10 border border-gray-200 font-playfair">
             <div className="mb-5">

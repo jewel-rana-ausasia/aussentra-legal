@@ -5,21 +5,21 @@ import { FaArrowRight, FaGavel, FaPhoneAlt, FaUser } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
-    <section className="py-20">
+    <section className="py-20 px-5 lg:px-0">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Side */}
           <div>
             {/* Subtitle */}
             <div className="flex items-center gap-2 text-gray-800 text-xl mb-2 font-playfair italic">
-              <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full">
+              <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#ac835d] rounded-full">
                 <FaGavel className="w-6 h-6 text-white" />
               </span>
               <span className="font-medium">Get in touch</span>
             </div>
 
             {/* Title */}
-            <h2 className="text-4xl font-semibold mb-10 font-playfair mt-5">
+            <h2 className="text-3xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
               Do you need help?{" "}
               <span className="text-[#ac835d] block mt-2 italic">
                 Contact with us now!
@@ -71,7 +71,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Side */}
-          <div className="max-w-xl mx-auto bg-white shadow-2xl rounded-3xl p-10 border border-gray-200 font-playfair">
+          <div className="w-full mx-auto bg-white shadow-2xl rounded-3xl p-10 border border-gray-200 font-playfair">
             <div className="mb-5">
               <h2 className="text-3xl font-bold  text-gray-900">
                 Let's Get In Touch<span className="text-[#ac835d]">.</span>

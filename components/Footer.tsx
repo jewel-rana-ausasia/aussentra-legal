@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6">
               {/* Text */}
               <div className="lg:col-span-8 text-white text-center lg:text-left">
-                <h2 className="text-2xl lg:text-4xl font-bold leading-snug font-playfair">
+                <h2 className="text-2xl md:3xl lg:text-4xl font-bold leading-snug font-playfair">
                   All people are equal before the law.
                   <br />
                   <span className="text-[#ac835d] italic">A good attorney</span>

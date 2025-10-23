@@ -2,10 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/autoplay";
-import { Autoplay } from "swiper/modules";
 import { FaGavel } from "react-icons/fa";
 
 interface AwardItem {
@@ -23,53 +19,38 @@ const awards: AwardItem[] = [
 
 const OurSuccesses: React.FC = () => {
   return (
-    <section className="clients relative py-20 bg-white">
+    <section className="clients relative py-12 sm:py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <div className="section-subtitle flex items-center justify-center text-[#ac835d] text-xl font-medium mb-3">
-            <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-2">
-              <FaGavel className="w-6 h-6 text-white text-xl" />
+          <div className="section-subtitle flex items-center justify-center text-[#ac835d] text-xl font-medium mb-3 font-playfair italic">
+            <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#ac835d] rounded-full mr-2">
+              <FaGavel className="w-6 h-6 text-white text-lg xl:text-xl" />
             </span>
             Our Successes
           </div>
-          <h2 className="section-title text-4xl font-bold text-gray-900">
+          <h2 className="section-title text-2xl lg:text-4xl font-bold text-gray-900 font-playfair">
             Awards <span className="text-[#ac835d]">&</span> Recognitions
           </h2>
         </div>
 
-        {/* Swiper Carousel */}
-        <div className="flex justify-center">
-          <div className="w-full max-w-3xl">
-            <Swiper
-              modules={[Autoplay]}
-              autoplay={{ delay: 2000, disableOnInteraction: false }}
-              loop
-              slidesPerView={2}
-              spaceBetween={40}
-              breakpoints={{
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 4 },
-              }}
-              className="flex items-center justify-center"
+        {/* Awards Images */}
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-10">
+          {awards.map((award, index) => (
+            <a
+              key={index}
+              href={award.href || "#0"}
+              className="flex justify-center items-center"
             >
-              {awards.map((award, index) => (
-                <SwiperSlide key={index}>
-                  <div className="clients-logo flex justify-center items-center opacity-100 hover:opacity-100 transition-all duration-300">
-                    <a href={award.href || "#0"}>
-                      <Image
-                        src={award.img}
-                        alt={award.alt}
-                        width={180}
-                        height={180}
-                        className="object-contain"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+              <Image
+                src={award.img}
+                alt={award.alt}
+                width={180}
+                height={180}
+                className="object-contain w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 lg:w-32 lg:h-32"
+              />
+            </a>
+          ))}
         </div>
       </div>
     </section>
