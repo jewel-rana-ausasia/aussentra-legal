@@ -16,17 +16,40 @@ export default function Footer() {
     "Immigration law",
     "Debt recovery",
     "Insolvency",
-    "Family law",
-    "Wills",
-    "Probate & Estate",
+    "All services",
   ];
+
+  const quickLinks = ["Home", "About Us", "Services", "Faq", "Contact"];
+
+  // Function to get href for any navigation item
+  const getHref = (label: string) => {
+    switch (label) {
+      case "Home":
+        return "/";
+      case "About Us":
+        return "/about";
+      case "Services":
+        return "/services";
+      case "Faq":
+        return "/faq";
+      case "Contact":
+        return "/contact";
+      default:
+        // For other labels like services
+        return "/";
+    }
+  };
+
   return (
     <>
       {/* Get in Touch */}
       <section className="relative">
         <div
           className="bg-fixed bg-contain lg:bg-cover  bg-center relative py-16 lg:py-20"
-          style={{ backgroundImage: "url('/home/all-people-are-equal-before-the-law.jpg')" }}
+          style={{
+            backgroundImage:
+              "url('/home/all-people-are-equal-before-the-law.jpg')",
+          }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>
@@ -78,11 +101,11 @@ export default function Footer() {
                 <Image
                   src="/aussentra-legal-logo-white.png"
                   alt="Logo"
-                  width={150}
+                  width={180}
                   height={80}
                 />
               </div>
-              <p className="text-gray-400">
+              <p className="text-gray-400 leading-loose">
                 Lorem ipsum is simply dummy text of the rinte and type settin in
                 the fermen.
               </p>
@@ -108,9 +131,9 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div>
+            <div className="space-y-2">
               <h3 className="text-2xl mb-2">Contact</h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-loose">
                 0665 Broadway st.
                 <br />
                 10234 NY, USA
@@ -126,7 +149,7 @@ export default function Footer() {
             {/* Services Column */}
             <div>
               <h3 className="text-2xl mb-2">Services</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li
                     key={index}
@@ -139,20 +162,18 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-2xl mb-2">Company</h3>
-              <ul className="space-y-2">
-                {["Home", "About Us", "Services", "Career", "Contact"].map(
-                  (item, index) => (
-                    <li key={index}>
-                      <a
-                        href={`#${item.replace(/\s+/g, "").toLowerCase()}`}
-                        className="text-gray-400 hover:text-[#ac835d] transition-colors"
-                      >
-                        {item}
-                      </a>
-                    </li>
-                  )
-                )}
+              <h3 className="text-2xl mb-2">Quick Links</h3>
+              <ul className="space-y-3">
+                {quickLinks.map((label, index) => (
+                  <li key={index}>
+                    <a
+                      href={getHref(label)}
+                      className="text-gray-400 hover:text-[#ac835d] transition-colors"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

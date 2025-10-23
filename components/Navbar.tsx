@@ -45,8 +45,8 @@ const Navbar = () => {
           <Image
             src="/aussentra-legal-logo-white.png"
             alt="Logo"
-            width={135}
-            height={60}
+            width={180}
+            height={80}
             className="object-contain"
           />
         </Link>

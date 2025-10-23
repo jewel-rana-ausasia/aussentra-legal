@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Gavel, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+
+import { useState, useEffect, useRef } from "react";
+import { Gavel, ArrowRight } from "lucide-react";
 
 const services = [
   { title: "Conveyancing", img: "/services/conveyancing-banner.jpg" },
@@ -15,16 +16,31 @@ const services = [
 export default function ServiceSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(3);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
+  // ✅ Detect visibility of the section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 } // start animation when 30% visible
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  // ✅ Handle responsive slide count
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setSlidesPerView(1);
-      } else if (window.innerWidth < 1024) {
-        setSlidesPerView(2);
-      } else {
-        setSlidesPerView(3);
-      }
+      if (window.innerWidth < 768) setSlidesPerView(1);
+      else if (window.innerWidth < 1024) setSlidesPerView(2);
+      else setSlidesPerView(3);
     };
 
     handleResize();
@@ -32,21 +48,16 @@ export default function ServiceSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // ✅ Auto-slide only when section is visible
   useEffect(() => {
+    if (!isVisible) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % services.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % services.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
-  };
+  }, [isVisible]);
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
@@ -61,7 +72,10 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="relative px-10 lg:px-0 py-20 bg-white overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative px-10 lg:px-0 py-20 bg-white overflow-hidden transition-opacity duration-700 ease-in-out"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           {/* Left Content */}
@@ -97,6 +111,7 @@ export default function ServiceSection() {
                       src={item.img}
                       alt={item.title.replace("\n", " ")}
                       className="rounded-lg object-cover w-full h-64 md:h-72 lg:h-80 transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-lg"></div>
 

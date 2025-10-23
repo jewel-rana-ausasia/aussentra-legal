@@ -49,7 +49,7 @@ const Header: React.FC = () => {
                 href="#"
                 className="inline-block relative px-8 py-3 text-white font-medium border border-[#ac835d] rounded-full hover:bg-[#ac835d] transition duration-300 button-3"
               >
-                Explore Company
+                Explore All Services
                 <span></span>
               </a>
             </div>

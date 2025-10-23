@@ -19,7 +19,7 @@ export default function AboutSection() {
                   <FaGavel className="w-5 h-5 text-white text-xl" />
                 </span>
               </div>
-              <span className="italic text-xl lg:text-2xl">About law firm</span>
+              <span className="italic text-xl lg:text-2xl">About us</span>
             </div>
 
             {/* Title */}
