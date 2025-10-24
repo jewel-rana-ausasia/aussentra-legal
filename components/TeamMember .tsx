@@ -51,10 +51,10 @@ const teamMembers: TeamMember[] = [
 const Team: React.FC = () => {
   return (
     <section className="w-full px-5 lg:px-0 py-20">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-2">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="section-subtitle flex justify-center items-center gap-1 text-lg text-[#ac835d] font-medium tracking-wider font-playfair italic">
+        <div className="text-center mb-8 lg:mb-20">
+          <div className="section-subtitle flex justify-center items-center gap-1 lg:text-lg text-[#ac835d] font-medium tracking-wider font-playfair italic">
             <span className="flex items-center justify-center w-10 h-10 bg-[#ac835d] rounded-full mr-2">
               <Image
                 src="/balance-icon.svg"
@@ -65,7 +65,7 @@ const Team: React.FC = () => {
             </span>
             Qualified experts
           </div>
-          <h2 className="section-title text-4xl font-bold mt-2 font-playfair">
+          <h2 className="section-title text-2xl lg:text-4xl font-bold mt-2 font-playfair">
             Meet Our <span className="text-[#ac835d] italic">Attorneys</span>
           </h2>
         </div>

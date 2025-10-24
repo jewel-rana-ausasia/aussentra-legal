@@ -14,16 +14,29 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/", icon: <Home className="w-4 h-4 mr-2" /> },
-  { label: "About Us", href: "/about", icon: <Info className="w-4 h-4 mr-2" /> },
-  { label: "Services", href: "/services", icon: <Briefcase className="w-4 h-4 mr-2" /> },
+  {
+    label: "About Us",
+    href: "/about",
+    icon: <Info className="w-4 h-4 mr-2" />,
+  },
+  {
+    label: "Services",
+    href: "/services",
+    icon: <Briefcase className="w-4 h-4 mr-2" />,
+  },
   { label: "Faq", href: "/faq", icon: <HelpCircle className="w-4 h-4 mr-2" /> },
-  { label: "Contact Us", href: "/contact", icon: <Mail className="w-4 h-4 mr-2" /> },
+  {
+    label: "Contact Us",
+    href: "/contact",
+    icon: <Mail className="w-4 h-4 mr-2" />,
+  },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const handleLinkClick = () => setIsOpen(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -72,12 +85,15 @@ const Navbar = () => {
               <li key={item.label}>
                 <Link
                   href={item.href}
+                  onClick={handleLinkClick} // <- Add this
                   className={`flex items-center hover:text-[#ac835d] ${
                     pathname === item.href ? "text-[#ac835d]" : "text-white"
                   }`}
                 >
                   {/* Show icon only on mobile */}
-                  {item.icon && <span className="block lg:hidden">{item.icon}</span>}
+                  {item.icon && (
+                    <span className="block lg:hidden">{item.icon}</span>
+                  )}
                   <span className="mb-0">{item.label}</span>
                 </Link>
               </li>
@@ -88,6 +104,7 @@ const Navbar = () => {
           <div className="mt-6 lg:mt-0 lg:ml-8">
             <Link
               href="/contact"
+              onClick={handleLinkClick} // <- Add this
               className="border border-[#ac835d] text-white px-5 py-3 text-sm rounded-full hover:bg-[#ac835d] transition-all"
             >
               Free consultant
