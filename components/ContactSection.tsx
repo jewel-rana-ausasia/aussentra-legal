@@ -19,7 +19,7 @@ const ContactSection = () => {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
+            <h2 className="text-2xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
               Do you need help?{" "}
               <span className="text-[#ac835d] block mt-2 italic">
                 Contact with us now!
@@ -28,15 +28,15 @@ const ContactSection = () => {
 
             {/* Address */}
             <div className="flex items-start mb-6">
-              <div className="text-[#ac835d] bg-[#f7f6f4] w-[60px] h-[60px] flex items-center justify-center rounded-full mr-4">
-                <FaLocationDot className="text-2xl" />
+              <div className="text-[#ac835d] bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
+                <FaLocationDot className="text-lg lg:text-2xl" />
               </div>
               <div>
-                <h5 className="text-[#14100c] text-xl font-semibold font-playfair">
+                <h5 className="text-[#14100c] text-lg lg:text-xl font-semibold font-playfair">
                   Address
                 </h5>
 
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600 text-sm lg:text-base leading-relaxed">
                   Sydney NSW, Australia
                 </p>
               </div>
@@ -44,14 +44,14 @@ const ContactSection = () => {
 
             {/* Phone */}
             <div className="flex items-start mb-6">
-              <div className="text-[#ac835d] bg-[#f7f6f4] w-[60px] h-[60px] flex items-center justify-center rounded-full mr-4">
-                <FaPhone className="text-2xl" />
+              <div className="text-[#ac835d] bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
+                <FaPhone className="text-lg lg:text-2xl" />
               </div>
               <div>
-                <h5 className="text-[#14100c] text-xl font-playfair font-semibold">
+                <h5 className="text-[#14100c] text-lg lg:text-xl font-playfair font-semibold">
                   Phone
                 </h5>
-                <p className="text-slate-600">
+                <p className="text-slate-600 text-sm lg:text-base">
                   <a href="tel:+11235678910" className="hover:underline">
                     +61 123 567 8910
                   </a>
@@ -61,14 +61,14 @@ const ContactSection = () => {
 
             {/* Email */}
             <div className="flex items-start">
-              <div className="text-[#ac835d] bg-[#f7f6f4] w-[60px] h-[60px] flex items-center justify-center rounded-full mr-4">
-                <FaEnvelope className="text-2xl" />
+              <div className="text-[#ac835d] bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
+                <FaEnvelope className="text-lg lg:text-2xl" />
               </div>
               <div>
-                <h5 className="text-[#14100c] text-xl font-playfair font-semibold">
+                <h5 className="text-[#14100c] text-lg lg:text-xl font-playfair font-semibold">
                   E-Mail
                 </h5>
-                <p className="text-slate-600">info@aussentralegal.com.au</p>
+                <p className="text-slate-600 text-sm lg:text-base">info@aussentralegal.com.au</p>
               </div>
             </div>
           </div>
