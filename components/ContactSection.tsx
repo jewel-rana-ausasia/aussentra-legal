@@ -35,7 +35,10 @@ const ContactSection = () => {
                 <h5 className="text-[#14100c] text-xl font-semibold font-playfair">
                   Address
                 </h5>
-                <p className="text-slate-600">0665 Broadway NY, 10001 USA</p>
+
+                <p className="text-slate-600 leading-relaxed">
+                  Sydney NSW, Australia
+                </p>
               </div>
             </div>
 
@@ -50,7 +53,7 @@ const ContactSection = () => {
                 </h5>
                 <p className="text-slate-600">
                   <a href="tel:+11235678910" className="hover:underline">
-                    +1 123 567 8910
+                    +61 123 567 8910
                   </a>
                 </p>
               </div>
@@ -65,7 +68,7 @@ const ContactSection = () => {
                 <h5 className="text-[#14100c] text-xl font-playfair font-semibold">
                   E-Mail
                 </h5>
-                <p className="text-slate-600">legal@lawdit.com</p>
+                <p className="text-slate-600">info@aussentralegal.com.au</p>
               </div>
             </div>
           </div>

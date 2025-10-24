@@ -89,13 +89,12 @@ const Header: React.FC = () => {
                   Future with Care
                 </span>
               </h3>
-
-              <p className="text-white text- md:text-lg mb-8 max-w-sm px-2 lg:px-0 lg:max-w-5xl mx-auto leading-relaxed">
-                Sorting out your affairs, managing an estate, or handling a Will
-                dispute can be tough, emotional, and take a lot of time. Because
-                we focus only on Wills and Estate law, we have the experience
-                and knowledge to help you handle your situation smoothly and
-                move forward with your life.
+              <p className="text-white text-md md:text-lg mb-8 max-w-sm px-2 lg:px-0 lg:max-w-5xl mx-auto leading-relaxed">
+                Managing an estate, preparing a Will, or resolving a Will
+                dispute can be stressful, emotional, and time-consuming. With
+                our exclusive focus on Wills and Estate law, Aussentra Legal has
+                the expertise to guide you smoothly through the process, protect
+                your interests, and help you move forward with confidence.
               </p>
 
               <Link

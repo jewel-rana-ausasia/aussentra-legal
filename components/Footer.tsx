@@ -98,7 +98,7 @@ export default function Footer() {
                       href="tel:1234567890"
                       className="font-semibold text-2xl md:text-xl hover:underline"
                     >
-                      123 456 7890
+                     +61 123 456 7890
                     </a>
                   </div>
                 </div>
@@ -153,16 +153,14 @@ export default function Footer() {
             <div className="space-y-2">
               <h3 className="text-2xl mb-2">Contact</h3>
               <p className="text-gray-400 leading-loose">
-                Level 10, 10 Barrack Street
-                <br />
-                Sydney NSW 2000, Australia
+                Sydney NSW, Australia
               </p>
               <div className="phone text-gray-400 text-lg">
-                <a href="tel:+61212345678">+61 2 1234 5678</a>
+                <a href="tel:+61212345678">+61 123 567 8910</a>
               </div>
               <div className="mail text-gray-400 text-lg">
                 <a href="mailto:hello@aussentralegal.com.au">
-                  aussentralegal@gmail.com
+                  info@aussentralegal.com.au
                 </a>
               </div>
             </div>
