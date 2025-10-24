@@ -44,7 +44,7 @@ const Header: React.FC = () => {
                     height={30}
                   />
                 </span>
-                Realiable legal solution
+                Aussentra Legal
               </h5>
               <h3 className="text-white text-3xl md:text-5xl lg:text-7xl font-medium mb-10">
                 We are here for the{" "}
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                 </span>
               </h3>
               <a
-                href="#"
+                href="/services"
                 className="inline-block relative px-8 py-3 text-white font-medium border border-[#ac835d] rounded-full hover:bg-[#ac835d] transition duration-300 button-3"
               >
                 Explore All Services

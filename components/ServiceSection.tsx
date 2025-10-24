@@ -11,7 +11,10 @@ const services = [
   { title: "Insolvency", img: "/services/insolvency.jpg" },
   { title: "Family\nLaw", img: "/services/family-law.jpg" },
   { title: "Wills", img: "/services/probate-and-estate.jpg" },
-  { title: "Probate\n& Estate", img: "/services/probate-and-estate-banner.jpg" },
+  {
+    title: "Probate\n& Estate",
+    img: "/services/probate-and-estate-banner.jpg",
+  },
 ];
 
 export default function ServiceSection() {
@@ -61,8 +64,9 @@ export default function ServiceSection() {
               Our <span className="italic text-[#ac835d]">Services</span>
             </h2>
             <p className="text-gray-600">
-              Lawyer sit amet risus ac duin auctor posuere fanish amet the
-              acinia lecra fermen.
+              At Aussentra Legal, we provide expert guidance in Wills and Estate
+              law to protect your family, home, and future with clarity and
+              care.
             </p>
             <button className="bg-[#ac835d] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#7f5633] transition-all duration-300 hover:shadow-lg">
               Discover more

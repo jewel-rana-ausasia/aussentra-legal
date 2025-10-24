@@ -7,18 +7,18 @@ export default function CaseStudyBox() {
   const data = [
     {
       icon: "/legal-production.png",
-      title: "Legal Production",
-      desc: "Lorem ipsum amet quam miss nestibulum drana fermen.",
+      title: "Clarity & Simplicity",
+      desc: "Clear, plain-language advice that simplifies complex legal processes for confident decision-making.",
     },
     {
       icon: "/private.png",
-      title: "Private",
-      desc: "Lorem ipsum amet quam miss nestibulum drana fermen.",
+      title: "Trust & Respect",
+      desc: "Building lasting relationships through personalized service, kindness, and dignity at every step.",
     },
     {
       icon: "/winning-awards.png",
-      title: "Winning Awards",
-      desc: "Lorem ipsum amet quam miss nestibulum drana fermen.",
+      title: "Empowerment & Control",
+      desc: "Providing the knowledge and support you need to feel in control of your legal journey.",
     },
   ];
 
@@ -27,10 +27,7 @@ export default function CaseStudyBox() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-start space-x-6 mt-5"
-            >
+            <div key={index} className="flex items-start space-x-6 mt-5">
               {/* ✅ PNG Icon */}
               <div className="flex-shrink-0">
                 <Image
@@ -45,9 +42,7 @@ export default function CaseStudyBox() {
                 <h5 className="text-[21px] font-semibold font-playfair text-gray-900 mb-2">
                   {item.title}
                 </h5>
-                <p className="text-[16px] text-gray-600">
-                  {item.desc}
-                </p>
+                <p className="text-[16px] text-gray-600">{item.desc}</p>
               </div>
             </div>
           ))}

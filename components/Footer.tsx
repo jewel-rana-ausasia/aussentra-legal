@@ -2,6 +2,8 @@
 
 import { Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   FaInstagram,
   FaTwitter,
@@ -34,11 +36,27 @@ export default function Footer() {
         return "/faq";
       case "Contact":
         return "/contact";
+      case "Conveyancing":
+        return "/services/conveyancing";
+      case "Immigration law":
+        return "/services/immigration-law";
+      case "Debt recovery":
+        return "/services/debt-recovery";
+      case "Insolvency":
+        return "/services/insolvency";
+      case "All services":
+        return "/services";
       default:
         // For other labels like services
         return "/";
     }
   };
+
+  const [currentYear, setCurrentYear] = useState("");
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear().toString());
+  }, []);
 
   return (
     <>
@@ -97,17 +115,17 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Logo + Description + Social */}
             <div className="space-y-4">
-              <div className="logo mb-5">
+              <Link href="/" className="mb-5">
                 <Image
                   src="/aussentra-legal-logo-white.png"
                   alt="Logo"
                   width={180}
                   height={80}
                 />
-              </div>
-              <p className="text-gray-400 leading-loose">
-                Lorem ipsum is simply dummy text of the rinte and type settin in
-                the fermen.
+              </Link>
+              <p className="text-gray-400 leading-relaxed">
+                Aussentra Legal: Expert Wills and Estate law services to protect
+                your family, home, and future.
               </p>
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
@@ -131,18 +149,21 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
+            {/* Contact */}
             <div className="space-y-2">
               <h3 className="text-2xl mb-2">Contact</h3>
               <p className="text-gray-400 leading-loose">
-                0665 Broadway st.
+                Level 10, 10 Barrack Street
                 <br />
-                10234 NY, USA
+                Sydney NSW 2000, Australia
               </p>
               <div className="phone text-gray-400 text-lg">
-                <a href="tel:+11235678910">+1 123 567 8910</a>
+                <a href="tel:+61212345678">+61 2 1234 5678</a>
               </div>
               <div className="mail text-gray-400 text-lg">
-                <a href="mailto:legal@lawdit.com">legal@lawdit.com</a>
+                <a href="mailto:hello@aussentralegal.com.au">
+                  aussentralegal@gmail.com
+                </a>
               </div>
             </div>
 
@@ -151,11 +172,13 @@ export default function Footer() {
               <h3 className="text-2xl mb-2">Services</h3>
               <ul className="space-y-3">
                 {services.map((service, index) => (
-                  <li
-                    key={index}
-                    className="text-gray-400 hover:text-[#ac835d] transition-colors cursor-pointer"
-                  >
-                    {service}
+                  <li key={index}>
+                    <Link
+                      href={getHref(service)}
+                      className="text-gray-400 hover:text-[#ac835d] transition-colors"
+                    >
+                      {service}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -166,12 +189,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {quickLinks.map((label, index) => (
                   <li key={index}>
-                    <a
+                    <Link
                       href={getHref(label)}
                       className="text-gray-400 hover:text-[#ac835d] transition-colors"
                     >
                       {label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -183,8 +206,9 @@ export default function Footer() {
         <div className="border-t border-[#91765a33] py-6">
           <div className="container mx-auto px-4 flex justify-center">
             <p className="text-gray-400 text-sm text-center">
-              Copyright © 2025 <span className="text-white">HR TOOLBOX</span> |
-              Website by <span className="text-white">Aus Asia Online</span>
+              Copyright © {currentYear}{" "}
+              <span className="text-white">Aussentra Legal</span> | Website by{" "}
+              <span className="text-white">Aus Asia Online</span>
             </p>
           </div>
         </div>
