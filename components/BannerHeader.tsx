@@ -22,7 +22,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 }) => {
   return (
     <div
-      className="relative flex items-center justify-center h-[65vh] bg-fixed bg-center bg-cover"
+      className="relative flex items-center justify-center h-[40vh] lg:h-[65vh] bg-fixed  bg-center bg-cover lg:bg-cover"
       style={{ backgroundImage: `url(${backgroundImage})` }}
       data-overlay-dark={overlayDark}
     >
@@ -37,13 +37,13 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
       <div className="container relative z-10">
         <div className="row">
           <div className="col-md-12 caption mt-30  text-center">
-            <h6 className="inline-flex items-center justify-center font-italic text-white mb-2 text-[21px]">
+            <h6 className="inline-flex items-center justify-center font-italic text-white mb-2 text-xl lg:text-2xl">
               <div className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-1">
                 <FaGavel className="w-6 h-6 text-white text-xl" />
               </div>
-              <div className="font-playfair italic text-2xl">{caption}</div>
+              <div className="font-playfair italic">{caption}</div>
             </h6>
-            <h1 className="text-[48px] text-white relative font-playfair">
+            <h1 className="text-[30px] lg:text-[48px] text-white relative font-playfair">
               {title}{" "}
               {subtitle && (
                 <span className="italic text-[#ac835d]">{subtitle}</span>

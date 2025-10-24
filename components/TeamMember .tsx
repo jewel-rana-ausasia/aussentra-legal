@@ -71,7 +71,8 @@ const Team: React.FC = () => {
         </div>
 
         {/* Team Carousel / Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Team Carousel / Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {teamMembers.map((member, idx) => (
             <div key={idx} className="item text-center group">
               <div className="relative overflow-hidden rounded-md transition-transform duration-500 group-hover:scale-95">
@@ -80,7 +81,7 @@ const Team: React.FC = () => {
                   alt={member.name}
                   width={400}
                   height={400}
-                  className="w-full h-[300px] object-cover rounded-md"
+                  className="w-[200px] h-[180px] sm:w-[250px] sm:h-[250px] md:w-full md:h-[300px] object-cover rounded-md mx-auto"
                 />
                 <div className="social-icons absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 flex gap-2 bg-[#ac835d] rounded-full px-3 py-2 opacity-0 group-hover:bottom-4 group-hover:opacity-100 transition-all duration-400">
                   {member.social.facebook && (
@@ -105,11 +106,13 @@ const Team: React.FC = () => {
                   )}
                 </div>
               </div>
-              <div className="info mt-4">
-                <h5 className="text-xl font-semibold text-gray-800 font-playfair hover:text-[#ac835d]">
+              <div className="info mt-3 sm:mt-4">
+                <h5 className="text-base sm:text-xl font-semibold text-gray-800 font-playfair hover:text-[#ac835d]">
                   <a href="#">{member.name}</a>
                 </h5>
-                <p className="text-gray-500 text-sm">{member.role}</p>
+                <p className="text-gray-500 text-xs sm:text-sm">
+                  {member.role}
+                </p>
               </div>
             </div>
           ))}

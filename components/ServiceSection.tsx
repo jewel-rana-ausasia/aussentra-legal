@@ -49,7 +49,7 @@ export default function ServiceSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <div className="flex items-center text-[#ac835d] text-lg font-medium font-playfair">
+            <div className="flex items-center justify-center text-[#ac835d] text-lg font-medium font-playfair">
               <div className="w-12 h-12 rounded-full bg-[#ac835d] flex items-center justify-center mr-3">
                 <Image
                   src="/balance-icon.svg"
@@ -60,7 +60,7 @@ export default function ServiceSection() {
               </div>
               <span className="italic text-lg">Areas of Service</span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 leading-tight font-playfair">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight font-playfair text-center">
               Our <span className="italic text-[#ac835d]">Services</span>
             </h2>
             <p className="text-gray-600">
