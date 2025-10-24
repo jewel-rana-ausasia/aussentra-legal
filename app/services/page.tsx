@@ -7,7 +7,7 @@ const ServicesPage: React.FC = () => {
   const services = [
     { title: "Conveyancing", img: "/services/conveyancing-banner.jpg", link: "/services/conveyancing" },
     { title: "Immigration\nLaw", img: "/services/immigration-law.jpg", link: "/services/immigration-law" },
-    { title: "Debt\nRecovery", img: "/case/6.jpg", link: "/services/debt-recovery" },
+    { title: "Debt\nRecovery", img: "/services/insolvency.jpg", link: "/services/debt-recovery" },
     { title: "Insolvency", img: "/services/insolvency-thum.jpg", link: "/services/insolvency" },
     { title: "Family\nLaw", img: "/services/family-law.jpg", link: "/services/family-law" },
     { title: "Wills", img: "/services/wills.jpg", link: "/services/wills" },

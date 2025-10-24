@@ -5,8 +5,8 @@ import { FaArrowRight, FaGavel, FaPhoneAlt, FaUser } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
-    <section className="py-20 px-5 lg:px-0">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-20 lg:px-0">
+      <div className="max-w-7xl mx-auto px-5 md:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Side */}
           <div>

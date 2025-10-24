@@ -62,11 +62,11 @@ export default function AboutSection2() {
                   height={30}
                 />
               </div>
-              <span className="italic text-xl">People make the difference</span>
+              <span className="italic text-lg lg:text-xl">People make the difference</span>
             </div>
 
             {/* Title */}
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight text-white">
               We here for provide <br />
               <span className="text-[#ac835d] italic">legal consultancy</span>
             </h2>

@@ -54,7 +54,7 @@ export default function Footer() {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>
 
-          <div className="max-w-7xl mx-auto h-[180px] flex justify-between items-center relative z-10 px-8 lg:px-0">
+          <div className="max-w-7xl mx-auto h-[180px] flex justify-between items-center relative z-10 px-5 lg:px-0">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-6">
               {/* Text */}
               <div className="lg:col-span-8 text-white text-center lg:text-left">
