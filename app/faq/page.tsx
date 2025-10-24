@@ -11,44 +11,44 @@ interface AccordionItem {
 
 const accordionData: AccordionItem[] = [
   {
-    title: "Social Media and Family Law",
+    title: "Do all estates require probate?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "Not all estates need to go through probate. If assets are jointly owned or have designated beneficiaries, like superannuation or insurance policies, they typically transfer directly without the need for probate. However, if assets are solely in the deceased's name, especially valuable ones like property or large bank accounts, probate is usually required to manage the estate.",
   },
   {
-    title: "Coerced marriage and the law",
+    title: "What is the role of an executor or administrator?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "An executor (appointed in a will) or an administrator (appointed when there's no will) is responsible for managing the deceased's estate. This includes applying for probate or letters of administration, paying debts, distributing assets to beneficiaries, and handling any legal or tax matters. It's a significant responsibility that requires careful attention to detail.",
   },
   {
-    title: "What Is A Family Visa?",
+    title: "How long does the probate process take?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "The duration of probate varies depending on the estate's complexity and the jurisdiction. While some straightforward estates can be processed in a few months, others may take longer due to factors like asset valuation, debt settlement, or family disputes. It's essential to be patient and prepared for potential delays.",
   },
   {
-    title: "Can anyone give immigration advice?",
+    title: "Are there any taxes or fees associated with probate?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "Currently, there are no death duties or inheritance taxes in Australia. However, probate applications involve court filing fees, which can vary based on the estate's value. For instance, in Victoria, probate fees have been significantly increased.",
   },
   {
-    title: "What should my attorney expect from me?",
+    title: "What happens if there's no valid will?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "If someone passes away without a valid will (intestate), the estate is distributed according to the laws of intestacy in the relevant jurisdiction. Typically, the deceased's assets are divided among close relatives, such as spouses, children, or parents. An administrator is appointed by the court to manage the estate in this scenario.",
   },
   {
-    title: "What is the role of witness in court?",
+    title: "Can a will be contested?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "Yes, wills can be contested. Common grounds for contesting a will include claims of undue influence, lack of testamentary capacity, or failure to provide adequate provision for dependents. If someone believes they have a valid claim, they must typically lodge it within a specific timeframe, which varies by jurisdiction",
   },
   {
-    title: "Do I need legal advice just to form my business?",
+    title: "Can probate be avoided altogether?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "In some cases, probate can be avoided. If the deceased’s assets were held jointly (like a joint bank account or jointly owned home), or if they nominated beneficiaries for certain assets (such as superannuation funds or life insurance policies), those assets pass directly to the surviving joint owner or nominated beneficiary. Establishing a comprehensive estate plan during one’s lifetime can help reduce the need for probate.",
   },
   {
-    title: "What types of business entities are there?",
+    title: "What happens if someone contests the will during probate?",
     content:
-      "Lorem ut nisl quam nestibulum drana nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis the monte nascete ridiculus mus morbine fermen.",
+      "If a will is contested during probate, the process is paused until the dispute is resolved. The court will review the evidence and determine whether the will is valid and fair. This can extend the probate timeline significantly and may require mediation or a hearing. Having a well-drafted will and clear communication with family members can help minimise the chances of disputes arising.",
   },
 ];
 
@@ -65,7 +65,7 @@ const FaqPage: React.FC = () => {
       />
 
       <section className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 px-5 lg:0 py-20 gap-20 items-center">
-        <div>
+        <div className="lg:sticky lg:top-28 self-start">
           <div className="max-w-xl mx-auto bg-white shadow-2xl rounded-3xl p-10 border border-gray-200 font-playfair">
             <div className="mb-5">
               <h2 className="text-3xl font-bold  text-gray-900">
@@ -159,7 +159,11 @@ const FaqPage: React.FC = () => {
             </form>
           </div>
         </div>
-        <Accordion items={accordionData} />
+
+        {/* Right Accordion */}
+        <div>
+          <Accordion items={accordionData} />
+        </div>
       </section>
     </div>
   );

@@ -1,96 +1,97 @@
 import { ServicePage } from "./types";
 
 export const willsData: ServicePage = {
-  id: "wills-and-estates",
-  title: "Wills & Estate Planning Services",
+  id: "wills",
+  title: "Wills & Estate Services",
   description:
-    "Comprehensive legal services for wills, estate planning, and asset protection to secure your family's future and ensure your wishes are respected.",
-  slug: "wills-and-estates",
+    "Create clear and legally sound Wills and estate plans to protect your family and assets with expert guidance from Aussentra Legal.",
+  slug: "wills",
   heroImage: "/images/services/wills-hero.jpg",
+
   sections: [
     {
-      title: "Understanding Wills & Estate Planning",
+      title: "Planning Your Will",
       paragraphs: [
-        "A well-prepared will and estate plan are essential to ensure that your assets are distributed according to your wishes and your loved ones are cared for after you pass away. Without a valid will, your estate may be distributed under intestacy laws, which may not reflect your intentions.",
-        "Our experienced estate lawyers provide clear and compassionate guidance through every stage of the planning process — from drafting wills and setting up trusts to managing probate and estate administration."
-      ],
-      listItems: [
-        { text: "Drafting and updating wills" },
-        { text: "Creating powers of attorney" },
-        { text: "Establishing trusts for asset protection" }
+        "Planning what happens to your assets and family after you pass away isn’t always easy to think about but it’s one of the most important things you can do for the people you care about.",
+        "At Aussentra Legal, we help individuals and families across Sydney create clear, legally sound Wills and estate plans that give peace of mind, protect assets, and make life easier for loved ones during difficult times. Whether you need a basic Will or a complete estate plan, our team is here to support you every step of the way."
       ]
     },
     {
-      title: "Why You Need a Legally Valid Will",
+      title: "What Is a Will and Why Do You Need One?",
       paragraphs: [
-        "Having a valid will is the best way to ensure your estate is handled smoothly and according to your wishes. It can prevent disputes, reduce stress for your family, and provide peace of mind knowing that everything is clearly documented."
+        "A Will is a legal document that explains what should happen to your belongings like your home, money, superannuation, and personal items after you pass away. It also lets you:"
       ],
       listItems: [
-        { text: "Control over how your assets are distributed" },
-        { text: "Appointment of executors and guardians for minors" },
-        { text: "Minimization of family disputes and legal challenges" },
-        { text: "Efficient estate administration and reduced costs" }
+        { text: "Name the people (called beneficiaries) who will receive your assets" },
+        { text: "Appoint a trusted person (called an executor) to carry out your wishes" },
+        { text: "Choose guardians for your children if they’re under 18" },
+        { text: "Give gifts, donations, or instructions that are important to you" }
       ]
     },
     {
-      title: "Estate Planning & Asset Protection",
+      title: "Consequences of Not Having a Will",
       paragraphs: [
-        "Estate planning is more than just writing a will — it’s about protecting your legacy and ensuring your financial affairs are in order. Our estate planning lawyers help you structure your assets to minimize tax liabilities and safeguard them from future risks."
-      ],
-      listItems: [
-        { text: "Asset structuring and succession planning" },
-        { text: "Family trusts and discretionary trusts" },
-        { text: "Superannuation and beneficiary nominations" },
-        { text: "Minimizing tax exposure through strategic planning" }
+        "If you don’t have a Will, your estate is handled under intestacy laws. This means the law decides how your estate is divided, and it may not match what you would have wanted. It can also create unnecessary delays, costs, or disputes among family members."
       ]
     },
     {
-      title: "Powers of Attorney & Guardianship",
+      title: "Wills & Estate Services at Aussentra Legal",
       paragraphs: [
-        "A Power of Attorney allows someone you trust to manage your affairs if you’re unable to do so yourself. We can help you draft clear and enforceable documents to ensure your financial and personal matters are protected in all circumstances."
+        "We can assist with a wide range of estate planning needs, from creating new Wills to managing estates after someone passes."
       ],
       listItems: [
-        { text: "Enduring Power of Attorney for financial decisions" },
-        { text: "Enduring Guardian for health and lifestyle decisions" },
-        { text: "Advance Care Directives for medical wishes" }
+        { text: "Writing or updating a Will" },
+        { text: "Creating Powers of Attorney and Enduring Guardian appointments" },
+        { text: "Superannuation advice in estate planning" },
+        { text: "Setting up testamentary and special disability trusts" },
+        { text: "Probate and Letters of Administration" },
+        { text: "Managing and distributing a loved one’s estate" },
+        { text: "Estate disputes (challenging or defending a Will)" },
+        { text: "Removing an executor or resolving disputes between family members" }
       ]
     },
     {
-      title: "Estate Disputes & Probate Assistance",
+      title: "Why Choose Aussentra Legal?",
       paragraphs: [
-        "If you’re an executor or beneficiary involved in a contested will or estate, our lawyers can provide expert representation and advice. We aim to resolve estate disputes efficiently and respectfully, avoiding litigation wherever possible."
+        "We provide clear, compassionate, and practical legal advice to make estate planning and Wills simple, secure, and stress-free."
       ],
       listItems: [
-        { text: "Challenging or defending a will" },
-        { text: "Probate applications and estate administration" },
-        { text: "Executor duties and dispute resolution" },
-        { text: "Mediation and negotiation of inheritance claims" }
+        { text: "Clear advice without legal jargon" },
+        { text: "Friendly and approachable lawyers" },
+        { text: "Support with simple and complex estates" },
+        { text: "Affordable, transparent pricing" },
+        { text: "Local experience with Sydney and NSW laws" },
+        { text: "Respectful support during emotional times" },
+        { text: "Free secure storage of your Will" }
       ]
     },
     {
-      title: "Secure Your Legacy with Confidence",
+      title: "Let’s Make Planning Easier – Talk to Us Today",
       paragraphs: [
-        "Whether you’re planning for the future or managing a loved one’s estate, professional legal advice ensures clarity, protection, and peace of mind. Our wills and estate lawyers are here to guide you through every step with care and precision."
+        "At Aussentra Legal, we believe everyone deserves to have their wishes respected and their family protected. Whether you’re making your first Will, updating one after a major life change, or need help with a loved one’s estate, we’re here to guide you with care, clarity, and compassion.",
+        "Call us now or book a free consultation online. Let’s make your estate planning simple, personal, and stress-free."
       ]
     }
   ],
+
   meta: {
-    title: "Wills & Estate Planning Lawyers | Protect Your Legacy",
+    title: "Wills & Estate Services | Sydney Estate Planning Lawyers",
     description:
-      "Trusted wills and estate planning lawyers helping you draft wills, manage estates, and protect your assets for the future.",
+      "Aussentra Legal helps you create Wills and estate plans to protect your family and assets, offering expert advice for simple or complex estates.",
     keywords: [
       "wills",
       "estate planning",
-      "power of attorney",
-      "trusts and estates",
-      "probate lawyer",
-      "inheritance disputes",
-      "estate administration"
+      "Sydney lawyers",
+      "executor",
+      "beneficiaries",
+      "probate",
+      "estate disputes"
     ]
   },
+
   cta: {
-    text: "Plan for the future with confidence. Contact our wills and estate lawyers today to secure your legacy.",
-    buttonText: "Book a Consultation",
+    text: "Need help with a Will or estate plan? Contact our expert team today.",
+    buttonText: "Book Free Consultation",
     link: "/contact"
   }
 };

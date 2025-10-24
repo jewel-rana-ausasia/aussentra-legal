@@ -1,7 +1,7 @@
 "use client";
 import BannerHeader from "@/components/BannerHeader";
 import ServiceDetailsContent from "@/components/ServiceDetailsContent";
-import { immigrationLawData } from "@/lib/data/services/immigration";
+import { immigrationData } from "@/lib/data/services/immigration";
 
 const ImmigrationLayPage: React.FC = () => {
   
@@ -16,7 +16,7 @@ const ImmigrationLayPage: React.FC = () => {
         overlayDark={5}
       />
 
-       <ServiceDetailsContent sections={immigrationLawData.sections} />
+       <ServiceDetailsContent sections={immigrationData.sections} />
 
      
     </div>

@@ -1,100 +1,85 @@
 import { ServicePage } from "./types";
 
 export const insolvencyData: ServicePage = {
-  id: "insolvency-law",
-  title: "Insolvency & Bankruptcy Services",
+  id: "insolvency",
+  title: "Insolvency Services",
   description:
-    "Comprehensive legal advice and representation for individuals and businesses facing financial distress, insolvency, or bankruptcy proceedings.",
-  slug: "insolvency-law",
-  heroImage: "/images/services/insolvency-law-hero.jpg",
+    "Professional insolvency legal support to help businesses, directors, and creditors navigate financial difficulties.",
+  slug: "insolvency",
+  heroImage: "/images/services/insolvency-hero.jpg",
+
   sections: [
     {
-      title: "Understanding Insolvency Law",
+      title: "Understanding Insolvency",
       paragraphs: [
-        "Insolvency law deals with situations where individuals or companies are unable to pay their debts as they become due. It provides a legal framework to either restructure debt, reach agreements with creditors, or, when necessary, liquidate assets fairly.",
-        "Our experienced insolvency lawyers assist clients in navigating the complexities of bankruptcy, liquidation, and corporate restructuring. We work with both debtors and creditors to find practical and legally sound solutions that protect financial interests and minimize losses."
-      ],
-      listItems: [
-        { text: "Personal insolvency and bankruptcy matters" },
-        { text: "Corporate liquidation and administration" },
-        { text: "Debt restructuring and negotiation" }
+        "Every year, thousands of businesses in Australia find themselves in financial trouble. If a business can’t pay its debts when they’re due, it may be facing insolvency.",
+        "At Aussentra Legal, we understand how stressful this can be. That’s why we offer friendly, professional legal support to help you explore your options, protect your rights, and take the right steps forward whether you’re a business owner, company director, or creditor."
       ]
     },
     {
-      title: "Corporate Insolvency Solutions",
+      title: "What Is Insolvency?",
       paragraphs: [
-        "When a business is struggling financially, quick and informed action is essential. Our insolvency lawyers provide tailored legal advice to company directors, shareholders, and creditors on all aspects of corporate distress and recovery."
-      ],
-      listItems: [
-        { text: "Voluntary administration and liquidation" },
-        { text: "Director’s duties and risk management" },
-        { text: "Restructuring, mergers, and acquisitions" },
-        { text: "Creditor negotiations and recovery actions" },
-        { text: "Asset protection and enforcement of securities" }
+        "In simple terms, insolvency means your business can’t pay its bills on time. This can happen to companies (corporate insolvency) or individuals (personal insolvency).",
+        "When a business becomes insolvent, it’s important to act fast. Waiting too long can make things worse and could put directors at risk of legal penalties."
       ]
     },
     {
-      title: "Personal Insolvency & Bankruptcy Assistance",
+      title: "Types of Insolvency Services We Offer",
       paragraphs: [
-        "Financial hardship can happen to anyone. Our lawyers offer compassionate, confidential advice to individuals facing debt-related challenges. We help you understand your rights, responsibilities, and all available legal options to regain financial stability."
+        "At Aussentra Legal, we help guide you through different types of insolvency processes, including:"
       ],
       listItems: [
-        { text: "Bankruptcy applications and defense" },
-        { text: "Debt agreements and personal insolvency arrangements" },
-        { text: "Asset protection strategies" },
-        { text: "Negotiation with creditors" },
-        { text: "Advice on credit reporting and financial rehabilitation" }
+        { text: "Voluntary Administration – Directors can appoint an external administrator to pause and restructure debts." },
+        { text: "Creditors’ Voluntary Liquidation (CVL) – Properly close down a business and fairly pay creditors." },
+        { text: "Court Liquidation – A creditor applies to court to shut down a company and a liquidator is appointed." },
+        { text: "Receivership – A secured creditor appoints a receiver to sell assets and repay debt." },
+        { text: "Simplified Liquidation – Quick, affordable closure of small businesses meeting criteria." },
+        { text: "Small Business Restructuring – Create a payment plan with creditors while keeping owners in control." },
+        { text: "Turnaround Management – Review, plan, and recover struggling businesses before closure." },
+        { text: "Members’ Voluntary Liquidation (MVL) – Close solvent businesses and distribute remaining assets legally." },
+        { text: "Voidable Transactions – Protect your rights if a liquidator tries to claw back payments." }
       ]
     },
     {
-      title: "Advising Creditors & Stakeholders",
-      paragraphs: [
-        "Our insolvency team also acts for creditors seeking to recover funds or protect their interests in insolvency proceedings. We help businesses assess their legal position, enforce securities, and participate effectively in insolvency processes."
-      ],
+      title: "Early Warning Signs of Insolvency",
       listItems: [
-        { text: "Debt recovery and enforcement of judgments" },
-        { text: "Filing proofs of debt and creditor claims" },
-        { text: "Negotiating settlements and repayment plans" },
-        { text: "Representing creditors in liquidation and administration" }
+        { text: "Constant cash flow problems" },
+        { text: "Missed payments or unpaid invoices" },
+        { text: "Overdue taxes or superannuation" },
+        { text: "Creditors chasing money or threatening legal action" },
+        { text: "Directors using personal funds to keep the business going" }
+      ],
+      paragraphs: [
+        "If these sound familiar, it’s time to get legal advice."
       ]
     },
     {
-      title: "Why Choose Our Insolvency Lawyers?",
+      title: "Obligation-Free Consultation",
       paragraphs: [
-        "With extensive experience across both personal and corporate insolvency matters, our legal team delivers strategic and results-oriented solutions. Whether you need protection from creditors or wish to recover funds, we provide expert guidance through every stage."
-      ],
-      listItems: [
-        { text: "Comprehensive advice on insolvency and restructuring" },
-        { text: "Representation for both debtors and creditors" },
-        { text: "Tailored solutions for businesses and individuals" },
-        { text: "Strong litigation and negotiation experience" },
-        { text: "Confidential and supportive legal guidance" }
-      ]
-    },
-    {
-      title: "Take Control of Your Financial Future",
-      paragraphs: [
-        "If you’re facing insolvency or struggling with debt, it’s important to seek legal advice early. Our insolvency lawyers can help you explore all available options, protect your rights, and plan a pathway toward financial recovery."
+        "At Aussentra Legal, we know how overwhelming financial difficulties can be. That’s why we offer clear, compassionate, and expert legal advice with no judgment and no jargon.",
+        "Whether your business can be saved or needs a respectful, legal exit, our experienced team is here to help.",
+        "Call us now for a free consultation or visit our website to learn more about how our Insolvency Services can support you or your clients."
       ]
     }
   ],
+
   meta: {
-    title: "Insolvency & Bankruptcy Lawyers | Corporate & Personal Solutions",
+    title: "Insolvency Services | Expert Legal Support for Businesses",
     description:
-      "Experienced insolvency lawyers providing expert advice on bankruptcy, debt restructuring, and liquidation for businesses and individuals.",
+      "Aussentra Legal provides professional insolvency advice and legal support for businesses, directors, and creditors facing financial difficulties.",
     keywords: [
-      "insolvency law",
-      "bankruptcy lawyer",
-      "corporate liquidation",
-      "debt restructuring",
-      "insolvency lawyer",
-      "business insolvency",
-      "personal bankruptcy"
+      "insolvency",
+      "corporate insolvency",
+      "personal insolvency",
+      "liquidation",
+      "administration",
+      "business restructuring"
     ]
   },
+
   cta: {
-    text: "Facing insolvency or financial distress? Get expert legal advice today from our experienced insolvency lawyers.",
-    buttonText: "Book a Consultation",
+    text: "Facing financial difficulties? Contact our insolvency team today for a free consultation.",
+    buttonText: "Get Free Consultation",
     link: "/contact"
   }
 };

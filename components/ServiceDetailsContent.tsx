@@ -51,7 +51,7 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections 
               {section.title}
             </h4>
             
-            {section.paragraphs && section.paragraphs.map((paragraph, pIndex) => (
+            {section.paragraphs && section.paragraphs?.map((paragraph, pIndex) => (
               <p 
                 key={pIndex} 
                 className="text-gray-600 leading-relaxed mb-5 text-justify font-light"

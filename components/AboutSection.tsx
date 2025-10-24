@@ -35,8 +35,24 @@ export default function AboutSection() {
 
             {/* Paragraph */}
             <p className="text-gray-600 leading-relaxed">
-              Lawyer sit amet risus ac duin auctor posuere fanish amet the
-              acinia lecratusan risus facilis semper etiam fermen.
+              Aussentra Legal is a law firm focused on providing personal,
+              practical, and easy-to-understand legal services for families,
+              homebuyers, and business owners. We specialise in property
+              transactions, estate planning, wills, probate, and banking law.
+              <br />
+              <br />
+              We know legal matters can be confusing and stressful, so we’re
+              here to make the process simple and clear. With fixed-fee pricing
+              and straightforward advice, we help you make confident decisions
+              without surprises.
+              <br />
+              <br />
+              At Aussentra Legal, we listen carefully, respect your needs, and
+              guide you with care every step of the way so you feel supported
+              and in control of your legal journey. Our goal is to build lasting
+              relationships based on trust, transparency, and respect. We are
+              committed to helping you protect what matters most and plan for
+              the future with peace of mind.
             </p>
 
             {/* List */}

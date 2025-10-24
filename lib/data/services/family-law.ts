@@ -4,78 +4,78 @@ export const familyLawData: ServicePage = {
   id: "family-law",
   title: "Family Law Services",
   description:
-    "Comprehensive family law services including divorce, child custody, property settlement, and mediation.",
+    "Expert family law legal support for separation, divorce, child custody, and property matters with care and respect.",
   slug: "family-law",
   heroImage: "/images/services/family-law-hero.jpg",
+
   sections: [
     {
       title: "Understanding Family Law",
       paragraphs: [
-        "Family law encompasses all legal matters related to family relationships, including marriage, divorce, child custody, property division, and financial support. These situations can be deeply personal and emotionally challenging, requiring both sensitivity and strong legal expertise.",
-        "Our experienced family law attorneys provide compassionate, practical, and tailored guidance to help you resolve family disputes efficiently and protect your rights and interests."
-      ],
-      listItems: [
-        { text: "Divorce and legal separation" },
-        { text: "Child custody and visitation arrangements" },
-        { text: "Child and spousal support (maintenance)" },
-        { text: "Property and asset division" },
-        { text: "Binding financial agreements and prenups" }
+        "When you're facing a family issue like separation, divorce, or child custody, things can feel overwhelming. At Aussentra Legal, we’re here to guide you through it with care, respect, and expert legal advice.",
+        "Our experienced team of family lawyers in Sydney will take the time to understand your situation and help you make the best decisions for your future. Whether your case is simple or complicated, we’re ready to help."
       ]
     },
     {
-      title: "Our Key Family Law Services",
+      title: "Why Choose Aussentra Legal for Family Law?",
       paragraphs: [
-        "We handle all aspects of family law with care and professionalism. Whether you are going through a separation, negotiating parenting arrangements, or resolving property matters, our team provides the legal guidance you need to make informed decisions."
+        "We focus on providing expert guidance, protecting your rights, and making the legal process as smooth as possible."
       ],
       listItems: [
-        { text: "Divorce applications and representation" },
-        { text: "Parenting orders and child custody disputes" },
-        { text: "De facto and same-sex relationship matters" },
-        { text: "Domestic violence and intervention orders" },
-        { text: "Property settlements and financial disputes" }
+        { text: "Family Law Specialists You Can Trust – Skilled professionals who understand the law inside and out." },
+        { text: "We Focus on You – Personalized advice tailored to your situation." },
+        { text: "We Handle Complex Matters Too – International custody disputes or large property settlements." },
+        { text: "Flexible Fees to Suit Your Budget – Affordable options without cutting corners." },
+        { text: "Local and International Experience – Expertise in both domestic and overseas family law matters." }
       ]
     },
     {
-      title: "Why Choose Our Family Lawyers?",
-      paragraphs: [
-        "We understand that family law matters can be sensitive and complex. Our lawyers approach every case with empathy, professionalism, and a focus on achieving fair, practical outcomes. We work to minimize conflict and stress while protecting what matters most to you."
-      ],
+      title: "Areas of Family Law We Cover",
       listItems: [
-        { text: "Client-focused and compassionate approach" },
-        { text: "Extensive experience in all areas of family law" },
-        { text: "Clear advice and transparent communication" },
-        { text: "Strong negotiation and advocacy skills" },
-        { text: "Dedicated to achieving the best possible results" }
+        { text: "Divorce and separation" },
+        { text: "Child custody and parenting arrangements" },
+        { text: "Property and financial settlements" },
+        { text: "Spousal support" },
+        { text: "De facto and same-sex relationships" },
+        { text: "Family violence and intervention orders" }
+      ],
+      paragraphs: [
+        "Our services cover all aspects of family law, ensuring you get the guidance and protection you need."
       ]
     },
     {
-      title: "How We Can Help You",
+      title: "Support Through Every Step",
       paragraphs: [
-        "From your first consultation, our family law team will listen to your situation, explain your legal options, and outline a strategy to resolve your matter efficiently. Whether through negotiation, mediation, or court representation, we are committed to supporting you every step of the way."
-      ],
-      listItems: [
-        { text: "Tailored legal advice and strategy" },
-        { text: "Support with mediation and dispute resolution" },
-        { text: "Experienced court representation when needed" }
+        "At Aussentra Legal, we know how emotional and stressful family issues can be. That’s why we treat every client with kindness, care, and respect.",
+        "We’ll guide you through the legal process and fight for what matters most to you."
+      ]
+    },
+    {
+      title: "Talk to a Family Lawyer Today",
+      paragraphs: [
+        "If you’re going through a family law issue or just need legal advice, don’t wait. Contact Aussentra Legal today to speak with one of our friendly family lawyers.",
+        "Call us to book your free first consultation. Let’s talk about how we can support you and your family."
       ]
     }
   ],
+
   meta: {
-    title: "Family Law Services | Divorce, Custody & Mediation Lawyers",
+    title: "Family Law Services | Expert Sydney Family Lawyers",
     description:
-      "Trusted family law firm offering expert legal support for divorce, child custody, spousal support, and property settlement. Compassionate and results-driven lawyers.",
+      "Aussentra Legal provides expert legal support for family law matters including divorce, child custody, property settlements, and family disputes.",
     keywords: [
       "family law",
-      "divorce lawyer",
+      "divorce",
       "child custody",
-      "spousal support",
       "property settlement",
-      "family mediation"
+      "spousal support",
+      "family lawyers Sydney"
     ]
   },
+
   cta: {
-    text: "Get compassionate legal support for your family matters. Speak with one of our family law experts today.",
-    buttonText: "Consult Our Family Lawyers",
+    text: "Facing a family law issue? Contact our experienced family law team today.",
+    buttonText: "Book Free Consultation",
     link: "/contact"
   }
 };

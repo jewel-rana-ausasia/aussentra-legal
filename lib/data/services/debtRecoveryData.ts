@@ -4,83 +4,77 @@ export const debtRecoveryData: ServicePage = {
   id: "debt-recovery",
   title: "Debt Recovery Services",
   description:
-    "Professional legal assistance in recovering outstanding debts and resolving financial disputes quickly and effectively.",
+    "Professional and stress-free debt recovery services for individuals, small businesses, and large companies.",
   slug: "debt-recovery",
   heroImage: "/images/services/debt-recovery-hero.jpg",
+
   sections: [
     {
-      title: "Understanding Debt Recovery Law",
+      title: "Debt Recovery Made Simple",
       paragraphs: [
-        "Debt recovery law governs the process of collecting outstanding payments from individuals or businesses. Whether you’re a small business owner, contractor, or corporate entity, unpaid debts can significantly affect your financial stability and cash flow.",
-        "Our debt recovery lawyers provide effective, practical solutions to recover money owed to you. We assist clients across all industries, managing each case with professionalism and efficiency — from initial demand letters to court proceedings."
+        "At Aussentra Legal, we make debt recovery simple, professional, and stress-free. Whether you're an individual, a small business, or a large company, our experienced team helps you recover what you're owed quickly and effectively.",
+        "We understand that unpaid debts can impact your cash flow and peace of mind. That’s why we use smart strategies and legal tools to get results without wasting your time or money."
+      ]
+    },
+    {
+      title: "Why Choose Aussentra Legal for Debt Recovery?",
+      paragraphs: [],
+      listItems: [
+        { text: "Expert legal team specialising in debt recovery" },
+        { text: "No recovery, no commission" },
+        { text: "Clear, honest advice before you commit" },
+        { text: "Fast and effective communication" },
+        { text: "Online portal to track and manage your case" },
+        { text: "Legal support from start to finish" }
+      ]
+    },
+    {
+      title: "Our Debt Recovery Services",
+      paragraphs: [
+        "We help with all types of unpaid debts across a wide range of industries:"
       ],
       listItems: [
-        { text: "Business and commercial debt recovery" },
-        { text: "Personal loan and invoice disputes" },
-        { text: "Legal notices and settlement negotiations" }
+        { text: "Personal Debt Recovery – Let us handle uncomfortable situations professionally and respectfully so you don’t have to." },
+        { text: "Small Business Debt Recovery – We help tradespeople, professionals, and small business owners recover overdue invoices efficiently." },
+        { text: "Commercial Debt Recovery – If you’re dealing with large or complex unpaid debts, our tailored approach gives you the best chance of recovery." },
+        { text: "Legal Debt Recovery Support – When legal action is needed, our skilled lawyers manage the process and represent your interests every step of the way." }
       ]
     },
     {
       title: "Our Debt Recovery Process",
-      paragraphs: [
-        "We take a structured, results-driven approach to recovering debts efficiently and cost-effectively. Every case is handled with attention to detail and compliance with legal standards to ensure a smooth process and maximize the chance of recovery."
-      ],
+      paragraphs: [],
       listItems: [
-        { text: "Initial consultation and case assessment" },
-        { text: "Issuing formal demand letters to debtors" },
-        { text: "Negotiating repayment or settlement agreements" },
-        { text: "Commencing court proceedings if required" },
-        { text: "Enforcing judgments and recovering funds" }
+        { text: "Demand for Payment – We contact the debtor through email, phone, or letter with a firm but fair request for payment." },
+        { text: "Negotiation – If the debtor responds, we negotiate a payment or instalment plan on your behalf." },
+        { text: "Legal Action – If required, our legal team steps in to take strong action backed by clear advice and full support." }
       ]
     },
     {
-      title: "Why Choose Our Debt Recovery Lawyers?",
+      title: "Ready to Recover What You're Owed?",
       paragraphs: [
-        "We understand that recovering debts can be stressful and time-consuming. Our debt recovery team uses proven legal strategies and a professional approach to help you recover outstanding funds as quickly and efficiently as possible."
-      ],
-      listItems: [
-        { text: "Fast, strategic, and cost-effective debt recovery" },
-        { text: "Transparent advice on options and costs" },
-        { text: "Skilled negotiators to avoid unnecessary litigation" },
-        { text: "Experienced representation in court when required" },
-        { text: "Tailored recovery plans to suit your business or personal needs" }
-      ]
-    },
-    {
-      title: "Commercial and Business Debt Solutions",
-      paragraphs: [
-        "Our firm assists companies of all sizes with managing overdue accounts and enforcing payment obligations. We help draft and review credit terms, agreements, and invoices to minimize future risk, while pursuing existing debts efficiently and professionally."
-      ],
-      listItems: [
-        { text: "Corporate debt collection and enforcement" },
-        { text: "Recovery of unpaid invoices and contracts" },
-        { text: "Credit control and policy review" },
-        { text: "Bankruptcy and insolvency proceedings" }
-      ]
-    },
-    {
-      title: "Get Help with Debt Recovery Today",
-      paragraphs: [
-        "If someone owes you money or a business has failed to pay for goods or services, don’t wait — taking early action can improve your chances of recovery. Our debt recovery lawyers are here to assist you through every step of the process."
+        "Let Aussentra Legal help you take control of your debt recovery. We’ll guide you through the process with care, honesty, and results that matter.",
+        "Get in touch today for expert advice or to start your debt recovery journey with no recovery, no commission."
       ]
     }
   ],
+
   meta: {
-    title: "Debt Recovery Lawyers | Fast & Effective Legal Debt Collection",
+    title: "Debt Recovery Services | Expert Legal Support",
     description:
-      "Experienced debt recovery lawyers providing efficient solutions for recovering unpaid debts. We handle business, personal, and commercial debt cases with professionalism.",
+      "Get professional debt recovery services from Aussentra Legal. Recover debts efficiently and stress-free with our expert legal team.",
     keywords: [
       "debt recovery",
-      "debt collection lawyer",
-      "commercial debt recovery",
-      "business debt collection",
-      "legal debt recovery",
-      "recover unpaid invoices"
+      "unpaid debts",
+      "commercial debt",
+      "legal recovery",
+      "business debt recovery",
+      "personal debt recovery"
     ]
   },
+
   cta: {
-    text: "Take control of your outstanding debts. Contact our debt recovery lawyers today for professional assistance.",
-    buttonText: "Request Consultation",
+    text: "Ready to recover what you're owed? Contact our debt recovery team today.",
+    buttonText: "Get Free Quote",
     link: "/contact"
   }
 };
