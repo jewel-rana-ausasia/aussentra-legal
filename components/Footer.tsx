@@ -172,7 +172,7 @@ export default function Footer() {
                   <li key={index}>
                     <Link
                       href={getHref(service)}
-                      className="text-gray-400 text-sm lg:text-base hover:text-[#ac835d] transition-colors"
+                      className="text-gray-400 text-sm lg:text-base hover:text-primary transition-colors"
                     >
                       {service}
                     </Link>
@@ -188,7 +188,7 @@ export default function Footer() {
                   <li key={index}>
                     <Link
                       href={getHref(label)}
-                      className="text-gray-400 text-sm lg:text-base hover:text-[#ac835d] transition-colors"
+                      className="text-gray-400 text-sm lg:text-base hover:text-primary transition-colors"
                     >
                       {label}
                     </Link>

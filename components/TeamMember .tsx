@@ -83,7 +83,7 @@ const Team: React.FC = () => {
                   height={400}
                   className="w-[200px] h-[180px] sm:w-[250px] sm:h-[250px] md:w-full md:h-[300px] object-cover rounded-md mx-auto"
                 />
-                <div className="social-icons absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 flex gap-2 bg-[#ac835d] rounded-full px-3 py-2 opacity-0 group-hover:bottom-4 group-hover:opacity-100 transition-all duration-400">
+                <div className="social-icons absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 flex gap-2 bg-primary rounded-full px-3 py-2 opacity-0 group-hover:bottom-4 group-hover:opacity-100 transition-all duration-400">
                   {member.social.facebook && (
                     <a href={member.social.facebook} className="text-white">
                       <FaFacebookF />
