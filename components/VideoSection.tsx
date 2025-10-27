@@ -19,7 +19,7 @@ const VideoSection: React.FC = () => {
         <div className="flex justify-center">
           <div className="text-center mb-4 lg:mb-8">
             <div className="section-subtitle text-white flex justify-center items-center gap-2 text-lg font-medium tracking-wider font-playfair italic">
-              <div className="flex items-center justify-center w-10 h-10 bg-[#ac835d] rounded-full mr-1">
+              <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-full mr-1">
                 <Image
                   src="/balance-icon.svg"
                   alt="balance-icon"
@@ -31,7 +31,7 @@ const VideoSection: React.FC = () => {
             </div>
             <h2 className="section-title text-2xl lg:text-4xl font-bold text-white mt-2 font-playfair">
               Law Firm{" "}
-              <span className="text-[#ac835d] italic">Promo Video</span>
+              <span className="text-primary italic">Promo Video</span>
             </h2>
           </div>
         </div>

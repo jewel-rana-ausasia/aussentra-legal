@@ -54,7 +54,7 @@ export default function AboutSection2() {
           >
             {/* Subtitle */}
             <div className="flex items-center justify-center text-lg font-medium">
-              <div className="mr-2 text-2xl bg-[#ac835d] h-12 w-12 flex justify-center items-center rounded-full">
+              <div className="mr-2 text-2xl bg-primary h-12 w-12 flex justify-center items-center rounded-full">
                 <Image
                   src="/balance-icon.svg"
                   alt="balance-icon"
@@ -68,7 +68,7 @@ export default function AboutSection2() {
             {/* Title */}
             <h2 className="text-3xl md:text-5xl font-bold leading-tight text-white">
               We here for provide <br />
-              <span className="text-[#ac835d] italic">legal consultancy</span>
+              <span className="text-primary italic">legal consultancy</span>
             </h2>
 
             {/* Paragraph */}
@@ -91,7 +91,7 @@ export default function AboutSection2() {
                 <div className="text-[18px] text-gray-300">
                   President &amp; Co-Founder
                 </div>
-                <div className="text-[18px] font-medium text-[#ac835d] font-sans">
+                <div className="text-[18px] font-medium text-primary font-sans">
                   Emily H. McGill
                 </div>
               </div>

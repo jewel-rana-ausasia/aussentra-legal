@@ -152,7 +152,7 @@ const FaqPage: React.FC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#ac835d] text-white py-2 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-[#956f4d] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
+                className="w-full bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white py-2 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-[#956f4d] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
               >
                 Submit Form <FaArrowRight className="text-sm" />
               </button>

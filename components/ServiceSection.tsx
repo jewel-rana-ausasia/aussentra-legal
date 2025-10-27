@@ -49,8 +49,8 @@ export default function ServiceSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <div className="flex items-center justify-center text-[#ac835d] text-lg font-medium font-playfair">
-              <div className="w-12 h-12 rounded-full bg-[#ac835d] flex items-center justify-center mr-3">
+            <div className="flex items-center text-lg font-medium font-playfair">
+              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mr-3">
                 <Image
                   src="/balance-icon.svg"
                   alt="balance-icon"
@@ -60,15 +60,15 @@ export default function ServiceSection() {
               </div>
               <span className="italic text-lg">Areas of Service</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight font-playfair text-center">
-              Our <span className="italic text-[#ac835d]">Services</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight font-playfair">
+              Our <span className="italic text-primary">Services</span>
             </h2>
             <p className="text-gray-600">
               At Aussentra Legal, we provide expert guidance in Wills and Estate
               law to protect your family, home, and future with clarity and
               care.
             </p>
-            <button className="bg-[#ac835d] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#7f5633] transition-all duration-300 hover:shadow-lg">
+            <button className="bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#7f5633] transition-all duration-300 hover:shadow-lg">
               Discover more
             </button>
           </div>
@@ -97,7 +97,7 @@ export default function ServiceSection() {
                       </div>
                       <a
                         href="/services"
-                        className="w-12 h-12 flex items-center justify-center bg-[#ac835d] rounded-full text-white transition-all duration-300 hover:bg-white hover:text-[#ac835d] transform hover:scale-110 flex-shrink-0 ml-4"
+                        className="w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white transition-all duration-300 hover:bg-white hover:text-[#ac835d] transform hover:scale-110 flex-shrink-0 ml-4"
                       >
                         <ArrowRight className="w-5 h-5" />
                       </a>
@@ -116,7 +116,7 @@ export default function ServiceSection() {
                       onClick={() => goToSlide(index * slidesPerView)}
                       className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
                         Math.floor(currentIndex / slidesPerView) === index
-                          ? "bg-[#ac835d] w-8"
+                          ? "bg-primary w-8"
                           : "bg-gray-300"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}

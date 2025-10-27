@@ -86,8 +86,8 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   onClick={handleLinkClick} // <- Add this
-                  className={`flex items-center hover:text-[#ac835d] ${
-                    pathname === item.href ? "text-[#ac835d]" : "text-white"
+                  className={`flex items-center hover:text-primary ${
+                    pathname === item.href ? "text-primary" : "text-white"
                   }`}
                 >
                   {/* Show icon only on mobile */}
@@ -105,7 +105,7 @@ const Navbar = () => {
             <Link
               href="/contact"
               onClick={handleLinkClick} // <- Add this
-              className="border border-[#ac835d] text-white px-5 py-3 text-sm rounded-full hover:bg-[#ac835d] transition-all"
+              className="border border-primary text-white px-5 py-3 text-sm rounded-full hover:bg-[#ac835d] transition-all"
             >
               Free consultant
             </Link>

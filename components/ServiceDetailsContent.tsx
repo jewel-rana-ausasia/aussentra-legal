@@ -65,7 +65,7 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections 
                 {section.listItems.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start">
                     <div className="flex-shrink-0 mt-1 mr-4">
-                      <span className="w-5 h-5 bg-[#ac835d] rounded-full flex items-center justify-center">
+                      <span className="w-5 h-5 bg-primary rounded-full flex items-center justify-center">
                         <svg 
                           className="w-3 h-3 text-white" 
                           fill="none" 

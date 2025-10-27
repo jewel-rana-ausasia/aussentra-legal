@@ -1,17 +1,42 @@
 "use client";
 import BannerHeader from "@/components/BannerHeader";
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 const ServicesPage: React.FC = () => {
   const services = [
-    { title: "Conveyancing", img: "/services/conveyancing-banner.jpg", link: "/services/conveyancing" },
-    { title: "Immigration\nLaw", img: "/services/immigration-law.jpg", link: "/services/immigration-law" },
-    { title: "Debt\nRecovery", img: "/services/insolvency.jpg", link: "/services/debt-recovery" },
-    { title: "Insolvency", img: "/services/insolvency-thum.jpg", link: "/services/insolvency" },
-    { title: "Family\nLaw", img: "/services/family-law.jpg", link: "/services/family-law" },
+    {
+      title: "Conveyancing",
+      img: "/services/conveyancing-banner.jpg",
+      link: "/services/conveyancing",
+    },
+    {
+      title: "Immigration\nLaw",
+      img: "/services/immigration-law.jpg",
+      link: "/services/immigration-law",
+    },
+    {
+      title: "Debt\nRecovery",
+      img: "/services/insolvency.jpg",
+      link: "/services/debt-recovery",
+    },
+    {
+      title: "Insolvency",
+      img: "/services/insolvency-thum.jpg",
+      link: "/services/insolvency",
+    },
+    {
+      title: "Family\nLaw",
+      img: "/services/family-law.jpg",
+      link: "/services/family-law",
+    },
     { title: "Wills", img: "/services/wills.jpg", link: "/services/wills" },
-    { title: "Probate\n& Estate", img: "/services/probate-and-estate-banner.jpg", link: "/services/probate-estate" },
+    {
+      title: "Probate\n& Estate",
+      img: "/services/probate-and-estate-banner.jpg",
+      link: "/services/probate-estate",
+    },
   ];
 
   return (
@@ -28,7 +53,8 @@ const ServicesPage: React.FC = () => {
       <section className="w-full px-8 lg:px-0 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((caseItem, idx) => (
-            <div
+            <Link
+              href={caseItem.link}
               key={idx}
               className="relative group overflow-hidden rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
             >
@@ -52,14 +78,11 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* Arrow */}
-                <a
-                  href={caseItem.link}
-                  className="w-8 h-8 bg-[#ac835d] rounded-full flex items-center justify-center text-white text-lg transition-colors duration-500 hover:bg-white hover:text-[#14100c]"
-                >
-                  <FaArrowRight className="w-4 h-4"/>
-                </a>
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-lg transition-colors duration-500 hover:bg-white hover:text-[#14100c]">
+                  <FaArrowRight className="w-4 h-4" />
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

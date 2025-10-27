@@ -69,7 +69,7 @@ const Testimonials: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-5">
           <div className="section-subtitle flex justify-center items-center gap-2 text-lg text-gray-800 font-medium tracking-wider font-playfair italic">
-            <span className="flex items-center justify-center w-10 h-10 bg-[#ac835d] rounded-full mr-1">
+            <span className="flex items-center justify-center w-10 h-10 bg-primary rounded-full mr-1">
               <Image
                 src="/balance-icon.svg"
                 alt="balance-icon"
@@ -80,7 +80,7 @@ const Testimonials: React.FC = () => {
             Our satisfied clients
           </div>
           <h2 className="section-title text-2xl lg:text-4xl font-bold mt-4 font-playfair">
-            What Our <span className="text-[#ac835d] italic">Clients Say</span>?
+            What Our <span className="text-primary italic">Clients Say</span>?
           </h2>
         </div>
 
@@ -125,10 +125,10 @@ const Testimonials: React.FC = () => {
             <button
               key={idx}
               onClick={() => setCurrentPage(idx)}
-              className={`w-3 h-3 rounded-full border border-[#ac835d] transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full border border-primary transition-all duration-300 ${
                 currentPage === idx
-                  ? "bg-[#ac835d] w-8"
-                  : "bg-transparent hover:bg-[#ac835d]/70"
+                  ? "bg-primary w-8"
+                  : "bg-transparent hover:bg-primary/70"
               }`}
             ></button>
           ))}
@@ -138,11 +138,11 @@ const Testimonials: React.FC = () => {
         <div className="text-center mt-5 lg:mt-10">
           <div className="section-info">
             <div className="desc text-gray-700 text-base lg:text-lg font-playfair italic space-x-1">
-              <span className="not-italic bg-[#ac835d] text-white px-4 py-2 rounded-full">
+              <span className="not-italic bg-primary text-white px-4 py-2 rounded-full">
                 Trust
               </span>
               <span>Genuine 1000+ people trusting</span>
-              <span className="border-b-2 border-[#ac835d]">
+              <span className="border-b-2 border-primary">
                 Aussentra Legal
               </span>
               <span>law firm.</span>

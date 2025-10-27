@@ -25,45 +25,11 @@ const Header: React.FC = () => {
           loop
           muted
         >
-          <source src="/home/lawyer-video.mp4" type="video/mp4" />
+          <source src="/home/video-aussentra-legal.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/60"></div>{" "}
         {/* Optional overlay */}
       </div>
-
-      {/* Content */}
-      {/*  <div className="relative z-10 flex items-center justify-center h-full v-middle font-playfair">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center items-center">
-            <div className="text-center lg:w-7/12 md:w-full">
-              <h5 className="flex items-center justify-center mb-2 text-white text-2xl italic font-normal">
-                <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-2">
-                  <Image
-                    src="/balance-icon.svg"
-                    alt="balance-icon"
-                    width={30}
-                    height={30}
-                  />
-                </span>
-                Aussentra Legal
-              </h5>
-              <h3 className="text-white text-3xl md:text-5xl lg:text-7xl font-medium mb-10">
-                We are here for the{" "}
-                <span className="text-[#ac835d] italic font-bold">
-                  voice of justice
-                </span>
-              </h3>
-              <Link
-                href="/services"
-                className="inline-block relative px-8 py-3 text-white font-medium border border-[#ac835d] rounded-full hover:bg-[#ac835d] transition duration-300 button-3"
-              >
-                Explore All Services
-                <span></span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full v-middle font-playfair">
@@ -71,7 +37,7 @@ const Header: React.FC = () => {
           <div className="flex justify-center items-center">
             <div className="text-center md:w-full">
               <h5 className="flex items-center justify-center mb-2 text-white text-2xl italic font-normal">
-                <span className="flex items-center justify-center w-12 h-12 bg-[#ac835d] rounded-full mr-2">
+                <span className="flex items-center justify-center w-12 h-12 bg-[#daa22d] rounded-full mr-2">
                   <Image
                     src="/balance-icon.svg"
                     alt="balance-icon"
@@ -85,7 +51,7 @@ const Header: React.FC = () => {
               <h3 className="w-full text-white text-3xl md:text-5xl lg:text-7xl font-medium mb-6">
                 Protecting Your Family's
                 <br />
-                <span className="text-[#ac835d] italic font-bold">
+                <span className="text-[#daa22d] italic font-bold">
                   Future with Care
                 </span>
               </h3>
@@ -99,7 +65,7 @@ const Header: React.FC = () => {
 
               <Link
                 href="/services"
-                className="inline-block relative px-8 py-3 lg:py-4 text-white font-medium bg-[#ac835d] border border-[#ac835d] rounded-full hover:bg-transparent hover:border-white transition duration-300 button-3"
+                className="inline-block relative px-8 py-3 lg:py-4 text-white font-medium bg-gradient-to-r from-[#daa22d] via-[#b38511] to-[#b0881a] border border-[#ac835d] rounded-full hover:bg-transparent hover:border-white transition duration-300 button-3"
               >
                 Explore Our Services
                 <span></span>

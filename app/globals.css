@@ -12,6 +12,10 @@
   --font-mono: var(--font-geist-mono);
   /* 🩷 NEW: Courgette font variable */
   --font-playfair: var(--font-playfair), serif; /* 🩵 Replaced Courgette */
+   /* ✅ Custom colors — these become Tailwind color classes */
+  --color-primary: #DAA22D;
+  --color-secondary: #476245;
+  
 }
 
 @media (prefers-color-scheme: dark) {

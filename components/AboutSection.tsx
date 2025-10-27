@@ -15,7 +15,7 @@ export default function AboutSection() {
             {/* Subtitle */}
             <div className="flex items-center justify-center lg:justify-start text-lg font-medium font-playfair">
               <div className="mr-2 text-2xl">
-                <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#ac835d] rounded-full mr-2">
+                <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-full mr-2">
                   <Image
                     src="/balance-icon.svg"
                     alt="balance-icon"
@@ -30,7 +30,7 @@ export default function AboutSection() {
             {/* Title */}
             <h2 className="text-3xl md:text-5xl text-center lg:text-start font-bold text-gray-900 leading-tight font-playfair">
               We are here to fight against{" "}
-              <span className="text-[#ac835d] italic">any violance</span>
+              <span className="text-primary italic">any violance</span>
             </h2>
 
             {/* Paragraph */}
@@ -78,7 +78,7 @@ export default function AboutSection() {
             {/* Button */}
             <a
               href="#"
-              className="inline-block bg-[#ac835d] text-white px-8 py-3 rounded-full font-semibold relative overflow-hidden group transition-all duration-300"
+              className="inline-block bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white px-8 py-3 rounded-full font-semibold relative overflow-hidden group transition-all duration-300"
             >
               Discover more
               <span className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -96,7 +96,7 @@ export default function AboutSection() {
                 ease: "easeInOut",
               }}
             >
-              <div className="absolute top-[-60px] left-[-10px] w-36 h-36 bg-[#ac835d] rounded-full -z-10"></div>
+              <div className="absolute top-[-60px] left-[-10px] w-36 h-36 bg-primary rounded-full -z-10"></div>
               <div className="text-6xl font-bold text-white relative z-10">
                 20
               </div>

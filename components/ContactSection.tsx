@@ -2,6 +2,7 @@
 
 import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
 import { FaArrowRight, FaGavel, FaPhoneAlt, FaUser } from "react-icons/fa";
+import Image from "next/image";
 
 const ContactSection = () => {
   return (
@@ -12,8 +13,13 @@ const ContactSection = () => {
           <div>
             {/* Subtitle */}
             <div className="flex items-center gap-2 text-gray-800 text-xl mb-2 font-playfair italic">
-              <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#ac835d] rounded-full">
-                <FaGavel className="w-6 h-6 text-white" />
+              <span className="flex items-center justify-center w-12 h-12 bg-[#daa22d] rounded-full mr-2">
+                <Image
+                  src="/balance-icon.svg"
+                  alt="balance-icon"
+                  width={30}
+                  height={30}
+                />
               </span>
               <span className="font-medium">Get in touch</span>
             </div>
@@ -21,14 +27,14 @@ const ContactSection = () => {
             {/* Title */}
             <h2 className="text-2xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
               Do you need help?{" "}
-              <span className="text-[#ac835d] block mt-2 italic">
+              <span className="text-primary block mt-2 italic">
                 Contact with us now!
               </span>
             </h2>
 
             {/* Address */}
             <div className="flex items-start mb-6">
-              <div className="text-[#ac835d] bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
+              <div className="text-primary bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
                 <FaLocationDot className="text-lg lg:text-2xl" />
               </div>
               <div>
@@ -44,7 +50,7 @@ const ContactSection = () => {
 
             {/* Phone */}
             <div className="flex items-start mb-6">
-              <div className="text-[#ac835d] bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
+              <div className="text-primary bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
                 <FaPhone className="text-lg lg:text-2xl" />
               </div>
               <div>
@@ -61,14 +67,16 @@ const ContactSection = () => {
 
             {/* Email */}
             <div className="flex items-start">
-              <div className="text-[#ac835d] bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
+              <div className="text-primary bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
                 <FaEnvelope className="text-lg lg:text-2xl" />
               </div>
               <div>
                 <h5 className="text-[#14100c] text-lg lg:text-xl font-playfair font-semibold">
                   E-Mail
                 </h5>
-                <p className="text-slate-600 text-sm lg:text-base">info@aussentralegal.com.au</p>
+                <p className="text-slate-600 text-sm lg:text-base">
+                  info@aussentralegal.com.au
+                </p>
               </div>
             </div>
           </div>
@@ -160,7 +168,7 @@ const ContactSection = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#ac835d] text-white py-2 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-[#956f4d] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
+                className="w-full bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white py-2 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-[#956f4d] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
               >
                 Submit Form <FaArrowRight className="text-sm" />
               </button>

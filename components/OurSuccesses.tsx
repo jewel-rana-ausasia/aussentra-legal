@@ -23,14 +23,14 @@ const OurSuccesses: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <div className="section-subtitle flex items-center justify-center text-[#ac835d] text-xl font-medium mb-3 font-playfair italic">
-            <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#ac835d] rounded-full mr-2">
+          <div className="section-subtitle flex items-center justify-center text-xl font-medium mb-3 font-playfair italic">
+            <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-full mr-2">
               <FaGavel className="w-6 h-6 text-white text-lg xl:text-xl" />
             </span>
             Our Successes
           </div>
           <h2 className="section-title text-2xl lg:text-4xl font-bold text-gray-900 font-playfair">
-            Awards <span className="text-[#ac835d]">&</span> Recognitions
+            Awards <span className="text-primary">&</span> Recognitions
           </h2>
         </div>
 

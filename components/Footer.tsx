@@ -79,7 +79,7 @@ export default function Footer() {
                 <h2 className="text-lg md:3xl lg:text-4xl font-bold leading-snug font-playfair">
                   All people are equal before the law.
                   <br />
-                  <span className="text-[#ac835d] italic">A good attorney</span>
+                  <span className="text-primary italic">A good attorney</span>
                   &nbsp;is what makes a difference.
                 </h2>
               </div>
@@ -87,11 +87,11 @@ export default function Footer() {
               {/* Call Center */}
               <div className="lg:col-span-3 lg:col-start-10 flex items-center justify-center lg:justify-start lg:mt-0">
                 <div className="flex items-center rounded-lg p-4 gap-4">
-                  <div className="text-xl lg:text-3xl bg-[#ac835d] w-10 h-10 lg:w-14 lg:h-14 rounded-full flex justify-center items-center">
+                  <div className="text-xl lg:text-3xl bg-primary w-10 h-10 lg:w-14 lg:h-14 rounded-full flex justify-center items-center">
                     <Phone className="text-white size-5 lg:size-6" />
                   </div>
                   <div className="text-white">
-                    <p className="text-sm md:text-xl font-playfair italic text-[#ac835d] mb-1">
+                    <p className="text-sm md:text-xl font-playfair italic text-primary mb-1">
                       Get in touch
                     </p>
                     <a
@@ -129,17 +129,17 @@ export default function Footer() {
               </p>
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
-                  <li className="w-10 h-10 flex items-center justify-center bg-[#ac835d] rounded-full hover:translate-y-[-3px] transition-transform">
+                  <li className="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaInstagram />
                     </a>
                   </li>
-                  <li className="w-10 h-10 flex items-center justify-center bg-[#ac835d] rounded-full hover:translate-y-[-3px] transition-transform">
+                  <li className="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaTwitter />
                     </a>
                   </li>
-                  <li className="w-10 h-10 flex items-center justify-center bg-[#ac835d] rounded-full hover:translate-y-[-3px] transition-transform">
+                  <li className="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaFacebookF />
                     </a>
