@@ -1,4 +1,5 @@
 "use client";
+
 import { MdOutlineRealEstateAgent } from "react-icons/md";
 import {
   Building2,
@@ -16,13 +17,19 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
 import { useState, useEffect } from "react";
-import { SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "../ui/sidebar";
+import { signOut } from "next-auth/react";
+import {
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "../ui/sidebar";
 
 export default function AdminSidebar() {
   const pathname = usePathname();
-
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -43,6 +50,10 @@ export default function AdminSidebar() {
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
   }, [mobileOpen]);
+
+  const handleLogout = () => {
+    signOut({ callbackUrl: "/" });
+  };
 
   const SidebarBody = () => (
     <div
@@ -66,10 +77,7 @@ export default function AdminSidebar() {
               </div>
             </Link>
           )}
-          <button
-            className="text-white hover:text-white md:hidden"
-            onClick={() => setMobileOpen(false)}
-          >
+          <button className="text-white hover:text-white md:hidden" onClick={() => setMobileOpen(false)}>
             <X className="h-6 w-6" />
           </button>
           <button
@@ -131,7 +139,7 @@ export default function AdminSidebar() {
       </SidebarContent>
 
       {/* Footer */}
-      <SidebarFooter className="mt-auto border-t border-green-800 px-4 py-3">
+      <SidebarFooter className="mt-auto border-t border-green-800 px-4 py-3 flex flex-col gap-2">
         <div className="flex items-center gap-3">
           <div className="h-8 w-8 rounded-full bg-primary/20 text-white flex items-center justify-center font-bold shadow-inner">
             AD
@@ -143,6 +151,13 @@ export default function AdminSidebar() {
             </div>
           )}
         </div>
+        {/* Logout Button */}
+        <button
+          onClick={handleLogout}
+          className="mt-2 rounded border border-white px-3 py-1 text-sm text-white hover:bg-white hover:text-green-900 transition-colors"
+        >
+          Logout
+        </button>
       </SidebarFooter>
     </div>
   );

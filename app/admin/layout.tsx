@@ -19,7 +19,7 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
   if ((session.user as any)?.role !== "ADMIN") redirect("/");
 
   return (
-    <div className="min-h-screen flex">
+    <div className="flex fixed size-full">
       <AdminSidebar />
       <main className="flex-1 p-6">{children}</main>
     </div>
