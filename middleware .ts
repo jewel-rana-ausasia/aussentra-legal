@@ -1,20 +1,32 @@
-import { NextRequest, NextResponse } from "next/server";
-import { headers } from "next/headers";
-import { auth } from "@/lib/auth";
+// middleware.ts
+import { getToken } from "next-auth/jwt";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export async function middleware(request: NextRequest) {
-    const session = await auth.api.getSession({
-        headers: await headers()
-    })
+export async function middleware(req: NextRequest) {
+  const { pathname, origin } = req.nextUrl;
 
-    if(!session) {
-        return NextResponse.redirect(new URL("/sign-in", request.url));
+  // Protect /admin and all its subpaths
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    const token = await getToken({
+      req,
+      secret: process.env.NEXTAUTH_SECRET,
+    });
+
+    // If not logged in, redirect to homepage
+    if (!token) {
+      return NextResponse.redirect(new URL("/", origin));
     }
 
-    return NextResponse.next();
+    // Optional: Only allow admins
+    if (token.role !== "ADMIN") {
+      return NextResponse.redirect(new URL("/", origin));
+    }
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
-  runtime: "nodejs",
-  matcher: ["/dashboard"], // Apply middleware to specific routes
+  matcher: ["/admin", "/admin/:path*"],
 };
