@@ -53,7 +53,7 @@ export default function AboutSection2() {
             variants={fadeInRight}
           >
             {/* Subtitle */}
-            <div className="flex items-center justify-center text-lg font-medium">
+            <div className="flex items-center text-lg font-medium">
               <div className="mr-2 text-2xl bg-primary h-12 w-12 flex justify-center items-center rounded-full">
                 <Image
                   src="/balance-icon.svg"
@@ -66,7 +66,7 @@ export default function AboutSection2() {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight text-white">
+            <h2 className="text-2xl md:text-4xl font-bold leading-tight text-white">
               We here for provide <br />
               <span className="text-primary italic">legal consultancy</span>
             </h2>

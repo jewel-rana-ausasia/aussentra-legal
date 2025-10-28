@@ -62,3 +62,22 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+
+model Navbar {
+  id       String    @id @default(cuid())
+  logoUrl  String
+  ctaText  String
+  ctaLink  String
+  navItems NavItem[] // One-to-many relation
+}
+
+model NavItem {
+  id       String   @id @default(cuid())
+  navbar   Navbar   @relation(fields: [navbarId], references: [id])
+  navbarId String
+  label    String
+  href     String
+  icon     String?
+  order    Int
+}

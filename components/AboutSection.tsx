@@ -106,7 +106,7 @@ export default function AboutSection() {
             </motion.div>
 
             <Image
-              src="/home/we-are-here-to-fight-against-any-violance.jpg"
+              src="/about/about-section.jpg"
               alt="About Image"
               width={600}
               height={500}

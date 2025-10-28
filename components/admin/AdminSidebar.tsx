@@ -34,17 +34,8 @@ export default function AdminSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const menuItems = [
-    { label: "Dashboard", icon: LayoutDashboard, path: "/admin" },
-    { label: "Properties", icon: Building2, path: "/admin/properties" },
-    { label: "Users & Agents", icon: Users, path: "/admin/users" },
-    { label: "Content", icon: FileText, path: "/admin/content" },
-    { label: "Leads & Messages", icon: MessageSquare, path: "/admin/leads" },
-    { label: "Admin Panel", icon: MdOutlineRealEstateAgent, path: "/admin/admin" },
-    { label: "Payments", icon: CreditCard, path: "/admin/payments" },
-    { label: "Analytics", icon: BarChart, path: "/admin/analytics" },
-    { label: "Settings", icon: Settings, path: "/admin/settings" },
-    { label: "Notifications", icon: Bell, path: "/admin/notifications", badge: 5 },
-    { label: "Support", icon: HelpCircle, path: "/admin/support" },
+    { label: "Navbar", icon: LayoutDashboard, path: "/admin/navbar" },
+   
   ];
 
   useEffect(() => {
@@ -73,7 +64,6 @@ export default function AdminSidebar() {
               <Building2 className="h-6 w-6 text-white" />
               <div className="hidden md:flex flex-col leading-tight">
                 <span className="text-base font-semibold text-white">Admin Panel</span>
-                <span className="text-sm text-white font-medium tracking-wide">Manage your site</span>
               </div>
             </Link>
           )}
