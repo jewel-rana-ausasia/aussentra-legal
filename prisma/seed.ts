@@ -86,6 +86,40 @@ async function main() {
   } else {
     console.log('ℹ️ Navbar already exists, skipping seeding');
   }
+
+  
+  // -----------------------------
+  // 3️⃣ Seed Header
+  // -----------------------------
+  const headerExists = await prisma.header.findUnique({ where: { id: 'default' } });
+
+  if (!headerExists) {
+    const header = await prisma.header.create({
+      data: {
+        id: 'default',
+        videoUrl: '/home/video-aussentra-legal.mp4',
+        fallbackImage: '/home/all-people-are-equal-before-the-law.jpg',
+        title: "Protecting Your Family's",
+        subtitle: 'Future with Care',
+        description: `Managing an estate, preparing a Will, or resolving a Will
+          dispute can be stressful, emotional, and time-consuming. With
+          our exclusive focus on Wills and Estate law, Aussentra Legal has
+          the expertise to guide you smoothly through the process, protect
+          your interests, and help you move forward with confidence.`,
+        ctaText: 'Explore Our Services',
+        ctaLink: '/services',
+        iconUrl: '/balance-icon.svg',
+      },
+    });
+
+    console.log('✅ Header seeded');
+    console.log('   Title:', header.title);
+    console.log('   Subtitle:', header.subtitle);
+    console.log('   CTA:', header.ctaText, '->', header.ctaLink, '\n');
+  } else {
+    console.log('ℹ️ Header already exists, skipping seeding');
+  }
+  
 }
 
 main()
