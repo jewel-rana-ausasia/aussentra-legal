@@ -27,8 +27,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "../ui/sidebar";
+import { useSession } from "@/lib/session";
 
 export default function AdminSidebar() {
+  const { data: session } = useSession();
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -136,8 +138,8 @@ export default function AdminSidebar() {
           </div>
           {!collapsed && (
             <div className="flex flex-col">
-              <span className="text-sm font-medium text-white">Admin User</span>
-              <span className="text-xs text-white">admin@example.com</span>
+              <span className="text-sm font-medium text-white">{session?.user?.name}</span>
+              <span className="text-xs text-white">{session?.user?.email}</span>
             </div>
           )}
         </div>
