@@ -52,19 +52,7 @@ export default function AboutSection2() {
             viewport={{ once: true }}
             variants={fadeInRight}
           >
-            {/* Subtitle */}
-            <div className="flex items-center text-lg font-medium">
-              <div className="mr-2 text-2xl bg-primary h-12 w-12 flex justify-center items-center rounded-full">
-                <Image
-                  src="/balance-icon.svg"
-                  alt="balance-icon"
-                  width={30}
-                  height={30}
-                />
-              </div>
-              <span className="italic text-lg lg:text-xl">People make the difference</span>
-            </div>
-
+          
             {/* Title */}
             <h2 className="text-2xl md:text-4xl font-bold leading-tight text-white">
               We here for provide <br />

@@ -12,21 +12,6 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            {/* Subtitle */}
-            <div className="flex items-center justify-center lg:justify-start text-lg font-medium font-playfair">
-              <div className="mr-2 text-2xl">
-                <span className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-full mr-2">
-                  <Image
-                    src="/balance-icon.svg"
-                    alt="balance-icon"
-                    width={30}
-                    height={30}
-                  />
-                </span>
-              </div>
-              <span className="italic text-xl lg:text-2xl">About us</span>
-            </div>
-
             {/* Title */}
             <h2 className="text-3xl md:text-5xl text-center lg:text-start font-bold text-gray-900 leading-tight font-playfair">
               We are here to fight against{" "}
@@ -87,29 +72,11 @@ export default function AboutSection() {
 
           {/* Right Image */}
           <div className="relative">
-            <motion.div
-              className="absolute bottom-6 left-6 bg-white shadow-lg rounded-lg p-4 w-40 text-center overflow-hidden z-10"
-              animate={{ y: [0, -8, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.5,
-                ease: "easeInOut",
-              }}
-            >
-              <div className="absolute top-[-60px] left-[-10px] w-36 h-36 bg-primary rounded-full -z-10"></div>
-              <div className="text-6xl font-bold text-white relative z-10">
-                20
-              </div>
-              <div className="text-gray-900 font-serif italic text-lg relative z-10">
-                Years of experience
-              </div>
-            </motion.div>
-
             <Image
               src="/about/about-section.jpg"
               alt="About Image"
-              width={600}
-              height={500}
+              width={800}
+              height={600}
               className="rounded-lg w-full h-auto object-cover"
             />
           </div>

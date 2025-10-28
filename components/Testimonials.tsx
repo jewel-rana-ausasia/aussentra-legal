@@ -68,17 +68,6 @@ const Testimonials: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-5">
-          <div className="section-subtitle flex justify-center items-center gap-2 text-lg text-gray-800 font-medium tracking-wider font-playfair italic">
-            <span className="flex items-center justify-center w-10 h-10 bg-primary rounded-full mr-1">
-              <Image
-                src="/balance-icon.svg"
-                alt="balance-icon"
-                width={30}
-                height={30}
-              />
-            </span>
-            Our satisfied clients
-          </div>
           <h2 className="section-title text-2xl lg:text-4xl font-bold mt-4 font-playfair">
             What Our <span className="text-primary italic">Clients Say</span>?
           </h2>
@@ -92,7 +81,9 @@ const Testimonials: React.FC = () => {
               className="item p-8 lg:p-10 rounded-md bg-white text-gray-500 shadow-sm transition-transform duration-500 hover:-translate-y-1"
             >
               <div className="info">
-                <p className="mb-4 text-gray-500 text-sm lg:text-base">{t.message}</p>
+                <p className="mb-4 text-gray-500 text-sm lg:text-base">
+                  {t.message}
+                </p>
                 <div className="review-title flex items-center">
                   <div className="img w-14 h-14 rounded-full overflow-hidden mr-4">
                     <Image
@@ -142,9 +133,7 @@ const Testimonials: React.FC = () => {
                 Trust
               </span>
               <span>Genuine 1000+ people trusting</span>
-              <span className="border-b-2 border-primary">
-                Aussentra Legal
-              </span>
+              <span className="border-b-2 border-primary">Aussentra Legal</span>
               <span>law firm.</span>
             </div>
           </div>

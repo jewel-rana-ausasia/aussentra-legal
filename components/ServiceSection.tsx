@@ -49,17 +49,6 @@ export default function ServiceSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <div className="flex items-center text-lg font-medium font-playfair">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mr-3">
-                <Image
-                  src="/balance-icon.svg"
-                  alt="balance-icon"
-                  width={30}
-                  height={30}
-                />
-              </div>
-              <span className="italic text-lg">Areas of Service</span>
-            </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight font-playfair">
               Our <span className="italic text-primary">Services</span>
             </h2>

@@ -18,20 +18,8 @@ const VideoSection: React.FC = () => {
         {/* Header */}
         <div className="flex justify-center">
           <div className="text-center mb-4 lg:mb-8">
-            <div className="section-subtitle text-white flex justify-center items-center gap-2 text-lg font-medium tracking-wider font-playfair italic">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-full mr-1">
-                <Image
-                  src="/balance-icon.svg"
-                  alt="balance-icon"
-                  width={30}
-                  height={30}
-                />{" "}
-              </div>
-              Watch law firm
-            </div>
             <h2 className="section-title text-2xl lg:text-4xl font-bold text-white mt-2 font-playfair">
-              Law Firm{" "}
-              <span className="text-primary italic">Promo Video</span>
+              Law Firm <span className="text-primary italic">Promo Video</span>
             </h2>
           </div>
         </div>
@@ -44,7 +32,7 @@ const VideoSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-           <Youtube className="w-8 h-8 lg:w-12 lg:h-12 text-red-500"/>
+            <Youtube className="w-8 h-8 lg:w-12 lg:h-12 text-red-500" />
           </a>
         </div>
       </div>
