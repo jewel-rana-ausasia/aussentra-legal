@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
+import AdminSidebar from "@/components/admin/AdminSidebar";
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -18,11 +19,8 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
   if ((session.user as any)?.role !== "ADMIN") redirect("/");
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="bg-gray-900 text-white p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Admin Panel</h1>
-        <p>Welcome, {(session.user as any)?.email}</p>
-      </header>
+    <div className="min-h-screen flex">
+      <AdminSidebar />
       <main className="flex-1 p-6">{children}</main>
     </div>
   );
