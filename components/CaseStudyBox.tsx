@@ -8,17 +8,17 @@ export default function CaseStudyBox() {
     {
       icon: "/legal-production.png",
       title: "Clarity & Simplicity",
-      desc: "Clear, plain-language advice that simplifies complex legal processes for confident decision-making.",
+      desc: "Straightforward, plain-English advice that makes complex legal matters easier to understand so you can make confident, informed decisions.",
     },
     {
       icon: "/private.png",
       title: "Trust & Respect",
-      desc: "Building lasting relationships through personalized service, kindness, and dignity at every step.",
+      desc: "We build genuine, lasting relationships through personal service, honesty, and treating every client with care and dignity.",
     },
     {
       icon: "/winning-awards.png",
       title: "Empowerment & Control",
-      desc: "Providing the knowledge and support you need to feel in control of your legal journey.",
+      desc: "Our goal is to give you the knowledge, guidance, and confidence to stay in control of your legal journey every step of the way.",
     },
   ];
 

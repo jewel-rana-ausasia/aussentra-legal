@@ -14,8 +14,8 @@ export default function AboutSection() {
           <div className="space-y-6">
             {/* Title */}
             <h2 className="text-3xl md:text-5xl text-center lg:text-start font-bold text-gray-900 leading-tight font-playfair">
-              We are here to fight against{" "}
-              <span className="text-primary italic">any violance</span>
+              Aussentra Legal Your Partner{" "}
+              <span className="text-primary italic">in Justice</span>
             </h2>
 
             {/* Paragraph */}

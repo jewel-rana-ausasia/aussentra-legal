@@ -52,22 +52,28 @@ export default function AboutSection2() {
             viewport={{ once: true }}
             variants={fadeInRight}
           >
-          
             {/* Title */}
             <h2 className="text-2xl md:text-4xl font-bold leading-tight text-white">
-              We here for provide <br />
-              <span className="text-primary italic">legal consultancy</span>
+              Legal Help You Can
+              <br />
+              <span className="text-primary italic">Count On</span>
             </h2>
 
             {/* Paragraph */}
             <p className="text-gray-400 leading-relaxed">
-              All people are equal before the law. A good attorney is what makes
-              a difference. Lorem aliquam sit amet auctor the done vitae risus
-              duise in the miss ranish fermen.
+              Everyone deserves a fair go under the law. Navigating legal
+              matters can be complex and overwhelming, but having the right
+              lawyer by your side makes all the difference. Our experienced
+              legal team is committed to providing clear, practical, and
+              tailored guidance for every situation. We take the time to
+              understand your unique circumstances, explain your options in
+              plain language, and empower you to make informed decisions. With
+              our support, you can move forward with confidence, knowing that
+              your rights are protected and your interests are our priority.
             </p>
 
             {/* Signature Block */}
-            <div className="flex items-center mt-8">
+            {/*  <div className="flex items-center mt-8">
               <Image
                 src="/signature.svg"
                 alt="Signature"
@@ -83,7 +89,7 @@ export default function AboutSection2() {
                   Emily H. McGill
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>
