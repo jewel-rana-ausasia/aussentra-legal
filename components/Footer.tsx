@@ -77,10 +77,12 @@ export default function Footer() {
               {/* Text */}
               <div className="lg:col-span-8 flex justify-center items-center text-white text-center lg:text-left">
                 <h2 className="text-lg md:3xl lg:text-4xl font-bold leading-snug font-playfair">
-                  All people are equal before the law.
+                  The law protects all, ensuring equal fairness.
                   <br />
-                  <span className="text-primary italic">A good attorney</span>
-                  &nbsp;is what makes a difference.
+                  <span className="text-primary italic">
+                    A skilled solicitor
+                  </span>
+                  &nbsp;makes all the difference.
                 </h2>
               </div>
 
@@ -98,7 +100,7 @@ export default function Footer() {
                       href="tel:1234567890"
                       className="font-semibold text-md md:text-xl hover:underline"
                     >
-                     +61 123 456 7890
+                      +61 123 456 7890
                     </a>
                   </div>
                 </div>

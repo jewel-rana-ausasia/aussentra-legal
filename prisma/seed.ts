@@ -1,4 +1,3 @@
-
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
@@ -12,20 +11,25 @@ async function main() {
   const password = "Admin@123"; // change in production
   const passwordHash = await bcrypt.hash(password, 10);
 
-  await prisma.user.upsert({
-    where: { email },
-    update: { role: "ADMIN", passwordHash },
-    create: {
-      email,
-      name: "Site Admin",
-      role: "ADMIN",
-      passwordHash,
-    },
-  });
+  // Check if admin already exists
+  const existingAdmin = await prisma.user.findUnique({ where: { email } });
 
-  console.log("\n✅ Admin seeded");
-  console.log("   Email   :", email);
-  console.log("   Password:", password, "\n");
+  if (!existingAdmin) {
+    await prisma.user.create({
+      data: {
+        email,
+        name: "Site Admin",
+        role: "ADMIN",
+        passwordHash,
+      },
+    });
+
+    console.log("\n✅ Admin seeded");
+    console.log("   Email   :", email);
+    console.log("   Password:", password, "\n");
+  } else {
+    console.log("\nℹ️ Admin user already exists, skipping seeding");
+  }
 
   // -----------------------------
   // 2️⃣ Seed Navbar + NavItems
@@ -81,13 +85,9 @@ async function main() {
         id: "default",
         videoUrl: "/uploads/legal-video-aussentra.mp4",
         fallbackImage: "/home/all-people-are-equal-before-the-law.jpg",
-        title: "Protecting Your Family's",
-        subtitle: "Future with Care",
-        description: `Managing an estate, preparing a Will, or resolving a Will
-          dispute can be stressful, emotional, and time-consuming. With
-          our exclusive focus on Wills and Estate law, Aussentra Legal has
-          the expertise to guide you smoothly through the process, protect
-          your interests, and help you move forward with confidence.`,
+        title: "Your Trusted Conveyancing and",
+        subtitle: "Property Law Experts",
+        description: `Aussentra Legal specialises exclusively in Conveyancing and Property Law, guiding you through every stage of your property transaction with confidence. Our solicitors provide practical, personalised advice to ensure your sale or purchase is completed smoothly, your interests are protected, and your settlement is stress-free.`,
         ctaText: "Explore Our Services",
         ctaLink: "/services",
       },
@@ -138,7 +138,7 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
   }
 
   // -----------------------------
-  // 5 Seed caseStudies Section
+  // 5️⃣ Seed caseStudies Section
   // -----------------------------
 
   const caseStudies = [
@@ -165,14 +165,16 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     },
   ];
 
-  for (const cs of caseStudies) {
-    await prisma.aboutCaseStudy.upsert({
-      where: { id: cs.icon }, // using icon as unique key for demo
-      update: cs,
-      create: cs,
-    });
+  // Check if case studies already exist
+  const existingCaseStudies = await prisma.aboutCaseStudy.findMany();
+  if (existingCaseStudies.length === 0) {
+    for (const cs of caseStudies) {
+      await prisma.aboutCaseStudy.create({ data: cs });
+    }
+    console.log("✅ About CaseStudy items seeded");
+  } else {
+    console.log("ℹ️ About CaseStudy items already exist, skipping seeding");
   }
-  console.log("✅ About CaseStudy items seeded");
 
   // -----------------------------
   // 4️⃣ Seed About Section 2
