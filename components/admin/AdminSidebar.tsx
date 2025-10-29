@@ -37,6 +37,8 @@ export default function AdminSidebar() {
 
   const menuItems = [
     { label: "Navbar", icon: LayoutDashboard, path: "/admin/navbar" },
+    { label: "Hero", icon: LayoutDashboard, path: "/admin/hero" },
+
    
   ];
 

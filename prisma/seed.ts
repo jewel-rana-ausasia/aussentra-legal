@@ -119,6 +119,42 @@ async function main() {
   } else {
     console.log('ℹ️ Header already exists, skipping seeding');
   }
+
+
+
+  // -----------------------------
+  // 4️⃣ Seed About Section
+  // -----------------------------
+  const aboutExists = await prisma.aboutSection.findUnique({ where: { id: 'default' } });
+
+  if (!aboutExists) {
+    const about = await prisma.aboutSection.create({
+      data: {
+        id: 'default',
+        title: 'Aussentra Legal Your Partner',
+        subtitle: 'in Justice',
+        description: `Aussentra Legal is a law firm focused on providing personal, practical, and easy-to-understand legal services for families, homebuyers, and business owners. We specialise in property transactions, estate planning, wills, probate, and banking law.
+
+We know legal matters can be confusing and stressful, so we’re here to make the process simple and clear. With fixed-fee pricing and straightforward advice, we help you make confident decisions without surprises.
+
+At Aussentra Legal, we listen carefully, respect your needs, and guide you with care every step of the way so you feel supported and in control of your legal journey. Our goal is to build lasting relationships based on trust, transparency, and respect. We are committed to helping you protect what matters most and plan for the future with peace of mind.`,
+        listItems: [
+          'Full service corporate & business law.',
+          'Reliable and innovative legal solutions.',
+        ],
+        buttonText: 'Discover more',
+        buttonLink: '#',
+        imageUrl: '/about/about-section.jpg',
+      },
+    });
+
+    console.log('✅ About Section seeded');
+    console.log('   Title:', about.title);
+    console.log('   Subtitle:', about.subtitle);
+    console.log('   Button:', about.buttonText, '->', about.buttonLink, '\n');
+  } else {
+    console.log('ℹ️ About Section already exists, skipping seeding');
+  }
   
 }
 
