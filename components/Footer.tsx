@@ -113,8 +113,8 @@ export default function Footer() {
       {/* Footer */}
       <footer className="bg-[#14100c] text-white px-5 lg:px-0">
         {/* Top */}
-        <div className="max-w-7xl mx-auto py-10 lg:py-20 pb-5">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto py-8 lg:py-20 pb-5">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-8">
             {/* Logo + Description + Social */}
             <div className="space-y-4">
               <Link href="/" className="mb-5">
@@ -125,24 +125,24 @@ export default function Footer() {
                   height={80}
                 />
               </Link>
-              <p className="text-gray-400 text-sm lg:text-base leading-relaxed">
+              <p className="text-gray-400 text-xs md:text-sm lg:text-base leading-relaxed">
                 At Aussentra Legal, we provide expert legal services across
                 Sydney. We’re here to protect your interests and guide you
                 through life’s key decisions with confidence.
               </p>
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
-                  <li className="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
+                  <li className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaInstagram />
                     </a>
                   </li>
-                  <li className="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
+                  <li className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaTwitter />
                     </a>
                   </li>
-                  <li className="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
+                  <li className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaFacebookF />
                     </a>
@@ -154,7 +154,7 @@ export default function Footer() {
             {/* Contact */}
             <div className="space-y-2">
               <h3 className="text-lg lg:text-2xl mb-2">Contact</h3>
-              <p className="text-gray-400 text-sm lg:text-base leading-loose">
+              <p className="text-gray-400 text-sm lg:text-base lg:leading-loose">
                 Sydney NSW, Australia
               </p>
               <div className="phone text-gray-400 text-sm lg:text-lg">
@@ -170,7 +170,7 @@ export default function Footer() {
             {/* Services Column */}
             <div>
               <h3 className="text-lg lg:text-2xl mb-2">Services</h3>
-              <ul className="space-y-3">
+              <ul className="space-y-1 lg:space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
                     <Link
@@ -186,7 +186,7 @@ export default function Footer() {
 
             <div>
               <h3 className="text-lg lg:text-2xl mb-2">Quick Links</h3>
-              <ul className="space-y-3">
+              <ul className="space-y-1 lg:space-y-3">
                 {quickLinks.map((label, index) => (
                   <li key={index}>
                     <Link
