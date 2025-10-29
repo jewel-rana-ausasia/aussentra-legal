@@ -15,7 +15,7 @@ const ContactPage: React.FC = () => {
     <div>
       <BannerHeader
         title="Contact"
-        subtitle="Info"
+        subtitle="Us"
         caption="Get in touch"
         iconClass="flaticon-courthouse"
         backgroundImage="/about/about-law-firm.jpg"

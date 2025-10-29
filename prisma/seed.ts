@@ -125,7 +125,7 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
         ],
         buttonText: "Discover more",
         buttonLink: "#",
-        imageUrl: "/about/about-section.jpg",
+        imageUrl: "/about/aussentra-legal-your-partner-in-justice.jpg",
       },
     });
 
@@ -199,7 +199,7 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
           plain language, and empower you to make informed decisions. With
           our support, you can move forward with confidence, knowing that
           your rights are protected and your interests are our priority.`,
-        imageUrl: "/home/we-here-for-provide-legal-consultancy.jpg",
+        imageUrl: "/about/legal-help-you-can-count-on.jpg",
       },
     });
 

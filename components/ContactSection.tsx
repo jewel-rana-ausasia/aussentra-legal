@@ -11,18 +11,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Side */}
           <div>
-            {/* Subtitle */}
-            <div className="flex items-center gap-2 text-gray-800 text-xl mb-2 font-playfair italic">
-              <span className="flex items-center justify-center w-12 h-12 bg-[#daa22d] rounded-full mr-2">
-                <Image
-                  src="/balance-icon.svg"
-                  alt="balance-icon"
-                  width={30}
-                  height={30}
-                />
-              </span>
-              <span className="font-medium">Get in touch</span>
-            </div>
+           
 
             {/* Title */}
             <h2 className="text-2xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
