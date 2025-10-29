@@ -1,10 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { FaGavel } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+// ✅ Interface for AboutSection2 data
+interface AboutSection2Data {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  imageUrl: string;
+}
+
 export default function AboutSection2() {
+  const [data, setData] = useState<AboutSection2Data | null>(null);
+
   const fadeInLeft = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -23,6 +34,28 @@ export default function AboutSection2() {
     },
   };
 
+  useEffect(() => {
+    fetchAboutSection();
+  }, []);
+
+  const fetchAboutSection = async () => {
+    try {
+      const res = await fetch("/api/admin/about-section-2");
+      const json: AboutSection2Data = await res.json();
+      setData(json);
+    } catch (err) {
+      console.error("Failed to fetch About Section 2", err);
+    }
+  };
+
+  if (!data) {
+    return (
+      <div className="w-full h-60 flex items-center justify-center text-lg text-gray-500">
+        Loading About Section...
+      </div>
+    );
+  }
+
   return (
     <section className="relative py-20 bg-[#1f1b16] about">
       <div className="max-w-7xl mx-auto">
@@ -36,7 +69,7 @@ export default function AboutSection2() {
             variants={fadeInLeft}
           >
             <Image
-              src="/home/we-here-for-provide-legal-consultancy.jpg"
+              src={data.imageUrl}
               alt="About Image"
               width={500}
               height={500}
@@ -54,42 +87,12 @@ export default function AboutSection2() {
           >
             {/* Title */}
             <h2 className="text-2xl md:text-4xl font-bold leading-tight text-white">
-              Legal Help You Can
-              <br />
-              <span className="text-primary italic">Count On</span>
+              {data.title} <br />
+              <span className="text-primary italic">{data.subtitle}</span>
             </h2>
 
             {/* Paragraph */}
-            <p className="text-gray-400 leading-relaxed">
-              Everyone deserves a fair go under the law. Navigating legal
-              matters can be complex and overwhelming, but having the right
-              lawyer by your side makes all the difference. Our experienced
-              legal team is committed to providing clear, practical, and
-              tailored guidance for every situation. We take the time to
-              understand your unique circumstances, explain your options in
-              plain language, and empower you to make informed decisions. With
-              our support, you can move forward with confidence, knowing that
-              your rights are protected and your interests are our priority.
-            </p>
-
-            {/* Signature Block */}
-            {/*  <div className="flex items-center mt-8">
-              <Image
-                src="/signature.svg"
-                alt="Signature"
-                width={70}
-                height={70}
-                className="mr-5 w-[70px]"
-              />
-              <div>
-                <div className="text-[18px] text-gray-300">
-                  President &amp; Co-Founder
-                </div>
-                <div className="text-[18px] font-medium text-primary font-sans">
-                  Emily H. McGill
-                </div>
-              </div>
-            </div> */}
+            <p className="text-gray-400 leading-relaxed">{data.description}</p>
           </motion.div>
         </div>
       </div>
