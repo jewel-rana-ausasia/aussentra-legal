@@ -63,7 +63,7 @@ export default function Footer() {
       {/* Get in Touch */}
       <section className="relative">
         <div
-          className="lg:bg-fixed bg-contain lg:bg-cover  bg-center bg-no-repeat relative py-16 lg:py-20"
+          className="lg:bg-fixed bg-cover  bg-center bg-no-repeat relative py-16 lg:py-20"
           style={{
             backgroundImage:
               "url('/home/all-people-are-equal-before-the-law.jpg')",
@@ -72,11 +72,11 @@ export default function Footer() {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60"></div>
 
-          <div className="max-w-7xl mx-auto h-[100px] lg:h-[180px] flex justify-between items-center relative z-10 px-5 lg:px-0">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-2">
+          <div className="max-w-7xl mx-auto h-[80px] lg:h-[180px] flex justify-between items-center relative z-10 px-5 lg:px-0">
+            <div className="flex flex-col justify-center mx-auto lg:grid lg:grid-cols-12 items-center gap-2">
               {/* Text */}
               <div className="lg:col-span-8 flex justify-center items-center text-white text-center lg:text-left">
-                <h2 className="text-lg md:3xl lg:text-4xl font-bold leading-snug font-playfair">
+                <h2 className="text-sm md:text-xl lg:text-4xl font-bold leading-snug font-playfair">
                   The law protects all, ensuring equal fairness.
                   <br />
                   <span className="text-primary italic">
@@ -90,15 +90,15 @@ export default function Footer() {
               <div className="lg:col-span-3 lg:col-start-10 flex items-center justify-center lg:justify-start lg:mt-0">
                 <div className="flex items-center rounded-lg p-4 gap-4">
                   <div className="text-xl lg:text-3xl bg-primary w-10 h-10 lg:w-14 lg:h-14 rounded-full flex justify-center items-center">
-                    <Phone className="text-white size-5 lg:size-6" />
+                    <Phone className="text-white size-4 md:size-5 lg:size-6" />
                   </div>
                   <div className="text-white">
-                    <p className="text-sm md:text-xl font-playfair italic text-primary mb-1">
+                    <p className="text-sm md:text-lg lg:text-xl font-playfair italic text-primary mb-1">
                       Get in touch
                     </p>
                     <a
                       href="tel:1234567890"
-                      className="font-semibold text-md md:text-xl hover:underline"
+                      className="font-semibold text-sm md:text-lg lg:text-xl hover:underline"
                     >
                       +61 123 456 7890
                     </a>

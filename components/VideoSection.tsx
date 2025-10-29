@@ -8,7 +8,7 @@ import { FaGavel } from "react-icons/fa";
 const VideoSection: React.FC = () => {
   return (
     <section
-      className="w-full h-[220px]  lg:h-[420px] flex justify-center items-center section-padding video-wrapper relative lg:bg-fixed bg-center bg-contain lg:bg-cover bg-no-repeat"
+      className="w-full h-[220px]  lg:h-[420px] flex justify-center items-center section-padding video-wrapper relative lg:bg-fixed bg-center bg-cover lg:bg-cover bg-no-repeat"
       style={{ backgroundImage: "url('/home/law-firm-promo-video.jpg')" }}
     >
       {/* Overlay */}

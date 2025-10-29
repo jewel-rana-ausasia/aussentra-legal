@@ -55,7 +55,7 @@ const Header: React.FC = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      <div className="relative z-10 flex items-center justify-center h-full v-middle font-playfair">
+      <div className="relative z-10 flex items-center justify-center px-5 h-full v-middle font-playfair">
         <div className="max-w-7xl mx-auto text-center">
           <h3 className="w-full text-white text-2xl md:text-4xl  lg:text-5xl xl:text-7xl font-medium mb-6">
             {data.title} <br />

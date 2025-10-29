@@ -63,7 +63,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="testimonials section-padding px-5 lg:px-0 py-20 bg-[#f8f4f0]"
+      className="testimonials section-padding px-5 lg:px-0 py-10 lg:py-20 bg-[#f8f4f0]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
