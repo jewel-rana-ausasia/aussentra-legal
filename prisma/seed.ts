@@ -199,7 +199,7 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
           plain language, and empower you to make informed decisions. With
           our support, you can move forward with confidence, knowing that
           your rights are protected and your interests are our priority.`,
-        imageUrl: "/about/legal-help-you-can-count-on.jpg",
+        imageUrl: "/about/home-about-image2.jpg",
       },
     });
 
