@@ -108,7 +108,7 @@ async function main() {
           your interests, and help you move forward with confidence.`,
         ctaText: 'Explore Our Services',
         ctaLink: '/services',
-        iconUrl: '/balance-icon.svg',
+        
       },
     });
 
