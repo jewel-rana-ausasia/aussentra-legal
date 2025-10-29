@@ -37,8 +37,8 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 
       <div className="container relative z-10">
         <div className="row">
-          <div className="col-md-12 caption mt-30  text-center">
-            <h6 className="inline-flex items-center justify-center font-italic text-white mb-2 text-xl lg:text-2xl">
+          <div className="col-md-12 caption  text-center">
+           {/*  <h6 className="inline-flex items-center justify-center font-italic text-white mb-2 text-xl lg:text-2xl">
               <div className="flex items-center justify-center w-12 h-12 bg-primary rounded-full mr-1">
                 <Image
                   src="/balance-icon.svg"
@@ -48,7 +48,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
                 />
               </div>
               <div className="font-playfair italic">{caption}</div>
-            </h6>
+            </h6> */}
             <h1 className="text-[30px] lg:text-[48px] text-white relative font-playfair">
               {title}{" "}
               {subtitle && (

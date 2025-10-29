@@ -50,12 +50,12 @@ export default function ServiceSection() {
           {/* Left Content */}
           <div className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight font-playfair">
-              Our <span className="italic text-primary">Services</span>
+              Our Legal{" "}
+              <span className="italic text-primary">Practice Areas</span>
             </h2>
             <p className="text-gray-600">
-              At Aussentra Legal, we provide expert guidance in Wills and Estate
-              law to protect your family, home, and future with clarity and
-              care.
+              Our guiding principle is to advocate strongly for your legal
+              needs, no matter the jurisdiction.
             </p>
             <button className="bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#7f5633] transition-all duration-300 hover:shadow-lg">
               Discover more

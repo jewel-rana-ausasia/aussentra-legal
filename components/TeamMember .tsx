@@ -55,7 +55,7 @@ const Team: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-8 lg:mb-20">
           <h2 className="section-title text-2xl lg:text-4xl font-bold mt-2 font-playfair">
-            Meet Our <span className="text-primary italic">Attorneys</span>
+            Meet Our <span className="text-primary italic">Legal Team</span>
           </h2>
         </div>
 
