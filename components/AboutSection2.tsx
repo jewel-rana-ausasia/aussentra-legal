@@ -87,7 +87,7 @@ export default function AboutSection2() {
           >
             {/* Title */}
             <h2 className="text-2xl md:text-4xl font-bold leading-tight text-white">
-              {data.title} <br />
+              {data.title}{" "}
               <span className="text-primary italic">{data.subtitle}</span>
             </h2>
 

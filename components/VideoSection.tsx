@@ -19,7 +19,8 @@ const VideoSection: React.FC = () => {
         <div className="flex justify-center">
           <div className="text-center mb-4 lg:mb-8">
             <h2 className="section-title text-2xl lg:text-4xl font-bold text-white mt-2 font-playfair">
-              Law Firm <span className="text-primary italic">Promo Video</span>
+              Get to Know Our
+              <span className="text-primary italic">Legal Expertise</span>
             </h2>
           </div>
         </div>

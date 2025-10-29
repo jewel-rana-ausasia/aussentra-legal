@@ -126,8 +126,9 @@ export default function Footer() {
                 />
               </Link>
               <p className="text-gray-400 text-sm lg:text-base leading-relaxed">
-                Aussentra Legal: Expert Wills and Estate law services to protect
-                your family, home, and future.
+                At Aussentra Legal, we provide expert legal services across
+                Sydney. We’re here to protect your interests and guide you
+                through life’s key decisions with confidence.
               </p>
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
