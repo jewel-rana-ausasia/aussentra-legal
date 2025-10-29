@@ -37,18 +37,18 @@ export default function CaseStudyBox() {
   }
 
   return (
-    <section className="relative max-w-7xl mx-auto px-5 lg:px-0 py-8 case-study-box bg-white">
+    <section className="relative max-w-7xl mx-auto px-5 lg:px-0 py-2 mb-8 lg:mb-0 lg:py-8 case-study-box bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8">
           {items.map((item) => (
-            <div key={item.id} className="flex items-start space-x-6 mt-5">
+            <div key={item.id} className="flex items-start space-x-4 lg:space-x-6 mt-5">
               <div className="flex-shrink-0">
                 <Image
                   src={item.icon}
                   alt={item.title}
                   width={60}
                   height={60}
-                  className="object-contain w-12 h-12"
+                  className="object-contain w-10 h-10 lg:w-12 lg:h-12"
                 />
               </div>
               <div className="cont">

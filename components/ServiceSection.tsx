@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   { title: "Conveyancing", img: "/services/conveyancing-banner.jpg" },
@@ -44,22 +45,27 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="relative px-10 lg:px-0 py-20 bg-white overflow-hidden transition-opacity duration-700 ease-in-out">
+    <section className="relative px-5 lg:px-0 py-20 bg-white overflow-hidden transition-opacity duration-700 ease-in-out">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight font-playfair">
+            <h2 className="text-2xl lg:text-4xl text-center lg:text-left font-bold text-gray-900 leading-tight font-playfair">
               Our Legal{" "}
               <span className="italic text-primary">Practice Areas</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm lg:text-base text-center lg:text-start">
               Our guiding principle is to advocate strongly for your legal
               needs, no matter the jurisdiction.
             </p>
-            <button className="bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#7f5633] transition-all duration-300 hover:shadow-lg">
-              Discover more
-            </button>
+            <div className="flex justify-center lg:justify-start">
+              <Link
+                href="/services"
+                className="inline-block bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white px-5 lg:px-8 py-2 lg:py-3 rounded-full font-semibold hover:bg-[#7f5633] transition-all duration-300 hover:shadow-lg"
+              >
+                Discover more
+              </Link>
+            </div>
           </div>
 
           {/* Right Carousel */}

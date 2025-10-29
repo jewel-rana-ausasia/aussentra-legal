@@ -124,7 +124,7 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
           "Reliable and innovative legal solutions.",
         ],
         buttonText: "Discover more",
-        buttonLink: "#",
+        buttonLink: "/about",
         imageUrl: "/about/aussentra-legal-your-partner-in-justice.jpg",
       },
     });

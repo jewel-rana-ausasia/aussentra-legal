@@ -57,9 +57,9 @@ export default function AboutSection2() {
   }
 
   return (
-    <section className="relative py-20 bg-[#1f1b16] about">
+    <section className="relative py-5 lg:py-20 bg-[#1f1b16] about">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-10 lg:p-0 gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-5 lg:p-0 gap-5 lg:gap-20">
           {/* Left Image */}
           <motion.div
             className="flex justify-center lg:justify-end"
@@ -86,13 +86,13 @@ export default function AboutSection2() {
             variants={fadeInRight}
           >
             {/* Title */}
-            <h2 className="text-2xl md:text-4xl font-bold leading-tight text-white">
+            <h2 className="text-2xl md:text-4xl font-bold text-center lg:text-left leading-tight text-white">
               {data.title}{" "}
               <span className="text-primary italic">{data.subtitle}</span>
             </h2>
 
             {/* Paragraph */}
-            <p className="text-gray-400 leading-relaxed">{data.description}</p>
+            <p className="text-gray-300 leading-relaxed text-sm lg:text-base">{data.description}</p>
           </motion.div>
         </div>
       </div>
