@@ -125,7 +125,7 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
         ],
         buttonText: "Discover more",
         buttonLink: "/about",
-        imageUrl: "/about/aussentra-legal-your-partner-in-justice.jpg",
+        imageUrl: "/about/home-about-image.jpg",
       },
     });
 
