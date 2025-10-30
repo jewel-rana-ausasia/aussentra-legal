@@ -27,6 +27,7 @@ const ServicesPage: React.FC = () => {
 
     fetchServices();
   }, []);
+  
   /* const services = [
     {
       title: "Conveyancing",
