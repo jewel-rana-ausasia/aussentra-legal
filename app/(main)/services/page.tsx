@@ -8,7 +8,7 @@ import { FaArrowRight } from "react-icons/fa";
 interface Service {
   title: string;
   slug: string;
-  img: string;
+  image: string;
   link: string;
 }
 
@@ -28,40 +28,7 @@ const ServicesPage: React.FC = () => {
     fetchServices();
   }, []);
   
-  /* const services = [
-    {
-      title: "Conveyancing",
-      img: "/services/conveyancing-banner.jpg",
-      link: "/services/conveyancing",
-    },
-    {
-      title: "Immigration\nLaw",
-      img: "/services/immigration-law.jpg",
-      link: "/services/immigration-law",
-    },
-    {
-      title: "Debt\nRecovery",
-      img: "/services/insolvency.jpg",
-      link: "/services/debt-recovery",
-    },
-    {
-      title: "Insolvency",
-      img: "/services/insolvency-thum.jpg",
-      link: "/services/insolvency",
-    },
-    {
-      title: "Family\nLaw",
-      img: "/services/family-law.jpg",
-      link: "/services/family-law",
-    },
-    { title: "Wills", img: "/services/wills.jpg", link: "/services/wills" },
-    {
-      title: "Probate\n& Estate",
-      img: "/services/probate-and-estate-banner.jpg",
-      link: "/services/probate-estate",
-    },
-  ]; */
-
+ 
   return (
     <div>
       <BannerHeader
@@ -84,7 +51,7 @@ const ServicesPage: React.FC = () => {
               {/* Image */}
               <div className="relative w-full h-64 sm:h-72 rounded-lg overflow-hidden">
                 <Image
-                  src={caseItem.img}
+                  src={caseItem.image}
                   alt={caseItem.title}
                   fill
                   className="object-cover rounded-lg"

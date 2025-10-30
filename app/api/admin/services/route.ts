@@ -16,7 +16,7 @@ export async function GET() {
     const formatted = services.map((s) => ({
       title: s.title,
       slug: s.slug,
-      img: s.image || "/placeholder.jpg",
+      image: s.image || "/placeholder.jpg",
       link: `/services/${s.slug}`,
     }));
 

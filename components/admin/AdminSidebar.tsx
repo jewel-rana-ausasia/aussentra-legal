@@ -39,7 +39,16 @@ export default function AdminSidebar() {
     { label: "Navbar", icon: LayoutDashboard, path: "/admin/navbar" },
     { label: "Hero", icon: LayoutDashboard, path: "/admin/hero" },
     { label: "About Section", icon: LayoutDashboard, path: "/admin/about" },
-    { label: "About Case Study", icon: LayoutDashboard, path: "/admin/about-case-study" },
+    {
+      label: "About Case Study",
+      icon: LayoutDashboard,
+      path: "/admin/about-case-study",
+    },
+    {
+      label: "Services",
+      icon: LayoutDashboard,
+      path: "/admin/services",
+    },
   ];
 
   useEffect(() => {
