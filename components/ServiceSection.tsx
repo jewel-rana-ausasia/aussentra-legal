@@ -6,15 +6,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const services = [
-  { title: "Conveyancing", img: "/services/conveyancing-banner.jpg" },
-  { title: "Immigration\nLaw", img: "/services/immigration-law.jpg" },
-  { title: "Debt\nRecovery", img: "/services/wills-banner.jpg" },
-  { title: "Insolvency", img: "/services/insolvency.jpg" },
+  { title: "Conveyancing", img: "/services/conveyancing-thum.jpg" },
+  { title: "Immigration\nLaw", img: "/services/immigration-law-thum.jpg" },
+  { title: "Debt\nRecovery", img: "/services/wills-thum.jpg" },
+  { title: "Insolvency", img: "/services/insolvency-thum.jpg" },
   { title: "Family\nLaw", img: "/services/family-law.jpg" },
-  { title: "Wills", img: "/services/probate-and-estate.jpg" },
+  { title: "Wills", img: "/services/wills-thum.jpg" },
   {
     title: "Probate\n& Estate",
-    img: "/services/probate-and-estate-banner.jpg",
+    img: "/services/probate-and-estate-thum.jpg",
   },
 ];
 
