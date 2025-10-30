@@ -2,10 +2,32 @@
 import BannerHeader from "@/components/BannerHeader";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
+interface Service {
+  title: string;
+  slug: string;
+  img: string;
+  link: string;
+}
+
 const ServicesPage: React.FC = () => {
-  const services = [
+  const [services, setServices] = useState<Service[]>([]);
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const res = await fetch("/api/admin/services");
+        const data = await res.json();
+        setServices(data);
+      } catch (error) {
+        console.error("Failed to fetch services:", error);
+      }
+    };
+
+    fetchServices();
+  }, []);
+  /* const services = [
     {
       title: "Conveyancing",
       img: "/services/conveyancing-banner.jpg",
@@ -37,7 +59,7 @@ const ServicesPage: React.FC = () => {
       img: "/services/probate-and-estate-banner.jpg",
       link: "/services/probate-estate",
     },
-  ];
+  ]; */
 
   return (
     <div>

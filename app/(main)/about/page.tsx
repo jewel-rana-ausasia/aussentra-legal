@@ -27,7 +27,7 @@ Whether you’re buying or selling a property, planning your Will, or managing a
     ],
     buttonText: "Learn More",
     buttonLink: "/services",
-    imageUrl: "/about/aussentra-legal-your-partner-in-justice.jpg",
+    imageUrl: "/about/we-here-for-provide-legal-consultancy.jpg",
   };
 
   const items = [

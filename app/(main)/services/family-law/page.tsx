@@ -12,7 +12,7 @@ const FamilyLawPage: React.FC = () => {
         subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/services/family-law.jpg"
+        backgroundImage="/services/family-law-banner.jpg"
         overlayDark={5}
       />
 

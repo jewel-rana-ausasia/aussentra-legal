@@ -12,7 +12,7 @@ const WillsPage: React.FC = () => {
         subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/services/wills.jpg"
+        backgroundImage="/services/wills-banner.jpg"
         overlayDark={5}
       />
 

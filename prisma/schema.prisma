@@ -129,3 +129,66 @@ model AboutSection2 {
   description String
   imageUrl    String
 }
+
+
+//services start
+model Service {
+  id    String  @id
+  title String
+  slug  String  @unique
+  image String?
+  page  Page?   // optional, but usually created
+}
+
+model Page {
+  id          String    @id @default(cuid())
+  service     Service   @relation(fields: [serviceId], references: [id])
+  serviceId   String    @unique
+  title       String
+  description String
+  heroImage   String?
+  sections    Section[] 
+  meta        Meta?     // optional
+  cta         CTA?      // optional
+}
+
+model Section {
+  id         String      @id @default(cuid())
+  page       Page        @relation(fields: [pageId], references: [id])
+  pageId     String
+  title      String
+  paragraphs Paragraph[] // can be empty
+  listItems  ListItem[]  // can be empty
+}
+
+model Paragraph {
+  id        String   @id @default(cuid())
+  section   Section  @relation(fields: [sectionId], references: [id])
+  sectionId String
+  text      String
+}
+
+model ListItem {
+  id        String   @id @default(cuid())
+  section   Section  @relation(fields: [sectionId], references: [id])
+  sectionId String
+  text      String
+}
+
+model Meta {
+  id          String   @id @default(cuid())
+  page        Page     @relation(fields: [pageId], references: [id])
+  pageId      String   @unique
+  title       String
+  description String
+  keywords    String[] // array of keywords
+}
+
+model CTA {
+  id         String   @id @default(cuid())
+  page       Page     @relation(fields: [pageId], references: [id])
+  pageId     String   @unique
+  text       String
+  buttonText String
+  link       String
+}

@@ -1,7 +1,6 @@
 "use client";
 import BannerHeader from "@/components/BannerHeader";
 import ServiceDetailsContent from "@/components/ServiceDetailsContent";
-import { immigrationLawData } from "@/lib/data/services/immigration";
 import { insolvencyData } from "@/lib/data/services/insolvencyData";
 
 const InsolvencyPage: React.FC = () => {
@@ -13,7 +12,7 @@ const InsolvencyPage: React.FC = () => {
         subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/services/insolvency.jpg"
+        backgroundImage="/services/insolvency-banner.jpg"
         overlayDark={5}
       />
 

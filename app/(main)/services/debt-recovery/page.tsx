@@ -13,7 +13,7 @@ const DebtRecoveryPage: React.FC = () => {
         subtitle="Law"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/services/insolvency.jpg"
+        backgroundImage="/services/debt-recovery-banner.jpg"
         overlayDark={4}
       />
 

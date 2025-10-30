@@ -23,7 +23,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 }) => {
   return (
     <div
-      className="relative flex items-center justify-center h-[40vh] lg:h-[65vh] bg-fixed  bg-center bg-cover lg:bg-cover"
+      className="relative flex items-center justify-center h-[40vh] lg:h-[65vh] bg-fixed  bg-center bg-cover lg:bg-cover bg-no-repeat"
       style={{ backgroundImage: `url(${backgroundImage})` }}
       data-overlay-dark={overlayDark}
     >
