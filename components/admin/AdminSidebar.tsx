@@ -38,8 +38,8 @@ export default function AdminSidebar() {
   const menuItems = [
     { label: "Navbar", icon: LayoutDashboard, path: "/admin/navbar" },
     { label: "Hero", icon: LayoutDashboard, path: "/admin/hero" },
-
-   
+    { label: "About Section", icon: LayoutDashboard, path: "/admin/about" },
+    { label: "About Case Study", icon: LayoutDashboard, path: "/admin/about-case-study" },
   ];
 
   useEffect(() => {
@@ -59,7 +59,9 @@ export default function AdminSidebar() {
       {/* Header */}
       <SidebarHeader
         className={`h-16 border-b border-green-800 ${
-          collapsed ? "flex items-center justify-center px-6" : "flex items-center pl-0 pr-4"
+          collapsed
+            ? "flex items-center justify-center px-6"
+            : "flex items-center pl-0 pr-4"
         }`}
       >
         <div className="flex items-center justify-between w-full">
@@ -67,11 +69,16 @@ export default function AdminSidebar() {
             <Link href="/admin" className="flex items-center gap-3 ml-4">
               <Building2 className="h-6 w-6 text-white" />
               <div className="hidden md:flex flex-col leading-tight">
-                <span className="text-base font-semibold text-white">Admin Panel</span>
+                <span className="text-base font-semibold text-white">
+                  Admin Panel
+                </span>
               </div>
             </Link>
           )}
-          <button className="text-white hover:text-white md:hidden" onClick={() => setMobileOpen(false)}>
+          <button
+            className="text-white hover:text-white md:hidden"
+            onClick={() => setMobileOpen(false)}
+          >
             <X className="h-6 w-6" />
           </button>
           <button
@@ -102,13 +109,17 @@ export default function AdminSidebar() {
                   <Link href={path} className="flex items-center w-full">
                     <Icon
                       className={`h-5 w-5 shrink-0 transition-colors ${
-                        active ? "text-black" : "text-white group-hover:text-white"
+                        active
+                          ? "text-black"
+                          : "text-white group-hover:text-white"
                       }`}
                     />
                     {!collapsed && (
                       <span
                         className={`ml-3 text-base font-medium transition-colors ${
-                          active ? "text-black" : "text-white group-hover:text-white"
+                          active
+                            ? "text-black"
+                            : "text-white group-hover:text-white"
                         }`}
                       >
                         {label}
@@ -140,7 +151,9 @@ export default function AdminSidebar() {
           </div>
           {!collapsed && (
             <div className="flex flex-col">
-              <span className="text-sm font-medium text-white">{session?.user?.name}</span>
+              <span className="text-sm font-medium text-white">
+                {session?.user?.name}
+              </span>
               <span className="text-xs text-white">{session?.user?.email}</span>
             </div>
           )}
