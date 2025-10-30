@@ -64,13 +64,13 @@ const Header: React.FC = () => {
             </span>
           </h3>
 
-          <p className="text-white text-sm md:text-lg mb-8 max-w-sm md:max-w-2xl px-2 lg:px-0 lg:max-w-5xl mx-auto leading-relaxed">
+        {/*   <p className="text-white text-sm md:text-lg mb-8 max-w-sm md:max-w-2xl px-2 lg:px-0 lg:max-w-5xl mx-auto leading-relaxed">
             {data.description}
-          </p>
+          </p> */}
 
           <Link
             href={data.ctaLink}
-            className="inline-block relative px-5 lg:px-8 py-2 lg:py-4 text-white font-medium bg-gradient-to-r from-[#daa22d] via-[#b38511] to-[#b0881a] border border-[#ac835d] rounded-full hover:bg-transparent hover:border-white transition duration-300 button-3"
+            className="inline-block mt-5 relative px-5 lg:px-8 py-2 lg:py-4 text-white font-medium bg-gradient-to-r from-[#daa22d] via-[#b38511] to-[#b0881a] border border-[#ac835d] rounded-full hover:bg-transparent hover:border-white transition duration-300 button-3"
           >
             {data.ctaText}
             <span></span>
