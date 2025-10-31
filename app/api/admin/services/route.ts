@@ -1,3 +1,5 @@
+//api/admin/services
+
 import { prisma } from "@/lib/prisma"; // your prisma client
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
