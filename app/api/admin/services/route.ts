@@ -10,29 +10,24 @@ export async function GET() {
     const services = await prisma.service.findMany({
       include: {
         page: {
-          select: {
-            heroImage: true,
+          include: {
+            sections: { include: { paragraphs: true, listItems: true } },
+            cta: true,
+            meta: true,
           },
         },
       },
     });
 
-    const formatted = services.map((s) => ({
-      title: s.title,
-      slug: s.slug,
-      image: s.image || "/placeholder.jpg",
-      link: `/services/${s.slug}`,
-    }));
-
-    return NextResponse.json(formatted);
+    return NextResponse.json(services);
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: "Failed to fetch services" }, { status: 500 });
+    console.error("GET /api/admin/services error:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch services" },
+      { status: 500 }
+    );
   }
 }
-
-
-
 // POST create a new service
 export async function POST(req: NextRequest) {
   try {
@@ -52,14 +47,22 @@ export async function POST(req: NextRequest) {
 
     if (heroFile) {
       const buffer = Buffer.from(await heroFile.arrayBuffer());
-      const filePath = path.join(process.cwd(), "public/uploads", heroFile.name);
+      const filePath = path.join(
+        process.cwd(),
+        "public/uploads",
+        heroFile.name
+      );
       await fs.writeFile(filePath, buffer);
       heroUrl = `/uploads/${heroFile.name}`;
     }
 
     if (imageFile) {
       const buffer = Buffer.from(await imageFile.arrayBuffer());
-      const filePath = path.join(process.cwd(), "public/uploads", imageFile.name);
+      const filePath = path.join(
+        process.cwd(),
+        "public/uploads",
+        imageFile.name
+      );
       await fs.writeFile(filePath, buffer);
       imageUrl = `/uploads/${imageFile.name}`;
     }
@@ -90,10 +93,12 @@ export async function POST(req: NextRequest) {
               create: sections.map((sec: any) => ({
                 title: sec.title,
                 paragraphs: {
-                  create: sec.paragraphs?.map((p: any) => ({ text: p.text })) || [],
+                  create:
+                    sec.paragraphs?.map((p: any) => ({ text: p.text })) || [],
                 },
                 listItems: {
-                  create: sec.listItems?.map((l: any) => ({ text: l.text })) || [],
+                  create:
+                    sec.listItems?.map((l: any) => ({ text: l.text })) || [],
                 },
               })),
             },
@@ -116,6 +121,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(service);
   } catch (error) {
     console.error("POST /api/services error:", error);
-    return NextResponse.json({ error: "Failed to create service" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create service" },
+      { status: 500 }
+    );
   }
 }

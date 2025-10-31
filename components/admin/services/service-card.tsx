@@ -36,10 +36,10 @@ export default function ServiceCard({ service, onEdit, onDelete }: ServiceCardPr
       {/* Content */}
       <div className="p-5 flex flex-col h-48">
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-foreground line-clamp-2">{service.title}</h3>
+          <h3 className="text-lg font-semibold text-foreground line-clamp-1">{service.title}</h3>
           <p className="text-sm text-muted-foreground mt-1">/{service.slug}</p>
           {service.page?.description && (
-            <p className="text-sm text-foreground/70 mt-2 line-clamp-2">{service.page.description}</p>
+            <p className="text-sm text-foreground/70 mt-2 line-clamp-1">{service.page.description}</p>
           )}
         </div>
 

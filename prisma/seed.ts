@@ -925,46 +925,100 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     },
   ];
 
-  for (const serviceData of servicesData) {
-    const exists = await prisma.service.findUnique({
-      where: { id: serviceData.id },
-    });
-
-    if (!exists) {
-      await prisma.service.create({
-        data: {
-          id: serviceData.id,
-          title: serviceData.title,
-          slug: serviceData.slug,
-          image: serviceData.image,
-          page: {
-            create: {
-              title: serviceData.page.title,
-              description: serviceData.page.description,
-              heroImage: serviceData.page.heroImage,
-              sections: {
-                create: serviceData.page.sections.map((section) => ({
-                  title: section.title,
-                  paragraphs: {
-                    create: section.paragraphs.map((p) => ({ text: p })),
-                  },
-                  listItems: {
-                    create:
-                      section.listItems?.map((li) => ({ text: li.text })) || [],
-                  },
-                })),
+ for (const serviceData of servicesData) {
+  await prisma.service.upsert({
+    where: { id: serviceData.id },
+    update: {
+      title: serviceData.title,
+      slug: serviceData.slug,
+      image: serviceData.image,
+      page: {
+        upsert: {
+          update: {
+            title: serviceData.page.title,
+            description: serviceData.page.description,
+            heroImage: serviceData.page.heroImage,
+            sections: {
+              deleteMany: {}, // remove old sections
+              create: serviceData.page.sections.map((section) => ({
+                title: section.title,
+                paragraphs: {
+                  create: section.paragraphs.map((p) => ({ text: p })),
+                },
+                listItems: {
+                  create:
+                    section.listItems?.map((li) => ({ text: li.text })) || [],
+                },
+              })),
+            },
+            meta: {
+              upsert: {
+                update: serviceData.page.meta,
+                create: serviceData.page.meta,
               },
-              meta: { create: serviceData.page.meta },
-              cta: { create: serviceData.page.cta },
+            },
+            cta: {
+              upsert: {
+                update: serviceData.page.cta,
+                create: serviceData.page.cta,
+              },
             },
           },
+          create: {
+            title: serviceData.page.title,
+            description: serviceData.page.description,
+            heroImage: serviceData.page.heroImage,
+            sections: {
+              create: serviceData.page.sections.map((section) => ({
+                title: section.title,
+                paragraphs: {
+                  create: section.paragraphs.map((p) => ({ text: p })),
+                },
+                listItems: {
+                  create:
+                    section.listItems?.map((li) => ({ text: li.text })) || [],
+                },
+              })),
+            },
+            meta: { create: serviceData.page.meta },
+            cta: { create: serviceData.page.cta },
+          },
         },
-      });
-      console.log(`✅ Service "${serviceData.title}" seeded`);
-    } else {
-      console.log(`ℹ️ Service "${serviceData.title}" already exists, skipping`);
-    }
-  }
+      },
+    },
+    create: {
+      id: serviceData.id,
+      title: serviceData.title,
+      slug: serviceData.slug,
+      image: serviceData.image,
+      page: {
+        create: {
+          title: serviceData.page.title,
+          description: serviceData.page.description,
+          heroImage: serviceData.page.heroImage,
+          sections: {
+            create: serviceData.page.sections.map((section) => ({
+              title: section.title,
+              paragraphs: {
+                create: section.paragraphs.map((p) => ({ text: p })),
+              },
+              listItems: {
+                create:
+                  section.listItems?.map((li) => ({ text: li.text })) || [],
+              },
+            })),
+          },
+          meta: { create: serviceData.page.meta },
+          cta: { create: serviceData.page.cta },
+        },
+      },
+    },
+  });
+
+  console.log(`✅ Service "${serviceData.title}" seeded/updated`);
+}
+
+
 }
 
 main()

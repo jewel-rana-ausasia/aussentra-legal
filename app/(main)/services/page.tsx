@@ -42,9 +42,9 @@ const ServicesPage: React.FC = () => {
 
       <section className="w-full px-8 lg:px-0 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((caseItem, idx) => (
+          {services.filter((s) => !!s.slug).map((caseItem, idx) => (
             <Link
-              href={caseItem.link}
+              href={`/services/${caseItem.slug}`}
               key={idx}
               className="relative group overflow-hidden rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
             >
