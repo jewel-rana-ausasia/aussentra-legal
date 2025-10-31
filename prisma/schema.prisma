@@ -192,3 +192,25 @@ model CTA {
   buttonText String
   link       String
 }
+
+
+//Faq Model
+model Faq {
+  id        Int      @id @default(autoincrement())
+  question  String   @unique
+  answer    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+// Contact Form
+model ContactSubmission {
+  id         Int      @id @default(autoincrement())
+  firstName  String
+  lastName   String
+  email      String
+  phone      String
+  message    String
+  createdAt  DateTime @default(now())
+}

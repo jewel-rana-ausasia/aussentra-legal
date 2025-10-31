@@ -3,6 +3,7 @@
 import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
 import { FaArrowRight, FaGavel, FaPhoneAlt, FaUser } from "react-icons/fa";
 import Image from "next/image";
+import ContactCard from "./ContactCard";
 
 const ContactSection = () => {
   return (
@@ -11,8 +12,6 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Side */}
           <div>
-           
-
             {/* Title */}
             <h2 className="text-2xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
               Do you need help?{" "}
@@ -71,98 +70,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Side */}
-          <div className="w-full mx-auto bg-white shadow-2xl rounded-3xl p-10 border border-gray-200 font-playfair">
-            <div className="mb-5">
-              <h2 className="text-3xl font-bold  text-gray-900">
-                Let's Get In Touch<span className="text-[#ac835d]">.</span>
-              </h2>
-            </div>
-
-            <form className="space-y-6">
-              {/* First + Last Name */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name
-                  </label>
-                  <div className="relative">
-                    <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
-                    <input
-                      type="text"
-                      placeholder="First Name"
-                      className="w-full border border-gray-300 rounded-xl pl-11 pr-4 py-2 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ac835d] focus:border-transparent transition-all"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
-                  <div className="relative">
-                    <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      className="w-full border border-gray-300 rounded-xl pl-11 pr-4 py-2 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ac835d] focus:border-transparent transition-all"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <div className="relative">
-                  <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full border border-gray-300 rounded-xl pl-11 pr-4 py-2 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ac835d] focus:border-transparent transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
-                <div className="relative">
-                  <FaPhoneAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
-                  <input
-                    type="tel"
-                    placeholder="Phone"
-                    className="w-full border border-gray-300 rounded-xl pl-11 pr-4 py-2 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ac835d] focus:border-transparent transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  placeholder="Enter your text.."
-                  maxLength={300}
-                  className="w-full border border-gray-300 rounded-xl px-4 py-3.5 h-32 resize-none text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ac835d] focus:border-transparent transition-all"
-                ></textarea>
-                <p className="text-xs text-gray-500 mt-1.5">
-                  Maximum 300 characters
-                </p>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-[#daa22d] via-[#d3a225] to-[#cf9d12] text-white py-2 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-[#956f4d] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
-              >
-                Submit Form <FaArrowRight className="text-sm" />
-              </button>
-            </form>
-          </div>
+          <ContactCard />
         </div>
       </div>
     </section>

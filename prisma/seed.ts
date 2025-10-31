@@ -925,45 +925,16 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     },
   ];
 
- for (const serviceData of servicesData) {
-  await prisma.service.upsert({
-    where: { id: serviceData.id },
-    update: {
-      title: serviceData.title,
-      slug: serviceData.slug,
-      image: serviceData.image,
-      page: {
-        upsert: {
-          update: {
-            title: serviceData.page.title,
-            description: serviceData.page.description,
-            heroImage: serviceData.page.heroImage,
-            sections: {
-              deleteMany: {}, // remove old sections
-              create: serviceData.page.sections.map((section) => ({
-                title: section.title,
-                paragraphs: {
-                  create: section.paragraphs.map((p) => ({ text: p })),
-                },
-                listItems: {
-                  create:
-                    section.listItems?.map((li) => ({ text: li.text })) || [],
-                },
-              })),
-            },
-            meta: {
-              upsert: {
-                update: serviceData.page.meta,
-                create: serviceData.page.meta,
-              },
-            },
-            cta: {
-              upsert: {
-                update: serviceData.page.cta,
-                create: serviceData.page.cta,
-              },
-            },
-          },
+  for (const serviceData of servicesData) {
+    await prisma.service.upsert({
+      where: { slug: serviceData.slug }, // ✅ use unique field
+      update: {}, // nothing to update during seed
+      create: {
+        id: serviceData.id,
+        title: serviceData.title,
+        slug: serviceData.slug,
+        image: serviceData.image,
+        page: {
           create: {
             title: serviceData.page.title,
             description: serviceData.page.description,
@@ -985,40 +956,63 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
           },
         },
       },
+    });
+    console.log(`✅ Service "${serviceData.title}" seeded or already exists`);
+  }
+
+  // Faq Seed Function
+  const faqsData = [
+    {
+      question: "Do all estates require probate?",
+      answer:
+        "Not all estates need to go through probate. If assets are jointly owned or have designated beneficiaries, like superannuation or insurance policies, they typically transfer directly without the need for probate. However, if assets are solely in the deceased's name, especially valuable ones like property or large bank accounts, probate is usually required to manage the estate.",
     },
-    create: {
-      id: serviceData.id,
-      title: serviceData.title,
-      slug: serviceData.slug,
-      image: serviceData.image,
-      page: {
-        create: {
-          title: serviceData.page.title,
-          description: serviceData.page.description,
-          heroImage: serviceData.page.heroImage,
-          sections: {
-            create: serviceData.page.sections.map((section) => ({
-              title: section.title,
-              paragraphs: {
-                create: section.paragraphs.map((p) => ({ text: p })),
-              },
-              listItems: {
-                create:
-                  section.listItems?.map((li) => ({ text: li.text })) || [],
-              },
-            })),
-          },
-          meta: { create: serviceData.page.meta },
-          cta: { create: serviceData.page.cta },
-        },
-      },
+    {
+      question: "What is the role of an executor or administrator?",
+      answer:
+        "An executor (appointed in a will) or an administrator (appointed when there's no will) is responsible for managing the deceased's estate. This includes applying for probate or letters of administration, paying debts, distributing assets to beneficiaries, and handling any legal or tax matters. It's a significant responsibility that requires careful attention to detail.",
     },
-  });
+    {
+      question: "How long does the probate process take?",
+      answer:
+        "The duration of probate varies depending on the estate's complexity and the jurisdiction. While some straightforward estates can be processed in a few months, others may take longer due to factors like asset valuation, debt settlement, or family disputes. It's essential to be patient and prepared for potential delays.",
+    },
+    {
+      question: "Are there any taxes or fees associated with probate?",
+      answer:
+        "Currently, there are no death duties or inheritance taxes in Australia. However, probate applications involve court filing fees, which can vary based on the estate's value. For instance, in Victoria, probate fees have been significantly increased.",
+    },
+    {
+      question: "What happens if there's no valid will?",
+      answer:
+        "If someone passes away without a valid will (intestate), the estate is distributed according to the laws of intestacy in the relevant jurisdiction. Typically, the deceased's assets are divided among close relatives, such as spouses, children, or parents. An administrator is appointed by the court to manage the estate in this scenario.",
+    },
+    {
+      question: "Can a will be contested?",
+      answer:
+        "Yes, wills can be contested. Common grounds for contesting a will include claims of undue influence, lack of testamentary capacity, or failure to provide adequate provision for dependents. If someone believes they have a valid claim, they must typically lodge it within a specific timeframe, which varies by jurisdiction.",
+    },
+    {
+      question: "Can probate be avoided altogether?",
+      answer:
+        "In some cases, probate can be avoided. If the deceased’s assets were held jointly (like a joint bank account or jointly owned home), or if they nominated beneficiaries for certain assets (such as superannuation funds or life insurance policies), those assets pass directly to the surviving joint owner or nominated beneficiary. Establishing a comprehensive estate plan during one’s lifetime can help reduce the need for probate.",
+    },
+    {
+      question: "What happens if someone contests the will during probate?",
+      answer:
+        "If a will is contested during probate, the process is paused until the dispute is resolved. The court will review the evidence and determine whether the will is valid and fair. This can extend the probate timeline significantly and may require mediation or a hearing. Having a well-drafted will and clear communication with family members can help minimise the chances of disputes arising.",
+    },
+  ];
 
-  console.log(`✅ Service "${serviceData.title}" seeded/updated`);
-}
+  for (const faq of faqsData) {
+    await prisma.faq.upsert({
+      where: { question: faq.question }, // ✅ unique field
+      update: {}, // no update for seeding
+      create: faq, // create if not exists
+    });
+  }
 
-
+  console.log("✅ Faq data inserted successfully!");
 }
 
 main()
