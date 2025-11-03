@@ -49,6 +49,16 @@ export default function AdminSidebar() {
       icon: LayoutDashboard,
       path: "/admin/services",
     },
+    {
+      label: "Faq Page",
+      icon: LayoutDashboard,
+      path: "/admin/faq",
+    },
+     {
+      label: "Contact Us",
+      icon: LayoutDashboard,
+      path: "/admin/contact-us",
+    },
   ];
 
   useEffect(() => {

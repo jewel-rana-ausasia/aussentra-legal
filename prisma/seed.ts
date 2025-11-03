@@ -1013,6 +1013,37 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
   }
 
   console.log("✅ Faq data inserted successfully!");
+
+
+  // Contact Us page information
+
+  const contactData = [
+    {
+      label: "Address",
+      value: "Sydney NSW, Australia",
+      icon: "FaLocationDot",
+    },
+    {
+      label: "Phone",
+      value: "+61 123 567 8910",
+      icon: "FaPhone",
+    },
+    {
+      label: "E-Mail",
+      value: "info@aussentralegal.com.au",
+      icon: "FaEnvelope",
+    },
+  ];
+
+  for (const data of contactData) {
+    await prisma.contactInfo.upsert({
+      where: { label: data.label },
+      update: data,
+      create: data,
+    });
+  }
+
+  console.log("Contact info seeded successfully!");
 }
 
 main()

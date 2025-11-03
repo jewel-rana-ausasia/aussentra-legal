@@ -214,3 +214,15 @@ model ContactSubmission {
   message    String
   createdAt  DateTime @default(now())
 }
+
+
+// Contact Page
+
+model ContactInfo {
+  id        Int      @id @default(autoincrement())
+  label     String   @unique  // e.g., "Address", "Phone", "E-Mail"
+  value     String   // actual content
+  icon      String?  // optional, store icon name like "FaPhone"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
