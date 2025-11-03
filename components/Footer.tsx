@@ -76,7 +76,7 @@ export default function Footer() {
             <div className="flex flex-col justify-center mx-auto lg:grid lg:grid-cols-12 items-center gap-2">
               {/* Text */}
               <div className="lg:col-span-8 flex justify-center items-center text-white text-center lg:text-left">
-                <h2 className="text-sm md:text-xl lg:text-4xl font-bold leading-snug font-playfair">
+                <h2 className="text-sm md:text-xl lg:text-3xl xl:text-4xl font-bold leading-snug font-playfair">
                   The law protects all, ensuring equal fairness.
                   <br />
                   <span className="text-primary italic">
@@ -111,7 +111,7 @@ export default function Footer() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#14100c] text-white px-5 lg:px-0">
+      <footer className="bg-[#14100c] text-white px-5 2xl:px-0 w-full mx-auto">
         {/* Top */}
         <div className="max-w-7xl mx-auto py-8 lg:py-20 pb-5">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-8">

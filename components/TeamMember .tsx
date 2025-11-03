@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
 
 const Team: React.FC = () => {
   return (
-    <section className="w-full px-5 lg:px-0 py-10 lg:py-20">
+    <section className="w-full px-5 xl:px-0 py-10 lg:py-20">
       <div className="max-w-7xl mx-auto px-2">
         {/* Header */}
         <div className="text-center mb-8 lg:mb-20">
@@ -60,7 +60,7 @@ const Team: React.FC = () => {
         </div>
 
         {/* Team Carousel / Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {teamMembers.map((member, idx) => (
             <div key={idx} className="item text-center group">
               <div className="relative overflow-hidden rounded-md transition-transform duration-500 group-hover:scale-95">

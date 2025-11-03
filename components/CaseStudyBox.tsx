@@ -37,7 +37,7 @@ export default function CaseStudyBox() {
   }
 
   return (
-    <section className="relative max-w-7xl mx-auto px-5 lg:px-0 py-2 mb-8 lg:mb-0 lg:py-8 case-study-box bg-white">
+    <section className="relative max-w-7xl mx-auto px-5 xl:px-0 py-2 mb-8 lg:mb-0 lg:py-8 case-study-box bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8">
           {items.map((item) => (
