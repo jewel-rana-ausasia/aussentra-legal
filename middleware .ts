@@ -47,55 +47,76 @@
 
 
 
-// middleware.ts
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export async function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
+const { pathname, origin } = req.nextUrl;
 
-  // Allow public assets and auth routes
-  if (
-    pathname.startsWith("/_next") || 
-    pathname.startsWith("/static") ||
-    pathname.startsWith("/images") ||
-    pathname === "/favicon.ico" ||
-    pathname.startsWith("/api/auth")
-  ) {
-    return NextResponse.next();
-  }
+// 1️⃣ Allow public assets and NextAuth routes
+if (
+pathname.startsWith("/_next") ||
+pathname.startsWith("/static") ||
+pathname.startsWith("/images") ||
+pathname === "/favicon.ico" ||
+pathname.startsWith("/api/auth")
+) {
+return NextResponse.next();
+}
 
-  // Protect all APIs under /api
-  if (pathname.startsWith("/api")) {
-    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+// 2️⃣ Protect admin APIs
+if (pathname.startsWith("/api/admin")) {
+const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
-    if (!token) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+if (!token) {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+}
 
-    // Optional: restrict /api/admin to only ADMIN role
-    if (pathname.startsWith("/api/admin") && token.role !== "ADMIN") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
+if (token.role !== "ADMIN") {
+  return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+}
 
-    return NextResponse.next();
-  }
+return NextResponse.next();
 
-  // Protect /admin pages (optional)
-  if (pathname.startsWith("/admin")) {
-    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-    if (!token || token.role !== "ADMIN") {
-      return NextResponse.redirect(new URL("/admin/login", req.url));
-    }
-  }
 
-  return NextResponse.next();
+}
+
+// 3️⃣ Protect all other APIs for logged-in users
+if (pathname.startsWith("/api")) {
+const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+
+
+if (!token) {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+}
+
+return NextResponse.next();
+
+
+}
+
+// 4️⃣ Protect admin pages
+if (pathname.startsWith("/admin")) {
+const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+
+
+if (!token || token.role !== "ADMIN") {
+  return NextResponse.redirect(new URL("/admin/login", origin));
+}
+
+return NextResponse.next();
+
+
+}
+
+// 5️⃣ Allow all other pages
+return NextResponse.next();
 }
 
 export const config = {
-  matcher: [
-    "/api/:path*",   // Protect all API routes
-    "/admin/:path*", // Protect admin pages
-  ],
+matcher: [
+"/api/:path*",   // Protect all APIs
+"/admin/:path*", // Protect admin pages
+],
 };
