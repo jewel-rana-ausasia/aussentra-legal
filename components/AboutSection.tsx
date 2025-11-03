@@ -28,7 +28,7 @@ export default function AboutSection() {
   if (!about) return null;
 
   return (
-    <section className="relative py-10 lg:py-16 px-2 md:px-5 xl:px-0 max-w-7xl mx-auto bg-white about">
+    <section className="relative py-10 lg:py-16 px-2 md:px-5 2xl:px-0 max-w-7xl mx-auto bg-white about">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
           {/* Left Content */}
