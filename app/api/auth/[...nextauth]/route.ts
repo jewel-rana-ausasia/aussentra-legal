@@ -47,6 +47,7 @@
 
 
 
+// app/api/auth/[...nextauth]/route.ts
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@auth/prisma-adapter';
@@ -55,7 +56,7 @@ import bcrypt from 'bcryptjs';
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma) as any,
-  session: { strategy: 'jwt' }, // using JWT for session
+  session: { strategy: 'jwt' },
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
@@ -67,37 +68,31 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        // Find user by email
         const user = await prisma.user.findUnique({ where: { email: credentials.email } });
         if (!user || !user.passwordHash) return null;
 
-        // Verify password
         const validPassword = await bcrypt.compare(credentials.password, user.passwordHash);
         if (!validPassword) return null;
 
-        // Return user object with role
         return { id: user.id, name: user.name, email: user.email!, role: user.role } as any;
       },
     }),
   ],
   callbacks: {
-    // Add role to JWT token
     async jwt({ token, user }) {
       if (user) token.role = (user as any).role ?? 'USER';
       return token;
     },
-    // Add role to session object
     async session({ session, token }) {
       if (session.user) (session.user as any).role = token.role ?? 'USER';
       return session;
     },
   },
   pages: {
-    signIn: '/admin/login', // custom login page
+    signIn: '/sign-in', // points to app/(auth)/sign-in
   },
-  debug: process.env.NODE_ENV === 'development', // helpful in development
+  debug: process.env.NODE_ENV === 'development',
 };
 
-// Use NextAuth handler for both GET and POST
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
