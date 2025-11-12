@@ -104,35 +104,38 @@ async function main() {
   // -----------------------------
   // 4️⃣ Seed About Section
   // -----------------------------
-  const aboutExists = await prisma.aboutSection.findUnique({
+  await prisma.aboutSection.upsert({
     where: { id: "default" },
+    update: {
+      title: "Trusted NSW Lawyers for Property, Family,",
+      subtitle: "Immigration & Estate Matters",
+      description: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.
+    Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
+      listItems: [
+        "Full service corporate & business law.",
+        "Reliable and innovative legal solutions.",
+      ],
+      buttonText: "Discover more",
+      buttonLink: "/about",
+      imageUrl: "/about/home-about-image.jpg",
+    },
+    create: {
+      id: "default",
+      title: "Trusted NSW Lawyers for Property, Family,",
+      subtitle: "Immigration & Estate Matters",
+      description: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.
+    Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
+      listItems: [
+        "Full service corporate & business law.",
+        "Reliable and innovative legal solutions.",
+      ],
+      buttonText: "Discover more",
+      buttonLink: "/about",
+      imageUrl: "/about/home-about-image.jpg",
+    },
   });
 
-  if (!aboutExists) {
-    const about = await prisma.aboutSection.create({
-      data: {
-        id: "default",
-        title: "Trusted NSW Lawyers for Property, Family,",
-        subtitle: "Immigration & Estate Matters",
-        description: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.
-        Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
-        listItems: [
-          "Full service corporate & business law.",
-          "Reliable and innovative legal solutions.",
-        ],
-        buttonText: "Discover more",
-        buttonLink: "/about",
-        imageUrl: "/about/home-about-image.jpg",
-      },
-    });
-
-    console.log("✅ About Section seeded");
-    console.log("   Title:", about.title);
-    console.log("   Subtitle:", about.subtitle);
-    console.log("   Button:", about.buttonText, "->", about.buttonLink, "\n");
-  } else {
-    console.log("ℹ️ About Section already exists, skipping seeding");
-  }
+  console.log("✅ About Section seeded or updated successfully\n");
 
   // -----------------------------
   // 5️⃣ Seed caseStudies Section
@@ -923,10 +926,27 @@ async function main() {
   ];
 
   for (const serviceData of servicesData) {
-    await prisma.service.upsert({
-      where: { slug: serviceData.slug }, // ✅ use unique field
-      update: {}, // nothing to update during seed
-      create: {
+    const existingService = await prisma.service.findUnique({
+      where: { slug: serviceData.slug },
+      include: { page: { include: { sections: true, meta: true, cta: true } } },
+    });
+
+    if (existingService) {
+      // 🧹 Clean up old related data before replacing
+      await prisma.page.delete({
+        where: { id: existingService.page!.id },
+      });
+
+      await prisma.service.delete({
+        where: { id: existingService.id },
+      });
+
+      console.log(`🗑️ Replacing existing service: ${serviceData.title}`);
+    }
+
+    // 🆕 Create new data fresh
+    await prisma.service.create({
+      data: {
         id: serviceData.id,
         title: serviceData.title,
         slug: serviceData.slug,
@@ -954,7 +974,8 @@ async function main() {
         },
       },
     });
-    console.log(`✅ Service "${serviceData.title}" seeded or already exists`);
+
+    console.log(`✅ Service "${serviceData.title}" seeded successfully`);
   }
 
   // Faq Seed Function

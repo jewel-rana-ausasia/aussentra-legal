@@ -142,57 +142,56 @@ model Service {
 
 model Page {
   id          String    @id @default(cuid())
-  service     Service   @relation(fields: [serviceId], references: [id])
+  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
   serviceId   String    @unique
   title       String
   description String
   heroImage   String?
   sections    Section[] 
-  meta        Meta?     // optional
-  cta         CTA?      // optional
+  meta        Meta?     
+  cta         CTA?      
 }
 
 model Section {
   id         String      @id @default(cuid())
-  page       Page        @relation(fields: [pageId], references: [id])
+  page       Page        @relation(fields: [pageId], references: [id], onDelete: Cascade)
   pageId     String
   title      String
-  paragraphs Paragraph[] // can be empty
-  listItems  ListItem[]  // can be empty
+  paragraphs Paragraph[] 
+  listItems  ListItem[]  
 }
 
 model Paragraph {
   id        String   @id @default(cuid())
-  section   Section  @relation(fields: [sectionId], references: [id])
+  section   Section  @relation(fields: [sectionId], references: [id], onDelete: Cascade)
   sectionId String
   text      String
 }
 
 model ListItem {
   id        String   @id @default(cuid())
-  section   Section  @relation(fields: [sectionId], references: [id])
+  section   Section  @relation(fields: [sectionId], references: [id], onDelete: Cascade)
   sectionId String
   text      String
 }
 
 model Meta {
   id          String   @id @default(cuid())
-  page        Page     @relation(fields: [pageId], references: [id])
+  page        Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
   pageId      String   @unique
   title       String
   description String
-  keywords    String[] // array of keywords
+  keywords    String[]
 }
 
 model CTA {
   id         String   @id @default(cuid())
-  page       Page     @relation(fields: [pageId], references: [id])
+  page       Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
   pageId     String   @unique
   text       String
   buttonText String
   link       String
 }
-
 
 //Faq Model
 model Faq {
