@@ -33,7 +33,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
           {/* Left Content */}
           <div className="space-y-6 flex flex-col justify-center">
-            <h2 className="text-2xl md:text-5xl font-bold text-center lg:text-left text-gray-900 leading-tight font-playfair">
+            <h2 className="text-2xl md:text-3xl font-bold text-center lg:text-left text-gray-900 leading-tight font-playfair">
               {about.title}{" "}
               {about.subtitle && (
                 <span className="text-primary italic">{about.subtitle}</span>

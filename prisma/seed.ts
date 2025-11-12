@@ -215,11 +215,11 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     // 1️⃣ Conveyancing
     {
       id: "conveyancing",
-      title: "Conveyancing Services",
+      title: " Conveyancing & Property Law in NSW",
       slug: "conveyancing",
       image: "/services/conveyancing-thum.jpg",
       page: {
-        title: "Conveyancing Services",
+        title: " Conveyancing & Property Law in NSW",
         description:
           "Easy and stress-free conveyancing services to help you buy or sell property with confidence and clarity.",
         heroImage: "/services/conveyancing-banner.jpg",
@@ -315,11 +315,11 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     // 2️⃣ Debt Recovery
     {
       id: "debt-recovery",
-      title: "Debt Recovery Services",
+      title: "Debt Recovery & Enforcement",
       slug: "debt-recovery",
       image: "/services/debt-recovery-thum.jpg",
       page: {
-        title: "Debt Recovery Services",
+        title: "Debt Recovery & Enforcement",
         description:
           "Professional and stress-free debt recovery services for individuals, small businesses, and large companies.",
         heroImage: "/services/debt-recovery-banner.jpg",
@@ -503,17 +503,17 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     // 4️⃣ Immigration Law
     {
       id: "immigration-law",
-      title: "Immigration Law",
+      title: " Immigration Lawyers in NSW",
       slug: "immigration-law",
       image: "/services/immigration-law-thum.jpg",
       page: {
-        title: "Immigration Law",
+        title: " Immigration Lawyers in NSW",
         description:
           "Expert legal guidance for visas, citizenship, and immigration issues in Australia.",
         heroImage: "/services/immigration-law-banner.jpg",
         sections: [
           {
-            title: "Immigration Law",
+            title: " Immigration Lawyers in NSW",
             paragraphs: [
               "Immigration rules can be confusing and change often. That’s why it's important to get clear, expert advice you can trust. Our team of immigration lawyers is here to guide you through every step, so you can live, work, study, or retire in Australia with confidence.",
               "We help with all types of visas, citizenship, detention cases, and appeals. Whether you're applying for the first time or dealing with a visa issue, we’re here to make the process easier and less stressful.",
@@ -603,11 +603,11 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     // 5️⃣ Insolvency Services
     {
       id: "insolvency",
-      title: "Insolvency Services",
+      title: " Insolvency & Bankruptcy Advice",
       slug: "insolvency",
       image: "/services/insolvency-thum.jpg",
       page: {
-        title: "Insolvency Services",
+        title: " Insolvency & Bankruptcy Advice",
         description:
           "Professional insolvency legal support to help businesses, directors, and creditors navigate financial difficulties.",
         heroImage: "/services/insolvency-banner.jpg",
@@ -709,11 +709,11 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     // 6️⃣ Probate & Estate Administration
     {
       id: "probate-estate",
-      title: "Probate & Estate Administration Services",
+      title: " Probate Litigation & Estate Disputes",
       slug: "probate-estate",
       image: "/services/probate-and-estate-thum.jpg",
       page: {
-        title: "Probate & Estate Administration Services",
+        title: " Probate Litigation & Estate Disputes",
         description:
           "Compassionate and professional legal assistance for executors, administrators, and beneficiaries in probate and estate administration matters.",
         heroImage: "/services/probate-and-estate-banner.jpg",
@@ -817,11 +817,11 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
     // 7️⃣ Wills & Estate Services
     {
       id: "wills",
-      title: "Wills & Estate Services",
+      title: " Wills, Estates & Probate",
       slug: "wills",
       image: "/services/wills-thum.jpg",
       page: {
-        title: "Wills & Estate Services",
+        title: " Wills, Estates & Probate",
         description:
           "Create clear and legally sound Wills and estate plans to protect your family and assets with expert guidance from Aussentra Legal.",
         heroImage: "/services/wills-banner.jpg",
