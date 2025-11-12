@@ -47,19 +47,32 @@ interface Service {
 }
 
 // ✅ Fetch data on the server
+// async function getService(slug: string): Promise<Service | null> {
+//   try {
+//     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+//       ? process.env.NEXT_PUBLIC_BASE_URL
+//       : process.env.VERCEL_URL
+//         ? `https://${process.env.VERCEL_URL}`
+//         : "http://localhost:3000";
+
+//     const res = await fetch(`${baseUrl}/api/admin/services/${slug}`, {
+//       cache: "no-store", // ensures fresh data each request
+//       next: { revalidate: 60 }, // or you can use ISR (60 seconds)
+//     });
+
+//     if (!res.ok) return null;
+//     return await res.json();
+//   } catch (error) {
+//     console.error("Error fetching service:", error);
+//     return null;
+//   }
+// }
+
 async function getService(slug: string): Promise<Service | null> {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-      ? process.env.NEXT_PUBLIC_BASE_URL
-      : process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : "http://localhost:3000";
-
-    const res = await fetch(`${baseUrl}/api/admin/services/${slug}`, {
-      cache: "no-store", // ensures fresh data each request
-      next: { revalidate: 60 }, // or you can use ISR (60 seconds)
+    const res = await fetch(`/api/admin/services/${slug}`, {
+      cache: "no-store",
     });
-
     if (!res.ok) return null;
     return await res.json();
   } catch (error) {
