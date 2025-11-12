@@ -112,13 +112,10 @@ async function main() {
     const about = await prisma.aboutSection.create({
       data: {
         id: "default",
-        title: "Aussentra Legal Your Partner",
-        subtitle: "in Justice",
-        description: `Aussentra Legal is a law firm focused on providing personal, practical, and easy-to-understand legal services for families, homebuyers, and business owners. We specialise in property transactions, estate planning, wills, probate, and banking law.
-
-We know legal matters can be confusing and stressful, so we’re here to make the process simple and clear. With fixed-fee pricing and straightforward advice, we help you make confident decisions without surprises.
-
-At Aussentra Legal, we listen carefully, respect your needs, and guide you with care every step of the way so you feel supported and in control of your legal journey. Our goal is to build lasting relationships based on trust, transparency, and respect. We are committed to helping you protect what matters most and plan for the future with peace of mind.`,
+        title: "Trusted NSW Lawyers for Property, Family,",
+        subtitle: "Immigration & Estate Matters",
+        description: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.
+        Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
         listItems: [
           "Full service corporate & business law.",
           "Reliable and innovative legal solutions.",
@@ -1013,7 +1010,6 @@ At Aussentra Legal, we listen carefully, respect your needs, and guide you with 
   }
 
   console.log("✅ Faq data inserted successfully!");
-
 
   // Contact Us page information
 
