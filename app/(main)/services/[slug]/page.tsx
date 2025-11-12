@@ -151,92 +151,45 @@ import BannerHeader from "@/components/BannerHeader";
 import ServiceDetailsContent from "@/components/ServiceDetailsContent";
 import { notFound } from "next/navigation";
 
-interface ListItem {
-  text: string;
-}
+interface ListItem { text: string }
+interface Paragraph { text: string }
+interface Section { id: string; title: string; paragraphs: Paragraph[]; listItems?: ListItem[] }
+interface CTA { text: string; buttonText: string; link: string }
+interface Meta { title: string; description: string; keywords: string[] }
+interface PageData { title: string; description: string; heroImage?: string; sections: Section[]; meta?: Meta; cta?: CTA }
+interface Service { id: string; title: string; slug: string; image?: string; page: PageData }
 
-interface Paragraph {
-  text: string;
-}
-
-interface Section {
-  id: string;
-  title: string;
-  paragraphs: Paragraph[];
-  listItems?: ListItem[];
-}
-
-interface CTA {
-  text: string;
-  buttonText: string;
-  link: string;
-}
-
-interface Meta {
-  title: string;
-  description: string;
-  keywords: string[];
-}
-
-interface PageData {
-  title: string;
-  description: string;
-  heroImage?: string;
-  sections: Section[];
-  meta?: Meta;
-  cta?: CTA;
-}
-
-interface Service {
-  id: string;
-  title: string;
-  slug: string;
-  image?: string;
-  page: PageData;
-}
-
-// ✅ Fetch service data (works locally and on Vercel)
+// Fetch service data from API
 async function getService(slug: string): Promise<Service | null> {
   try {
-    // Determine absolute URL for server-side fetch
     const baseUrl =
       process.env.NEXT_PUBLIC_BASE_URL ||
       (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
-    const res = await fetch(`${baseUrl}/api/admin/services/${slug}`, {
-      cache: "no-store", // always fresh
-    });
-
+    const res = await fetch(`${baseUrl}/api/admin/services/${slug}`, { cache: "no-store" });
     if (!res.ok) return null;
     return await res.json();
-  } catch (error) {
-    console.error("Error fetching service:", error);
+  } catch (err) {
+    console.error("Error fetching service:", err);
     return null;
   }
 }
 
-export default async function ServiceDetailPage({
-  params,
-}: {
-  params: { slug: string } | Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const service = await getService(slug);
 
   if (!service) return notFound();
 
   const { page } = service;
-
-  // Format sections for ServiceDetailsContent
-  const formattedSections = page.sections?.map((section: any) => ({
+  const formattedSections = page.sections?.map((section) => ({
     title: section.title,
-    paragraphs: section.paragraphs?.map((p: any) => p.text) || [],
-    listItems: section.listItems?.map((l: any) => ({ text: l.text })) || [],
+    paragraphs: section.paragraphs?.map((p) => p.text) || [],
+    listItems: section.listItems?.map((l) => ({ text: l.text })) || [],
   }));
 
   return (
     <div>
-      {/* Hero Banner */}
       {page.heroImage && (
         <BannerHeader
           title={page.title}
@@ -247,11 +200,7 @@ export default async function ServiceDetailPage({
           overlayDark={5}
         />
       )}
-
-      {/* Service Details */}
       <ServiceDetailsContent sections={formattedSections} />
-
-      {/* CTA */}
       {page.cta && (
         <div className="max-w-4xl mx-auto py-10 text-center">
           <p className="text-lg mb-4">{page.cta.text}</p>
