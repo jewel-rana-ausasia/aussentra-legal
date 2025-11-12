@@ -105,12 +105,12 @@ async function main() {
   // 4️⃣ Seed About Section
   // -----------------------------
   await prisma.aboutSection.upsert({
-    where: { id: "default" },
+    where: { id: "default" }, // Make sure your AboutSection.id is String in schema
     update: {
       title: "Trusted NSW Lawyers for Property, Family,",
       subtitle: "Immigration & Estate Matters",
-      description: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.
-    Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
+      description_one: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.`,
+      description_two: `Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
       listItems: [
         "Full service corporate & business law.",
         "Reliable and innovative legal solutions.",
@@ -123,8 +123,8 @@ async function main() {
       id: "default",
       title: "Trusted NSW Lawyers for Property, Family,",
       subtitle: "Immigration & Estate Matters",
-      description: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.
-    Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
+      description_one: `Welcome to Aussentra Legal, your local legal partner in New South Wales. We provide clear, practical, and results-driven legal services across key areas including conveyancing, family law, immigration, wills and estates, debt recovery, probate litigation, and insolvency.`,
+      description_two: `Whether you're buying a home, resolving a family dispute, applying for a visa, or managing estate matters, our experienced lawyers are here to guide you every step of the way.`,
       listItems: [
         "Full service corporate & business law.",
         "Reliable and innovative legal solutions.",

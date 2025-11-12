@@ -8,7 +8,8 @@ import Link from "next/link";
 interface AboutData {
   title: string;
   subtitle?: string;
-  description: string;
+  description_one: string;
+  description_two: string;
   listItems: string[];
   buttonText: string;
   buttonLink: string;
@@ -41,7 +42,11 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
-              {about.description}
+              {about.description_one}
+            </p>
+
+            <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+              {about.description_two}
             </p>
 
             <ul className="space-y-3">

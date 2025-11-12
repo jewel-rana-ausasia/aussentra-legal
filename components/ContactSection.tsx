@@ -29,7 +29,6 @@ const ContactSection = () => {
     fetchContacts();
   }, []);
 
-  // Determine type in code based on label
   const getType = (label: string) => {
     if (label.toLowerCase().includes("phone")) return "phone";
     if (label.toLowerCase().includes("email")) return "email";
@@ -39,7 +38,7 @@ const ContactSection = () => {
   return (
     <section className="py-20 lg:px-0">
       <div className="max-w-7xl mx-auto px-5 md:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Side */}
           <div>
             <h2 className="text-2xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
@@ -62,13 +61,21 @@ const ContactSection = () => {
                     <h5 className="text-[#14100c] text-lg lg:text-xl font-semibold font-playfair">
                       {contact.label}
                     </h5>
-                    <p className="text-slate-600 text-sm lg:text-base">
+                    <p className="text-slate-600 text-sm lg:text-base break-words">
                       {type === "phone" ? (
-                        <a href={`tel:${contact.value}`} className="hover:underline">
+                        <a
+                          href={`tel:${contact.value}`}
+                          className="hover:underline"
+                        >
                           {contact.value}
                         </a>
                       ) : type === "email" ? (
-                        <a href={`mailto:${contact.value}`} className="hover:underline">
+                        <a
+                          href={`mailto:${contact.value}?subject=Inquiry&body=Hello, I would like to get in touch.`}
+                          className="hover:underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {contact.value}
                         </a>
                       ) : (
