@@ -36,12 +36,12 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 lg:px-0">
-      <div className="max-w-7xl mx-auto px-5 md:px-5 xl:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start justify-center">
+    <section className="py-10 xl:py-20">
+      <div className="max-w-7xl mx-auto px-2 md:px-5 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center">
           {/* Left Side */}
-          <div>
-            <h2 className="text-2xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
+          <div className="max-w-xl mx-auto lg:mx-0">
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold mb-8 lg:mb-10 font-playfair mt-5">
               Do you need help?{" "}
               <span className="text-primary block mt-2 italic">
                 Contact with us now!
@@ -54,14 +54,14 @@ const ContactSection = () => {
 
               return (
                 <div key={contact.id} className="flex items-start mb-6">
-                  <div className="text-primary bg-[#f7f6f4] w-12 lg:w-[60px] h-12 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
+                  <div className="text-primary bg-[#f7f6f4] w-10 lg:w-[60px] h-10 lg:h-[60px] flex items-center justify-center rounded-full mr-4">
                     {Icon && <Icon className="text-lg lg:text-2xl" />}
                   </div>
                   <div>
-                    <h5 className="text-[#14100c] text-lg lg:text-xl font-semibold font-playfair">
+                    <h5 className="text-[#14100c] lg:text-xl font-semibold font-playfair">
                       {contact.label}
                     </h5>
-                    <p className="text-slate-900 text-sm lg:text-base break-words">
+                    <p className="text-slate-900 text-xs md:text-sm lg:text-base break-words">
                       {type === "phone" ? (
                         <a
                           href={`tel:${contact.value}`}
@@ -71,7 +71,7 @@ const ContactSection = () => {
                         </a>
                       ) : type === "email" ? (
                         <a
-                          href={`mailto:${contact.value}subject=Legal%20Inquiry&body=Hello%20Aussentra%20Legal%2C%20I%20would%20like%20to%20get%20in%20touch%20regarding...`}
+                          href={`mailto:${contact.value}?subject=Legal%20Inquiry&body=Hello%20Aussentra%20Legal%2C%20I%20would%20like%20to%20get%20in%20touch%20regarding...`}
                           className="hover:underline cursor-pointer"
                         >
                           {contact.value}

@@ -76,9 +76,9 @@ const Navbar = () => {
         {/* Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-white text-2xl focus:outline-none"
+          className="lg:hidden text-white text-xl focus:outline-none"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
 
         {/* Nav Links */}
