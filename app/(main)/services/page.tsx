@@ -75,14 +75,14 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <div className="absolute bottom-10 left-5 right-5 flex items-center justify-between transition-opacity duration-500 opacity-100">
+                <div className="absolute bottom-10 left-5 right-5 flex items-center justify-between gap-8 transition-opacity duration-500 opacity-100">
                   {/* Title */}
                   <div className="text-white text-xl font-medium">
                     {caseItem.title}
                   </div>
 
                   {/* Arrow */}
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-lg transition-colors duration-500 hover:bg-white hover:text-[#14100c]">
+                  <div className="w-8 h-8 shrink-0 bg-primary rounded-full flex items-center justify-center text-white text-lg transition-colors duration-500 hover:bg-white hover:text-[#14100c]">
                     <FaArrowRight className="w-4 h-4" />
                   </div>
                 </div>
