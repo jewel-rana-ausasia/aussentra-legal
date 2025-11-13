@@ -103,8 +103,8 @@ model AboutSection {
   id          String  @id @default(cuid())
   title       String
   subtitle    String?
-  description_one String
-  description_two String
+  description_one String?
+  description_two String?
   listItems   String[]  // array of bullet points
   buttonText  String
   buttonLink  String
