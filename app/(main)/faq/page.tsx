@@ -39,6 +39,19 @@ const FaqPage: React.FC = () => {
     fetchFaqs();
   }, []);
 
+  const [isXL, setIsXL] = useState(false);
+  useEffect(() => {
+    const handleResize = () => setIsXL(window.innerWidth >= 1280);
+
+    handleResize(); // check on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  const bannerImage = isXL
+    ? "/about/lawyers-holding-books-law-library.jpg"
+    : "/about/about-law-firm.jpg";
+
   return (
     <div>
       <BannerHeader
@@ -46,7 +59,7 @@ const FaqPage: React.FC = () => {
         subtitle="Questions"
         caption="Popular questions"
         iconClass="flaticon-courthouse"
-        backgroundImage="/about/about-law-firm.jpg"
+        backgroundImage={bannerImage}
         overlayDark={5}
       />
 

@@ -27,8 +27,20 @@ const ServicesPage: React.FC = () => {
 
     fetchServices();
   }, []);
-  
- 
+
+  const [isXL, setIsXL] = useState(false);
+  useEffect(() => {
+    const handleResize = () => setIsXL(window.innerWidth >= 1280);
+
+    handleResize(); // check on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  const bannerImage = isXL
+    ? "/about/lawyers-holding-books-law-library.jpg"
+    : "/about/about-law-firm.jpg";
+
   return (
     <div>
       <BannerHeader
@@ -36,44 +48,46 @@ const ServicesPage: React.FC = () => {
         subtitle="Services"
         caption="Areas of Services"
         iconClass="flaticon-courthouse"
-        backgroundImage="/about/about-law-firm.jpg"
+        backgroundImage={bannerImage}
         overlayDark={5}
       />
 
       <section className="w-full px-8 lg:px-0 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.filter((s) => !!s.slug).map((caseItem, idx) => (
-            <Link
-              href={`/services/${caseItem.slug}`}
-              key={idx}
-              className="relative group overflow-hidden rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
-            >
-              {/* Image */}
-              <div className="relative w-full h-64 sm:h-72 rounded-lg overflow-hidden">
-                <Image
-                  src={caseItem.image}
-                  alt={caseItem.title}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
-              </div>
-
-              {/* Content */}
-              <div className="absolute bottom-10 left-5 right-5 flex items-center justify-between transition-opacity duration-500 opacity-100">
-                {/* Title */}
-                <div className="text-white text-xl font-medium">
-                  {caseItem.title}
+          {services
+            .filter((s) => !!s.slug)
+            .map((caseItem, idx) => (
+              <Link
+                href={`/services/${caseItem.slug}`}
+                key={idx}
+                className="relative group overflow-hidden rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+              >
+                {/* Image */}
+                <div className="relative w-full h-64 sm:h-72 rounded-lg overflow-hidden">
+                  <Image
+                    src={caseItem.image}
+                    alt={caseItem.title}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
                 </div>
 
-                {/* Arrow */}
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-lg transition-colors duration-500 hover:bg-white hover:text-[#14100c]">
-                  <FaArrowRight className="w-4 h-4" />
+                {/* Content */}
+                <div className="absolute bottom-10 left-5 right-5 flex items-center justify-between transition-opacity duration-500 opacity-100">
+                  {/* Title */}
+                  <div className="text-white text-xl font-medium">
+                    {caseItem.title}
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-lg transition-colors duration-500 hover:bg-white hover:text-[#14100c]">
+                    <FaArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
         </div>
       </section>
     </div>

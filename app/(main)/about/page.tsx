@@ -10,6 +10,7 @@ import VideoSection from "@/components/VideoSection";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const About: React.FC = () => {
   const about = {
@@ -63,7 +64,6 @@ Whether you’re buying or selling a property, planning your Will, or managing a
     imageUrl: "/about/legal-help-you-can-count-on.jpg", // update this with your actual image
   };
 
-
   const fadeInLeft = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -81,6 +81,19 @@ Whether you’re buying or selling a property, planning your Will, or managing a
       transition: { duration: 0.8, ease: "easeOut" as const },
     },
   };
+  const [isXL, setIsXL] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsXL(window.innerWidth >= 1280);
+
+    handleResize(); // check on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  const bannerImage = isXL
+    ? "/about/lawyers-holding-books-law-library.jpg"
+    : "/about/about-law-firm.jpg";
 
   return (
     <div>
@@ -89,7 +102,7 @@ Whether you’re buying or selling a property, planning your Will, or managing a
         subtitle="Aussentra Legal"
         caption="Who we are"
         iconClass="flaticon-courthouse"
-        backgroundImage="/about/about-law-firm.jpg"
+        backgroundImage={bannerImage}
         overlayDark={5}
       />
 
@@ -106,7 +119,7 @@ Whether you’re buying or selling a property, planning your Will, or managing a
                 )}
               </h2>
 
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+              <p className="text-slate-900 leading-relaxed whitespace-pre-line">
                 {about.description}
               </p>
 
