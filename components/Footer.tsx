@@ -17,11 +17,10 @@ export default function Footer() {
     "Conveyancing",
     "Immigration law",
     "Debt recovery",
-    "Insolvency",
     "All services",
   ];
 
-  const quickLinks = ["Home", "About Us", "Services", "Faq", "Contact"];
+  const quickLinks = ["Home", "About Us", "Faq", "Contact"];
 
   // Function to get href for any navigation item
   const getHref = (label: string) => {
@@ -126,9 +125,8 @@ export default function Footer() {
                 />
               </Link>
               <p className="text-gray-400 text-xs md:text-sm lg:text-base leading-relaxed">
-                At Aussentra Legal, we provide expert legal services across
-                Sydney. We’re here to protect your interests and guide you
-                through life’s key decisions with confidence.
+                “Aussentra Legal provides expert legal services across Sydney,
+                guiding you confidently through important decisions.”
               </p>
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
@@ -137,7 +135,7 @@ export default function Footer() {
                       <FaInstagram />
                     </a>
                   </li>
-                  
+
                   <li className="w-8 h-8 lg:w-8 lg:h-8 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaFacebookF />

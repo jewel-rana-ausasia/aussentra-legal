@@ -30,8 +30,9 @@ const ContactSection = () => {
   }, []);
 
   const getType = (label: string) => {
-    if (label.toLowerCase().includes("phone")) return "phone";
-    if (label.toLowerCase().includes("email")) return "email";
+    const l = label.toLowerCase().replace(/[^a-z]/g, ""); // remove non-letter chars
+    if (l.includes("phone")) return "phone";
+    if (l.includes("email")) return "email";
     return "text";
   };
 
@@ -40,6 +41,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-2 md:px-5 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center">
           {/* Left Side */}
+          
           <div className="max-w-xl mx-auto lg:mx-0">
             <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold mb-8 lg:mb-10 font-playfair mt-5">
               Do you need help?{" "}
