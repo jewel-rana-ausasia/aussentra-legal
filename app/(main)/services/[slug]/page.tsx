@@ -46,46 +46,14 @@ interface Service {
   page: PageData;
 }
 
-// ✅ Fetch data on the server
-// async function getService(slug: string): Promise<Service | null> {
-//   try {
-//     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-//       ? process.env.NEXT_PUBLIC_BASE_URL
-//       : process.env.VERCEL_URL
-//         ? `https://${process.env.VERCEL_URL}`
-//         : "http://localhost:3000";
-
-//     const res = await fetch(`${baseUrl}/api/admin/services/${slug}`, {
-//       cache: "no-store", // ensures fresh data each request
-//       next: { revalidate: 60 }, // or you can use ISR (60 seconds)
-//     });
-
-//     if (!res.ok) return null;
-//     return await res.json();
-//   } catch (error) {
-//     console.error("Error fetching service:", error);
-//     return null;
-//   }
-// }
-
-// async function getService(slug: string): Promise<Service | null> {
-//   try {
-//     const res = await fetch(`/api/admin/services/${slug}`, {
-//       cache: "no-store",
-//     });
-//     if (!res.ok) return null;
-//     return await res.json();
-//   } catch (error) {
-//     console.error("Error fetching service:", error);
-//     return null;
-//   }
-// }
 async function getService(slug: string) {
   try {
     // Absolute URL for server-side fetch
     const baseUrl =
       process.env.NEXT_PUBLIC_BASE_URL || // local
-      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+      (process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "http://localhost:3000");
 
     const res = await fetch(`${baseUrl}/api/admin/services/${slug}`, {
       cache: "no-store", // always fresh
@@ -98,7 +66,6 @@ async function getService(slug: string) {
     return null;
   }
 }
-
 
 export default async function ServiceDetailPage({
   params,
@@ -137,7 +104,7 @@ export default async function ServiceDetailPage({
 
       {/* CTA */}
       {page.cta && (
-        <div className="max-w-4xl mx-auto py-10 text-center">
+        <div className="max-w-4xl mx-auto px-8 py-10 text-center">
           <p className="text-lg mb-4">{page.cta.text}</p>
           <a
             href={page.cta.link}

@@ -117,11 +117,11 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 
       {/* Text Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 lg:px-0">
-        {caption && (
+       {/*  {caption && (
           <div className="mb-4 text-white italic font-playfair text-lg lg:text-xl">
             {caption}
           </div>
-        )}
+        )} */}
         <h1 className="text-[28px] lg:text-[48px] font-playfair text-white">
           {title}{" "}
           {subtitle && <span className="text-primary italic">{subtitle}</span>}

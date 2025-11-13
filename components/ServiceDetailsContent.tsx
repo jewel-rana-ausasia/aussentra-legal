@@ -43,7 +43,7 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections 
   }
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 font-playfair">
+    <section className="bg-white py-16 px-5 sm:px-6 lg:px-8 font-playfair">
       <div className="max-w-4xl mx-auto">
         {sections.map((section, index) => (
           <div key={index} className={section.className || 'mb-12 last:mb-0'}>
