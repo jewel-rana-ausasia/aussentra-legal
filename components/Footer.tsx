@@ -125,8 +125,8 @@ export default function Footer() {
                 />
               </Link>
               <p className="text-gray-400 text-xs md:text-sm lg:text-base leading-relaxed">
-                “Aussentra Legal provides expert legal services across Sydney,
-                guiding you confidently through important decisions.”
+                Aussentra Legal provides expert legal services across Sydney,
+                guiding you confidently through important decisions.
               </p>
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
