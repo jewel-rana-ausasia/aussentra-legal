@@ -11,6 +11,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import AboutOurTeam from "@/components/AboutOurTeam";
 
 const About: React.FC = () => {
   const about = {
@@ -230,7 +231,8 @@ Whether you’re buying or selling a property, planning your Will, or managing a
       {/* <AboutSection2 /> */}
       <OurSuccesses />
       <VideoSection />
-      <Team />
+      {/* <Team /> */}
+      <AboutOurTeam />
     </div>
   );
 };
