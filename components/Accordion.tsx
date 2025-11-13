@@ -28,10 +28,10 @@ export const Accordion = ({ items }: { items: AccordionItem[] }) => {
                 : "text-slate-900 hover:bg-gray-100"
             }`}
           >
-            <div className="w-full flex justify-between">
+            <div className="w-full flex justify-between gap-5">
               {item.title}
               <span
-                className={`transform transition-transform duration-300 w-8 h-8 rounded-full bg-primary flex justify-center items-center ${
+                className={`transform transition-transform duration-300 w-8 h-8 shrink-0 rounded-full bg-primary flex justify-center items-center ${
                   activeIndex === index ? "rotate-180" : "rotate-0"
                 }`}
               >

@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="absolute inset-0 bg-black/60"></div>
 
           <div className="max-w-7xl mx-auto h-[80px] lg:h-[180px] flex justify-between items-center relative z-10 px-5 lg:px-0">
-            <div className="flex flex-col justify-center mx-auto lg:grid lg:grid-cols-12 items-center gap-2">
+            <div className="flex flex-col justify-center mx-auto xl:grid xl:grid-cols-12 items-center gap-2">
               {/* Text */}
               <div className="lg:col-span-8 flex justify-center items-center text-white text-center lg:text-left">
                 <h2 className="text-sm md:text-xl lg:text-3xl xl:text-4xl font-bold leading-snug font-playfair">

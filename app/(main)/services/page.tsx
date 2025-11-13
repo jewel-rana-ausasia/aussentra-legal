@@ -52,7 +52,7 @@ const ServicesPage: React.FC = () => {
         overlayDark={5}
       />
 
-      <section className="w-full px-8 lg:px-0 py-20 relative overflow-hidden">
+      <section className="w-full px-8 lg:px-10 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services
             .filter((s) => !!s.slug)
