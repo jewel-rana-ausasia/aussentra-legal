@@ -25,7 +25,7 @@ export const Accordion = ({ items }: { items: AccordionItem[] }) => {
             className={`w-full text-left px-6 py-4 font-medium transition-colors flex justify-between items-center cursor-pointer ${
               activeIndex === index
                 ? "bg-primary text-white"
-                : "text-gray-900 hover:bg-gray-100"
+                : "text-slate-900 hover:bg-gray-100"
             }`}
           >
             <div className="w-full flex justify-between">
@@ -44,7 +44,7 @@ export const Accordion = ({ items }: { items: AccordionItem[] }) => {
               activeIndex === index ? "max-h-96 py-4" : "max-h-0"
             }`}
           >
-            <p className="text-gray-600">{item.content}</p>
+            <p className="text-slate-900">{item.content}</p>
           </div>
         </div>
       ))}

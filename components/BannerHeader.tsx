@@ -33,7 +33,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
         style={{
           backgroundColor: `rgba(0,0,0,${overlayDark * 0.1})`,
         }}
-      />
+      />z
 
       <div className="container relative z-10">
         <div className="row">

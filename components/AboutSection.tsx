@@ -41,11 +41,11 @@ export default function AboutSection() {
               )}
             </h2>
 
-            <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+            <p className="text-black leading-relaxed text-sm lg:text-base">
               {about.description_one}
             </p>
 
-            <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+            <p className="text-black leading-relaxed text-sm lg:text-base">
               {about.description_two}
             </p>
 

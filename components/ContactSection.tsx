@@ -37,8 +37,8 @@ const ContactSection = () => {
 
   return (
     <section className="py-20 lg:px-0">
-      <div className="max-w-7xl mx-auto px-5 md:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <div className="max-w-7xl mx-auto px-5 md:px-5 xl:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start justify-center">
           {/* Left Side */}
           <div>
             <h2 className="text-2xl lg:text-4xl font-semibold mb-10 font-playfair mt-5">
@@ -61,7 +61,7 @@ const ContactSection = () => {
                     <h5 className="text-[#14100c] text-lg lg:text-xl font-semibold font-playfair">
                       {contact.label}
                     </h5>
-                    <p className="text-slate-600 text-sm lg:text-base break-words">
+                    <p className="text-slate-900 text-sm lg:text-base break-words">
                       {type === "phone" ? (
                         <a
                           href={`tel:${contact.value}`}
@@ -71,10 +71,8 @@ const ContactSection = () => {
                         </a>
                       ) : type === "email" ? (
                         <a
-                          href={`mailto:${contact.value}?subject=Inquiry&body=Hello, I would like to get in touch.`}
-                          className="hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={`mailto:${contact.value}subject=Legal%20Inquiry&body=Hello%20Aussentra%20Legal%2C%20I%20would%20like%20to%20get%20in%20touch%20regarding...`}
+                          className="hover:underline cursor-pointer"
                         >
                           {contact.value}
                         </a>

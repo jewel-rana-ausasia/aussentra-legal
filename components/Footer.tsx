@@ -132,17 +132,13 @@ export default function Footer() {
               </p>
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
-                  <li className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
+                  <li className="w-8 h-8 lg:w-8 lg:h-8 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaInstagram />
                     </a>
                   </li>
-                  <li className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
-                    <a href="#">
-                      <FaTwitter />
-                    </a>
-                  </li>
-                  <li className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
+                  
+                  <li className="w-8 h-8 lg:w-8 lg:h-8 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
                     <a href="#">
                       <FaFacebookF />
                     </a>
@@ -161,7 +157,10 @@ export default function Footer() {
                 <a href="tel:+61212345678">+61 123 567 8910</a>
               </div>
               <div className="mail text-gray-400 text-sm lg:text-lg">
-                <a href="mailto:hello@aussentralegal.com.au">
+                <a
+                  href="mailto:info@aussentralegal.com.au?subject=Legal%20Inquiry&body=Hello%20Aussentra%20Legal%2C%20I%20would%20like%20to%20get%20in%20touch%20regarding..."
+                  className="hover:underline cursor-pointer"
+                >
                   info@aussentralegal.com.au
                 </a>
               </div>
