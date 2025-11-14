@@ -1,5 +1,7 @@
 import AboutSection from "@/components/AboutSection";
 import AboutSection2 from "@/components/AboutSection2";
+import AboutTeamLanding from "@/components/AboutTeamHome ";
+import AboutOurTeam from "@/components/AboutTeamHome ";
 import CaseStudyBox from "@/components/CaseStudyBox";
 import Header from "@/components/Header";
 import ServiceSection from "@/components/ServiceSection";
@@ -18,7 +20,8 @@ export default function MainPage() {
       <ServiceSection />
       <VideoSection />
       <Testimonials />
-      <Team />
+      {/* <Team /> */}
+      <AboutTeamLanding />
     </div>
   );
 }
