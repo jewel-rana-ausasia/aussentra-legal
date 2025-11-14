@@ -14,6 +14,11 @@ export default function AdminFaqPage() {
   const [newFaqs, setNewFaqs] = useState<FaqItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editData, setEditData] = useState<FaqItem>({
+    question: "",
+    answer: "",
+  });
 
   useEffect(() => {
     fetchFaqs();
@@ -87,12 +92,43 @@ export default function AdminFaqPage() {
     }
   };
 
+  const startEditing = (faq: FaqItem) => {
+    setEditingId(faq.id || null);
+    setEditData({ question: faq.question, answer: faq.answer });
+  };
+
+  const saveEditFaq = async () => {
+    if (!editingId) return;
+
+    if (!editData.question.trim() || !editData.answer.trim()) {
+      setError("Both question and answer are required.");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      await fetch("/api/admin/faq", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: editingId, ...editData }),
+      });
+
+      setEditingId(null);
+      await fetchFaqs();
+    } catch (error) {
+      console.error("Failed to update FAQ:", error);
+      setError("Failed to update FAQ. Please try again.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="w-full mx-auto px-10 py-5 space-y-8">
       <div className="border-b border-gray-200 pb-6">
-        <h1 className="text-3xl font-semibold text-gray-900">
-          FAQ Management
-        </h1>
+        <h1 className="text-3xl font-semibold text-gray-900">FAQ Management</h1>
         <p className="mt-2 text-gray-600">
           Manage frequently asked questions for your users
         </p>
@@ -128,30 +164,100 @@ export default function AdminFaqPage() {
                 key={faq.id}
                 className="bg-white border border-green-200 rounded-lg p-5 hover:shadow-sm transition-shadow"
               >
-                <div className="flex justify-between items-start gap-4">
-                  <div className="flex-1 space-y-3">
+                {editingId === faq.id ? (
+                  // -----------------------------
+                  // EDIT MODE
+                  // -----------------------------
+                  <div className="space-y-4">
                     <div>
-                      <p className="text-sm font-medium text-gray-500 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Question
-                      </p>
-                      <p className="text-gray-900 font-medium">{faq.question}</p>
+                      </label>
+                      <input
+                        type="text"
+                        value={editData.question}
+                        onChange={(e) =>
+                          setEditData({ ...editData, question: e.target.value })
+                        }
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500"
+                      />
                     </div>
+
                     <div>
-                      <p className="text-sm font-medium text-gray-500 mb-1">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Answer
-                      </p>
-                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                      </label>
+                      <textarea
+                        value={editData.answer}
+                        onChange={(e) =>
+                          setEditData({ ...editData, answer: e.target.value })
+                        }
+                        rows={4}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+
+                    <div className="flex gap-3">
+                      <button
+                        onClick={saveEditFaq}
+                        disabled={loading}
+                        className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700"
+                      >
+                        Save
+                      </button>
+
+                      <button
+                        onClick={() => setEditingId(null)}
+                        className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200"
+                      >
+                        Cancel
+                      </button>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => deleteFaq(faq.id)}
-                    className="text-red-500 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-colors"
-                    title="Delete FAQ"
-                  >
-                    <Trash2 className="w-5 h-5" />
-                  </button>
-                </div>
+                ) : (
+                  // -----------------------------
+                  // VIEW MODE (DEFAULT)
+                  // -----------------------------
+                  <div className="flex justify-between items-start gap-4">
+                    <div className="flex-1 space-y-3">
+                      <div>
+                        <p className="text-sm font-medium text-gray-500 mb-1">
+                          Question
+                        </p>
+                        <p className="text-gray-900 font-medium">
+                          {faq.question}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-medium text-gray-500 mb-1">
+                          Answer
+                        </p>
+                        <p className="text-gray-700 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                      <button
+                        type="button"
+                        onClick={() => startEditing(faq)}
+                        className="text-emerald-600 hover:text-emerald-700 p-2 rounded-lg hover:bg-emerald-50"
+                      >
+                        ✏️
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => deleteFaq(faq.id)}
+                        className="text-red-500 hover:text-red-600 p-2 rounded-lg hover:bg-red-50"
+                      >
+                        <Trash2 className="w-5 h-5" />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -212,7 +318,9 @@ export default function AdminFaqPage() {
                 <div className="flex gap-3 pt-2">
                   <button
                     type="button"
-                    disabled={loading || !faq.question.trim() || !faq.answer.trim()}
+                    disabled={
+                      loading || !faq.question.trim() || !faq.answer.trim()
+                    }
                     onClick={() => saveNewFaq(index)}
                     className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white px-5 py-2.5 rounded-lg font-medium shadow-sm transition-colors"
                   >
