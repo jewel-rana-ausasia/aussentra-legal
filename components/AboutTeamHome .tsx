@@ -108,7 +108,7 @@ export default function AboutTeamLanding() {
               const subServices = practiceAreas[area.title as keyof typeof practiceAreas] || [];
               
               return (
-                <DropdownMenu key={area.title}>
+                <DropdownMenu key={area.title} modal={false}>
                   <DropdownMenuTrigger asChild>
                     <button
                       onMouseEnter={() => setHoveredArea(area.title)}
