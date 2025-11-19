@@ -137,7 +137,11 @@ export default function Footer() {
                   </li>
 
                   <li className="w-8 h-8 lg:w-8 lg:h-8 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
-                    <a href="#">
+                    <a
+                      href="https://www.facebook.com/aussentralegal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FaFacebookF />
                     </a>
                   </li>
