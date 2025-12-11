@@ -32,7 +32,7 @@ async function main() {
   }
 
   // -----------------------------
-  // 2️⃣ Seed Navbar + NavItems
+  // 2️⃣ Seed Navbar + NavItems with Submenus
   // -----------------------------
   const navbarExists = await prisma.navbar.findFirst();
 
@@ -51,16 +51,55 @@ async function main() {
               href: "/services",
               icon: "briefcase",
               order: 3,
+              subItems: {
+                create: [
+                  {
+                    label: "Conveyancing & Property Law in NSW",
+                    href: "/services/conveyancing",
+                    order: 1,
+                  },
+                  {
+                    label: "Family Law Services",
+                    href: "/services/family-law",
+                    order: 2,
+                  },
+                  {
+                    label: "Immigration Lawyers in NSW",
+                    href: "/services/immigration-law",
+                    order: 3,
+                  },
+                  {
+                    label: "Wills, Estates & Probate",
+                    href: "/services/wills",
+                    order: 4,
+                  },
+                  {
+                    label: "Debt Recovery & Enforcement",
+                    href: "/services/debt-recovery",
+                    order: 5,
+                  },
+                  {
+                    label: "Probate Litigation & Estate Disputes",
+                    href: "/services/probate-estate",
+                    order: 6,
+                  },
+                  {
+                    label: "Insolvency & Bankruptcy Advice",
+                    href: "/services/insolvency",
+                    order: 7,
+                  },
+                ],
+              },
             },
             { label: "Faq", href: "/faq", icon: "help", order: 4 },
             { label: "Contact Us", href: "/contact", icon: "mail", order: 5 },
           ],
         },
       },
-      include: { navItems: true },
+      include: { navItems: { include: { subItems: true } } },
     });
 
-    console.log("✅ Navbar seeded with default nav items");
+    console.log("✅ Navbar seeded with default nav items and submenus");
     console.log("   Logo URL:", navbar.logoUrl);
     console.log("   CTA Text:", navbar.ctaText);
     console.log(
@@ -68,6 +107,13 @@ async function main() {
       navbar.navItems.map((i) => i.label).join(", "),
       "\n"
     );
+    const servicesNav = navbar.navItems.find((i) => i.label === "Services");
+    if (servicesNav) {
+      console.log(
+        "   Submenu Items for Services:",
+        servicesNav.subItems.map((i) => i.label).join(", ")
+      );
+    }
   } else {
     console.log("ℹ️ Navbar already exists, skipping seeding");
   }

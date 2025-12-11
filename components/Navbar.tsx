@@ -1,10 +1,176 @@
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { usePathname } from "next/navigation";
+// import { Menu, X, Home, Info, Briefcase, HelpCircle, Mail } from "lucide-react";
+
+// interface NavItem {
+//   id: string;
+//   label: string;
+//   href: string;
+//   icon?: string;
+//   order: number;
+// }
+
+// interface NavbarData {
+//   logoUrl: string;
+//   ctaText: string;
+//   ctaLink: string;
+//   navItems: NavItem[];
+// }
+
+// const iconMap: { [key: string]: React.ReactNode } = {
+//   home: <Home className="w-4 h-4 mr-2" />,
+//   info: <Info className="w-4 h-4 mr-2" />,
+//   briefcase: <Briefcase className="w-4 h-4 mr-2" />,
+//   help: <HelpCircle className="w-4 h-4 mr-2" />,
+//   mail: <Mail className="w-4 h-4 mr-2" />,
+// };
+
+// const Navbar = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [data, setData] = useState<NavbarData | null>(null);
+//   const pathname = usePathname();
+
+//   useEffect(() => {
+//     const handleScroll = () => setScrolled(window.scrollY > 50);
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   // Fetch navbar data from API
+//   useEffect(() => {
+//     fetch("/api/admin/navbar")
+//       .then((res) => res.json())
+//       .then(setData)
+//       .catch((err) => console.error(err));
+//   }, []);
+
+//   if (!data) return null; // render nothing while loading
+
+//   const handleLinkClick = () => setIsOpen(false);
+
+//   return (
+//     <nav
+//       className={`w-full z-50 transition-all duration-300 ${
+//         scrolled
+//           ? "fixed top-0 left-0 bg-[#14100c] shadow-md"
+//           : "absolute top-0 left-0 bg-transparent"
+//       }`}
+//     >
+//       <div className="max-w-7xl mx-auto flex justify-between items-center h-[85px] px-4">
+//         {/* Logo */}
+//         <Link href="/" className="flex items-center">
+//           <Image
+//             src={data.logoUrl}
+//             alt="Logo"
+//             width={180}
+//             height={80}
+//             className="h-auto w-[120px] sm:w-[150px] md:w-[180px] lg:w-[180px] xl:w-[180px] object-contain"
+//           />
+//         </Link>
+
+//         {/* Hamburger */}
+//         <button
+//           onClick={() => setIsOpen(!isOpen)}
+//           className="lg:hidden text-white text-xl focus:outline-none"
+//         >
+//           {isOpen ? <X size={20} /> : <Menu size={20} />}
+//         </button>
+
+//         {/* Nav Links */}
+//         <div
+//           className={`${
+//             isOpen
+//               ? "block absolute top-[85px] left-0 w-full bg-[#14100c] p-6"
+//               : "hidden"
+//           } lg:flex lg:items-center lg:static lg:w-auto lg:bg-transparent transition-all duration-300`}
+//         >
+//           <ul className="flex flex-col lg:flex-row lg:items-center gap-6 text-[18px]">
+//             {data.navItems.map((item) => (
+//               <li key={item.id}>
+//                 <Link
+//                   href={item.href}
+//                   onClick={handleLinkClick}
+//                   className={`flex items-center hover:text-primary ${
+//                     pathname === item.href ? "text-primary" : "text-white"
+//                   }`}
+//                 >
+//                   {item.icon && (
+//                     <span className="block lg:hidden">
+//                       {iconMap[item.icon]}
+//                     </span>
+//                   )}
+//                   <span>{item.label}</span>
+//                 </Link>
+//               </li>
+//             ))}
+//           </ul>
+
+//           {/* CTA Button */}
+//           <div className="mt-6 lg:mt-0 lg:ml-8">
+//             <Link
+//               href={data.ctaLink}
+//               onClick={handleLinkClick}
+//               className="border border-primary text-white px-5 py-3 text-sm rounded-full hover:bg-[#ac835d] transition-all"
+//             >
+//               {data.ctaText}
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Home, Info, Briefcase, HelpCircle, Mail } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  Info,
+  Briefcase,
+  HelpCircle,
+  Mail,
+  ChevronDown,
+} from "lucide-react";
+
+interface SubNavItem {
+  id: string;
+  label: string;
+  href: string;
+  icon?: string;
+  order: number;
+}
 
 interface NavItem {
   id: string;
@@ -12,6 +178,7 @@ interface NavItem {
   href: string;
   icon?: string;
   order: number;
+  subItems?: SubNavItem[];
 }
 
 interface NavbarData {
@@ -33,7 +200,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [data, setData] = useState<NavbarData | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const pathname = usePathname();
+  const submenuTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -41,7 +210,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Fetch navbar data from API
   useEffect(() => {
     fetch("/api/admin/navbar")
       .then((res) => res.json())
@@ -49,9 +217,18 @@ const Navbar = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  if (!data) return null; // render nothing while loading
+  if (!data) return null;
 
   const handleLinkClick = () => setIsOpen(false);
+
+  const handleMouseEnter = (id: string) => {
+    if (submenuTimeout.current) clearTimeout(submenuTimeout.current);
+    setActiveSubmenu(id);
+  };
+
+  const handleMouseLeave = () => {
+    submenuTimeout.current = setTimeout(() => setActiveSubmenu(null), 300); // 300ms delay
+  };
 
   return (
     <nav
@@ -78,7 +255,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden text-white text-xl focus:outline-none"
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
         {/* Nav Links */}
@@ -91,21 +268,57 @@ const Navbar = () => {
         >
           <ul className="flex flex-col lg:flex-row lg:items-center gap-6 text-[18px]">
             {data.navItems.map((item) => (
-              <li key={item.id}>
+              <li
+                key={item.id}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(item.id)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Link
                   href={item.href}
                   onClick={handleLinkClick}
-                  className={`flex items-center hover:text-primary ${
+                  className={`flex items-center hover:text-primary transition-colors ${
                     pathname === item.href ? "text-primary" : "text-white"
                   }`}
                 >
                   {item.icon && (
-                    <span className="block lg:hidden">
-                      {iconMap[item.icon]}
-                    </span>
+                    <span className="block lg:hidden">{iconMap[item.icon]}</span>
                   )}
                   <span>{item.label}</span>
+                  {item.subItems && item.subItems.length > 0 && (
+                    <ChevronDown className="w-3 h-3 ml-1" />
+                  )}
                 </Link>
+
+                {/* Submenu */}
+                {item.subItems && item.subItems.length > 0 && (
+                  <ul
+                    className={`absolute -left-20 top-full mt-3 bg-[#14100c] shadow-xl rounded-lg min-w-[350px] z-50 overflow-hidden transition-all duration-200 ${
+                      activeSubmenu === item.id
+                        ? "opacity-100 visible translate-y-0"
+                        : "opacity-0 invisible -translate-y-2"
+                    }`}
+                  >
+                    {item.subItems
+                      .sort((a, b) => a.order - b.order)
+                      .map((sub) => (
+                        <li key={sub.id}>
+                          <Link
+                            href={sub.href}
+                            onClick={handleLinkClick}
+                            className={`block px-5 py-3 hover:bg-[#ac835d] hover:text-white transition-colors ${
+                              pathname === sub.href
+                                ? "text-primary"
+                                : "text-white"
+                            }`}
+                          >
+                            {sub.label}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                )}
+                
               </li>
             ))}
           </ul>

@@ -81,6 +81,18 @@ model NavItem {
   href     String
   icon     String?
   order    Int
+  subItems SubNavItem[] // One-to-many relation to submenu
+
+}
+
+model SubNavItem {
+  id        String   @id @default(cuid())
+  navItem   NavItem  @relation(fields: [navItemId], references: [id])
+  navItemId String
+  label     String
+  href      String
+  icon      String?
+  order     Int
 }
 
 
