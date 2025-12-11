@@ -225,10 +225,16 @@ async function main() {
         heroImage: "/services/conveyancing-banner.jpg",
         sections: [
           {
-            title: "Easy and Stress-Free Conveyancing Services",
+            title:
+              "Buying or selling property? Our conveyancing lawyers handle:",
             paragraphs: [
-              "We help you buy or sell property without the stress. Our team focuses only on conveyancing, which means we handle everything from start to finish quickly, safely, and clearly.",
-              "Whether you're buying your first home, selling a property, or growing your investment portfolio, our team is here to guide you every step of the way.",
+              "We ensure your property deal is smooth, compliant, and stress-free.",
+            ],
+            listItems: [
+              { text: "Residential and commercial transactions" },
+              { text: "Contract review and negotiation" },
+              { text: "Title searches and settlement coordination" },
+              { text: "Off-the-plan purchases and property transfers" },
             ],
           },
           {
@@ -312,101 +318,6 @@ async function main() {
       },
     },
 
-    // 2️⃣ Debt Recovery
-    {
-      id: "debt-recovery",
-      title: "Debt Recovery & Enforcement",
-      slug: "debt-recovery",
-      image: "/services/debt-recovery-thum.jpg",
-      page: {
-        title: "Debt Recovery & Enforcement",
-        description:
-          "Professional and stress-free debt recovery services for individuals, small businesses, and large companies.",
-        heroImage: "/services/debt-recovery-banner.jpg",
-        sections: [
-          {
-            title: "Debt Recovery Made Simple",
-            paragraphs: [
-              "At Aussentra Legal, we make debt recovery simple, professional, and stress-free. Whether you're an individual, a small business, or a large company, our experienced team helps you recover what you're owed quickly and effectively.",
-              "We understand that unpaid debts can impact your cash flow and peace of mind. That’s why we use smart strategies and legal tools to get results without wasting your time or money.",
-            ],
-          },
-          {
-            title: "Why Choose Aussentra Legal for Debt Recovery?",
-            paragraphs: [],
-            listItems: [
-              { text: "Expert legal team specialising in debt recovery" },
-              { text: "No recovery, no commission" },
-              { text: "Clear, honest advice before you commit" },
-              { text: "Fast and effective communication" },
-              { text: "Online portal to track and manage your case" },
-              { text: "Legal support from start to finish" },
-            ],
-          },
-          {
-            title: "Our Debt Recovery Services",
-            paragraphs: [
-              "We help with all types of unpaid debts across a wide range of industries:",
-            ],
-            listItems: [
-              {
-                text: "Personal Debt Recovery – Let us handle uncomfortable situations professionally and respectfully so you don’t have to.",
-              },
-              {
-                text: "Small Business Debt Recovery – We help tradespeople, professionals, and small business owners recover overdue invoices efficiently.",
-              },
-              {
-                text: "Commercial Debt Recovery – If you’re dealing with large or complex unpaid debts, our tailored approach gives you the best chance of recovery.",
-              },
-              {
-                text: "Legal Debt Recovery Support – When legal action is needed, our skilled lawyers manage the process and represent your interests every step of the way.",
-              },
-            ],
-          },
-          {
-            title: "Our Debt Recovery Process",
-            paragraphs: [],
-            listItems: [
-              {
-                text: "Demand for Payment – We contact the debtor through email, phone, or letter with a firm but fair request for payment.",
-              },
-              {
-                text: "Negotiation – If the debtor responds, we negotiate a payment or instalment plan on your behalf.",
-              },
-              {
-                text: "Legal Action – If required, our legal team steps in to take strong action backed by clear advice and full support.",
-              },
-            ],
-          },
-          {
-            title: "Ready to Recover What You're Owed?",
-            paragraphs: [
-              "Let Aussentra Legal help you take control of your debt recovery. We’ll guide you through the process with care, honesty, and results that matter.",
-              "Get in touch today for expert advice or to start your debt recovery journey with no recovery, no commission.",
-            ],
-          },
-        ],
-        meta: {
-          title: "Debt Recovery Services | Expert Legal Support",
-          description:
-            "Get professional debt recovery services from Aussentra Legal. Recover debts efficiently and stress-free with our expert legal team.",
-          keywords: [
-            "debt recovery",
-            "unpaid debts",
-            "commercial debt",
-            "legal recovery",
-            "business debt recovery",
-            "personal debt recovery",
-          ],
-        },
-        cta: {
-          text: "Ready to recover what you're owed? Contact our debt recovery team today.",
-          buttonText: "Get Free Quote",
-          link: "/contact",
-        },
-      },
-    },
-
     // 3️⃣ Family Law
     {
       id: "family-law",
@@ -419,6 +330,19 @@ async function main() {
           "Expert family law legal support for separation, divorce, child custody, and property matters with care and respect.",
         heroImage: "/services/family-law-banner.jpg",
         sections: [
+          {
+            title:
+              "We Support Families Through Life’s Transitions With Care and Clarity:",
+            paragraphs: [
+              "Our family lawyers aim for fair outcomes while protecting your rights.",
+            ],
+            listItems: [
+              { text: "Divorce and separation" },
+              { text: "Parenting arrangements and custody" },
+              { text: "Property settlements and financial agreements" },
+              { text: "Domestic violence orders" },
+            ],
+          },
           {
             title: "Understanding Family Law",
             paragraphs: [
@@ -513,6 +437,19 @@ async function main() {
         heroImage: "/services/immigration-law-banner.jpg",
         sections: [
           {
+            title:
+              "Need Help With Your Visa or Migration Matter? We assist with:",
+            paragraphs: [
+              "We stay up to date with immigration law to support your journey.",
+            ],
+            listItems: [
+              { text: "Partner, parent, and skilled visas" },
+              { text: "Employer-sponsored and business visas" },
+              { text: "Visa refusals and cancellations" },
+              { text: "Tribunal appeals and ministerial intervention" },
+            ],
+          },
+          {
             title: " Immigration Lawyers in NSW",
             paragraphs: [
               "Immigration rules can be confusing and change often. That’s why it's important to get clear, expert advice you can trust. Our team of immigration lawyers is here to guide you through every step, so you can live, work, study, or retire in Australia with confidence.",
@@ -600,107 +537,228 @@ async function main() {
       },
     },
 
-    // 5️⃣ Insolvency Services
+    // 7️⃣ Wills & Estate Services
     {
-      id: "insolvency",
-      title: " Insolvency & Bankruptcy Advice",
-      slug: "insolvency",
-      image: "/services/insolvency-thum.jpg",
+      id: "wills",
+      title: " Wills, Estates & Probate",
+      slug: "wills",
+      image: "/services/wills-thum.jpg",
       page: {
-        title: " Insolvency & Bankruptcy Advice",
+        title: " Wills, Estates & Probate",
         description:
-          "Professional insolvency legal support to help businesses, directors, and creditors navigate financial difficulties.",
-        heroImage: "/services/insolvency-banner.jpg",
+          "Create clear and legally sound Wills and estate plans to protect your family and assets with expert guidance from Aussentra Legal.",
+        heroImage: "/services/wills-banner.jpg",
         sections: [
           {
-            title: "Understanding Insolvency",
+            title: "Plan Ahead and Protect Your Legacy:",
             paragraphs: [
-              "Every year, thousands of businesses in Australia find themselves in financial trouble. If a business can’t pay its debts when they’re due, it may be facing insolvency.",
-              "At Aussentra Legal, we understand how stressful this can be. That’s why we offer friendly, professional legal support to help you explore your options, protect your rights, and take the right steps forward whether you’re a business owner, company director, or creditor.",
+              "We help ensure your wishes are respected and your loved ones supported.",
+            ],
+            listItems: [
+              { text: "Drafting wills and powers of attorney" },
+              { text: "Estate planning and asset protection" },
+              { text: "Probate and letters of administration" },
+              { text: "Estate disputes and family provision claims" },
             ],
           },
           {
-            title: "What Is Insolvency?",
+            title: "Planning Your Will",
             paragraphs: [
-              "In simple terms, insolvency means your business can’t pay its bills on time. This can happen to companies (corporate insolvency) or individuals (personal insolvency).",
-              "When a business becomes insolvent, it’s important to act fast. Waiting too long can make things worse and could put directors at risk of legal penalties.",
+              "Planning what happens to your assets and family after you pass away isn’t always easy to think about but it’s one of the most important things you can do for the people you care about.",
+              "At Aussentra Legal, we help individuals and families across Sydney create clear, legally sound Wills and estate plans that give peace of mind, protect assets, and make life easier for loved ones during difficult times. Whether you need a basic Will or a complete estate plan, our team is here to support you every step of the way.",
             ],
           },
           {
-            title: "Types of Insolvency Services We Offer",
+            title: "What Is a Will and Why Do You Need One?",
             paragraphs: [
-              "At Aussentra Legal, we help guide you through different types of insolvency processes, including:",
+              "A Will is a legal document that explains what should happen to your belongings like your home, money, superannuation, and personal items after you pass away. It also lets you:",
             ],
             listItems: [
               {
-                text: "Voluntary Administration – Directors can appoint an external administrator to pause and restructure debts.",
+                text: "Name the people (called beneficiaries) who will receive your assets",
               },
               {
-                text: "Creditors’ Voluntary Liquidation (CVL) – Properly close down a business and fairly pay creditors.",
+                text: "Appoint a trusted person (called an executor) to carry out your wishes",
               },
               {
-                text: "Court Liquidation – A creditor applies to court to shut down a company and a liquidator is appointed.",
+                text: "Choose guardians for your children if they’re under 18",
               },
               {
-                text: "Receivership – A secured creditor appoints a receiver to sell assets and repay debt.",
-              },
-              {
-                text: "Simplified Liquidation – Quick, affordable closure of small businesses meeting criteria.",
-              },
-              {
-                text: "Small Business Restructuring – Create a payment plan with creditors while keeping owners in control.",
-              },
-              {
-                text: "Turnaround Management – Review, plan, and recover struggling businesses before closure.",
-              },
-              {
-                text: "Members’ Voluntary Liquidation (MVL) – Close solvent businesses and distribute remaining assets legally.",
-              },
-              {
-                text: "Voidable Transactions – Protect your rights if a liquidator tries to claw back payments.",
+                text: "Give gifts, donations, or instructions that are important to you",
               },
             ],
           },
           {
-            title: "Early Warning Signs of Insolvency",
+            title: "Consequences of Not Having a Will",
             paragraphs: [
-              "If these sound familiar, it’s time to get legal advice.",
+              "If you don’t have a Will, your estate is handled under intestacy laws. This means the law decides how your estate is divided, and it may not match what you would have wanted. It can also create unnecessary delays, costs, or disputes among family members.",
+            ],
+          },
+          {
+            title: "Wills & Estate Services at Aussentra Legal",
+            paragraphs: [
+              "We can assist with a wide range of estate planning needs, from creating new Wills to managing estates after someone passes.",
             ],
             listItems: [
-              { text: "Constant cash flow problems" },
-              { text: "Missed payments or unpaid invoices" },
-              { text: "Overdue taxes or superannuation" },
-              { text: "Creditors chasing money or threatening legal action" },
+              { text: "Writing or updating a Will" },
               {
-                text: "Directors using personal funds to keep the business going",
+                text: "Creating Powers of Attorney and Enduring Guardian appointments",
+              },
+              { text: "Superannuation advice in estate planning" },
+              { text: "Setting up testamentary and special disability trusts" },
+              { text: "Probate and Letters of Administration" },
+              { text: "Managing and distributing a loved one’s estate" },
+              { text: "Estate disputes (challenging or defending a Will)" },
+              {
+                text: "Removing an executor or resolving disputes between family members",
               },
             ],
           },
           {
-            title: "Obligation-Free Consultation",
+            title: "Why Choose Aussentra Legal?",
             paragraphs: [
-              "At Aussentra Legal, we know how overwhelming financial difficulties can be. That’s why we offer clear, compassionate, and expert legal advice with no judgment and no jargon.",
-              "Whether your business can be saved or needs a respectful, legal exit, our experienced team is here to help.",
-              "Call us now for a free consultation or visit our website to learn more about how our Insolvency Services can support you or your clients.",
+              "We provide clear, compassionate, and practical legal advice to make estate planning and Wills simple, secure, and stress-free.",
+            ],
+            listItems: [
+              { text: "Clear advice without legal jargon" },
+              { text: "Friendly and approachable lawyers" },
+              { text: "Support with simple and complex estates" },
+              { text: "Affordable, transparent pricing" },
+              { text: "Local experience with Sydney and NSW laws" },
+              { text: "Respectful support during emotional times" },
+              { text: "Free secure storage of your Will" },
+            ],
+          },
+          {
+            title: "Let’s Make Planning Easier – Talk to Us Today",
+            paragraphs: [
+              "At Aussentra Legal, we believe everyone deserves to have their wishes respected and their family protected. Whether you’re making your first Will, updating one after a major life change, or need help with a loved one’s estate, we’re here to guide you with care, clarity, and compassion.",
+              "Call us now or book a free consultation online. Let’s make your estate planning simple, personal, and stress-free.",
             ],
           },
         ],
         meta: {
-          title: "Insolvency Services | Expert Legal Support for Businesses",
+          title: "Wills & Estate Services | Sydney Estate Planning Lawyers",
           description:
-            "Aussentra Legal provides professional insolvency advice and legal support for businesses, directors, and creditors facing financial difficulties.",
+            "Aussentra Legal helps you create Wills and estate plans to protect your family and assets, offering expert advice for simple or complex estates.",
           keywords: [
-            "insolvency",
-            "corporate insolvency",
-            "personal insolvency",
-            "liquidation",
-            "administration",
-            "business restructuring",
+            "wills",
+            "estate planning",
+            "Sydney lawyers",
+            "executor",
+            "beneficiaries",
+            "probate",
+            "estate disputes",
           ],
         },
         cta: {
-          text: "Facing financial difficulties? Contact our insolvency team today for a free consultation.",
-          buttonText: "Get Free Consultation",
+          text: "Need help with a Will or estate plan? Contact our expert team today.",
+          buttonText: "Book Free Consultation",
+          link: "/contact",
+        },
+      },
+    },
+
+    // 2️⃣ Debt Recovery
+    {
+      id: "debt-recovery",
+      title: "Debt Recovery & Enforcement",
+      slug: "debt-recovery",
+      image: "/services/debt-recovery-thum.jpg",
+      page: {
+        title: "Debt Recovery & Enforcement",
+        description:
+          "Professional and stress-free debt recovery services for individuals, small businesses, and large companies.",
+        heroImage: "/services/debt-recovery-banner.jpg",
+        sections: [
+          {
+            title: "Recover What You’re Owed With Confidence:",
+            paragraphs: ["We act swiftly to protect your financial interests."],
+            listItems: [
+              { text: "Letters of demand" },
+              { text: "Court proceedings and enforcement" },
+              { text: "Bankruptcy and winding-up actions" },
+              { text: "Negotiated settlements" },
+            ],
+          },
+          {
+            title: "Debt Recovery Made Simple",
+            paragraphs: [
+              "At Aussentra Legal, we make debt recovery simple, professional, and stress-free. Whether you're an individual, a small business, or a large company, our experienced team helps you recover what you're owed quickly and effectively.",
+              "We understand that unpaid debts can impact your cash flow and peace of mind. That’s why we use smart strategies and legal tools to get results without wasting your time or money.",
+            ],
+          },
+          {
+            title: "Why Choose Aussentra Legal for Debt Recovery?",
+            paragraphs: [],
+            listItems: [
+              { text: "Expert legal team specialising in debt recovery" },
+              { text: "No recovery, no commission" },
+              { text: "Clear, honest advice before you commit" },
+              { text: "Fast and effective communication" },
+              { text: "Online portal to track and manage your case" },
+              { text: "Legal support from start to finish" },
+            ],
+          },
+          {
+            title: "Our Debt Recovery Services",
+            paragraphs: [
+              "We help with all types of unpaid debts across a wide range of industries:",
+            ],
+            listItems: [
+              {
+                text: "Personal Debt Recovery – Let us handle uncomfortable situations professionally and respectfully so you don’t have to.",
+              },
+              {
+                text: "Small Business Debt Recovery – We help tradespeople, professionals, and small business owners recover overdue invoices efficiently.",
+              },
+              {
+                text: "Commercial Debt Recovery – If you’re dealing with large or complex unpaid debts, our tailored approach gives you the best chance of recovery.",
+              },
+              {
+                text: "Legal Debt Recovery Support – When legal action is needed, our skilled lawyers manage the process and represent your interests every step of the way.",
+              },
+            ],
+          },
+          {
+            title: "Our Debt Recovery Process",
+            paragraphs: [],
+            listItems: [
+              {
+                text: "Demand for Payment – We contact the debtor through email, phone, or letter with a firm but fair request for payment.",
+              },
+              {
+                text: "Negotiation – If the debtor responds, we negotiate a payment or instalment plan on your behalf.",
+              },
+              {
+                text: "Legal Action – If required, our legal team steps in to take strong action backed by clear advice and full support.",
+              },
+            ],
+          },
+          {
+            title: "Ready to Recover What You're Owed?",
+            paragraphs: [
+              "Let Aussentra Legal help you take control of your debt recovery. We’ll guide you through the process with care, honesty, and results that matter.",
+              "Get in touch today for expert advice or to start your debt recovery journey with no recovery, no commission.",
+            ],
+          },
+        ],
+        meta: {
+          title: "Debt Recovery Services | Expert Legal Support",
+          description:
+            "Get professional debt recovery services from Aussentra Legal. Recover debts efficiently and stress-free with our expert legal team.",
+          keywords: [
+            "debt recovery",
+            "unpaid debts",
+            "commercial debt",
+            "legal recovery",
+            "business debt recovery",
+            "personal debt recovery",
+          ],
+        },
+        cta: {
+          text: "Ready to recover what you're owed? Contact our debt recovery team today.",
+          buttonText: "Get Free Quote",
           link: "/contact",
         },
       },
@@ -718,6 +776,17 @@ async function main() {
           "Compassionate and professional legal assistance for executors, administrators, and beneficiaries in probate and estate administration matters.",
         heroImage: "/services/probate-and-estate-banner.jpg",
         sections: [
+          {
+            title: "Disputes Over Wills and Estates? We Represent:",
+            paragraphs: [
+              "We resolve estate disputes with strategy and empathy.",
+            ],
+            listItems: [
+              { text: "Executors, beneficiaries, and claimants" },
+              { text: "Contested probate and family provision claims" },
+              { text: "Mediation and Supreme Court litigation" },
+            ],
+          },
           {
             title: "Understanding Probate & Estate Law",
             paragraphs: [
@@ -814,111 +883,119 @@ async function main() {
       },
     },
 
-    // 7️⃣ Wills & Estate Services
+    // 5️⃣ Insolvency Services
     {
-      id: "wills",
-      title: " Wills, Estates & Probate",
-      slug: "wills",
-      image: "/services/wills-thum.jpg",
+      id: "insolvency",
+      title: " Insolvency & Bankruptcy Advice",
+      slug: "insolvency",
+      image: "/services/insolvency-thum.jpg",
       page: {
-        title: " Wills, Estates & Probate",
+        title: " Insolvency & Bankruptcy Advice",
         description:
-          "Create clear and legally sound Wills and estate plans to protect your family and assets with expert guidance from Aussentra Legal.",
-        heroImage: "/services/wills-banner.jpg",
+          "Professional insolvency legal support to help businesses, directors, and creditors navigate financial difficulties.",
+        heroImage: "/services/insolvency-banner.jpg",
         sections: [
           {
-            title: "Planning Your Will",
+            title: "Facing Financial Distress? We Advise On:",
             paragraphs: [
-              "Planning what happens to your assets and family after you pass away isn’t always easy to think about but it’s one of the most important things you can do for the people you care about.",
-              "At Aussentra Legal, we help individuals and families across Sydney create clear, legally sound Wills and estate plans that give peace of mind, protect assets, and make life easier for loved ones during difficult times. Whether you need a basic Will or a complete estate plan, our team is here to support you every step of the way.",
+              "We help individuals and businesses navigate insolvency with dignity.",
+            ],
+            listItems: [
+              { text: "Personal bankruptcy and debt agreements" },
+              { text: "Corporate insolvency and liquidation" },
+              { text: "Director duties and restructuring" },
+              { text: "Creditor negotiations" },
             ],
           },
           {
-            title: "What Is a Will and Why Do You Need One?",
+            title: "Understanding Insolvency",
             paragraphs: [
-              "A Will is a legal document that explains what should happen to your belongings like your home, money, superannuation, and personal items after you pass away. It also lets you:",
+              "Every year, thousands of businesses in Australia find themselves in financial trouble. If a business can’t pay its debts when they’re due, it may be facing insolvency.",
+              "At Aussentra Legal, we understand how stressful this can be. That’s why we offer friendly, professional legal support to help you explore your options, protect your rights, and take the right steps forward whether you’re a business owner, company director, or creditor.",
+            ],
+          },
+          {
+            title: "What Is Insolvency?",
+            paragraphs: [
+              "In simple terms, insolvency means your business can’t pay its bills on time. This can happen to companies (corporate insolvency) or individuals (personal insolvency).",
+              "When a business becomes insolvent, it’s important to act fast. Waiting too long can make things worse and could put directors at risk of legal penalties.",
+            ],
+          },
+          {
+            title: "Types of Insolvency Services We Offer",
+            paragraphs: [
+              "At Aussentra Legal, we help guide you through different types of insolvency processes, including:",
             ],
             listItems: [
               {
-                text: "Name the people (called beneficiaries) who will receive your assets",
+                text: "Voluntary Administration – Directors can appoint an external administrator to pause and restructure debts.",
               },
               {
-                text: "Appoint a trusted person (called an executor) to carry out your wishes",
+                text: "Creditors’ Voluntary Liquidation (CVL) – Properly close down a business and fairly pay creditors.",
               },
               {
-                text: "Choose guardians for your children if they’re under 18",
+                text: "Court Liquidation – A creditor applies to court to shut down a company and a liquidator is appointed.",
               },
               {
-                text: "Give gifts, donations, or instructions that are important to you",
+                text: "Receivership – A secured creditor appoints a receiver to sell assets and repay debt.",
+              },
+              {
+                text: "Simplified Liquidation – Quick, affordable closure of small businesses meeting criteria.",
+              },
+              {
+                text: "Small Business Restructuring – Create a payment plan with creditors while keeping owners in control.",
+              },
+              {
+                text: "Turnaround Management – Review, plan, and recover struggling businesses before closure.",
+              },
+              {
+                text: "Members’ Voluntary Liquidation (MVL) – Close solvent businesses and distribute remaining assets legally.",
+              },
+              {
+                text: "Voidable Transactions – Protect your rights if a liquidator tries to claw back payments.",
               },
             ],
           },
           {
-            title: "Consequences of Not Having a Will",
+            title: "Early Warning Signs of Insolvency",
             paragraphs: [
-              "If you don’t have a Will, your estate is handled under intestacy laws. This means the law decides how your estate is divided, and it may not match what you would have wanted. It can also create unnecessary delays, costs, or disputes among family members.",
-            ],
-          },
-          {
-            title: "Wills & Estate Services at Aussentra Legal",
-            paragraphs: [
-              "We can assist with a wide range of estate planning needs, from creating new Wills to managing estates after someone passes.",
+              "If these sound familiar, it’s time to get legal advice.",
             ],
             listItems: [
-              { text: "Writing or updating a Will" },
+              { text: "Constant cash flow problems" },
+              { text: "Missed payments or unpaid invoices" },
+              { text: "Overdue taxes or superannuation" },
+              { text: "Creditors chasing money or threatening legal action" },
               {
-                text: "Creating Powers of Attorney and Enduring Guardian appointments",
-              },
-              { text: "Superannuation advice in estate planning" },
-              { text: "Setting up testamentary and special disability trusts" },
-              { text: "Probate and Letters of Administration" },
-              { text: "Managing and distributing a loved one’s estate" },
-              { text: "Estate disputes (challenging or defending a Will)" },
-              {
-                text: "Removing an executor or resolving disputes between family members",
+                text: "Directors using personal funds to keep the business going",
               },
             ],
           },
           {
-            title: "Why Choose Aussentra Legal?",
+            title: "Obligation-Free Consultation",
             paragraphs: [
-              "We provide clear, compassionate, and practical legal advice to make estate planning and Wills simple, secure, and stress-free.",
-            ],
-            listItems: [
-              { text: "Clear advice without legal jargon" },
-              { text: "Friendly and approachable lawyers" },
-              { text: "Support with simple and complex estates" },
-              { text: "Affordable, transparent pricing" },
-              { text: "Local experience with Sydney and NSW laws" },
-              { text: "Respectful support during emotional times" },
-              { text: "Free secure storage of your Will" },
-            ],
-          },
-          {
-            title: "Let’s Make Planning Easier – Talk to Us Today",
-            paragraphs: [
-              "At Aussentra Legal, we believe everyone deserves to have their wishes respected and their family protected. Whether you’re making your first Will, updating one after a major life change, or need help with a loved one’s estate, we’re here to guide you with care, clarity, and compassion.",
-              "Call us now or book a free consultation online. Let’s make your estate planning simple, personal, and stress-free.",
+              "At Aussentra Legal, we know how overwhelming financial difficulties can be. That’s why we offer clear, compassionate, and expert legal advice with no judgment and no jargon.",
+              "Whether your business can be saved or needs a respectful, legal exit, our experienced team is here to help.",
+              "Call us now for a free consultation or visit our website to learn more about how our Insolvency Services can support you or your clients.",
             ],
           },
         ],
         meta: {
-          title: "Wills & Estate Services | Sydney Estate Planning Lawyers",
+          title: "Insolvency Services | Expert Legal Support for Businesses",
           description:
-            "Aussentra Legal helps you create Wills and estate plans to protect your family and assets, offering expert advice for simple or complex estates.",
+            "Aussentra Legal provides professional insolvency advice and legal support for businesses, directors, and creditors facing financial difficulties.",
           keywords: [
-            "wills",
-            "estate planning",
-            "Sydney lawyers",
-            "executor",
-            "beneficiaries",
-            "probate",
-            "estate disputes",
+            "insolvency",
+            "corporate insolvency",
+            "personal insolvency",
+            "liquidation",
+            "administration",
+            "business restructuring",
           ],
         },
         cta: {
-          text: "Need help with a Will or estate plan? Contact our expert team today.",
-          buttonText: "Book Free Consultation",
+          text: "Facing financial difficulties? Contact our insolvency team today for a free consultation.",
+          buttonText: "Get Free Consultation",
           link: "/contact",
         },
       },

@@ -34,20 +34,39 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
           {/* Left Content */}
           <div className="space-y-6 flex flex-col justify-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-center lg:text-left text-gray-900 leading-tight font-playfair">
+            <h2 className="text-2xl md:text-3xl font-bold text-center lg:text-left text-black leading-tight font-playfair">
               {about.title}{" "}
               {about.subtitle && (
                 <span className="text-primary italic">{about.subtitle}</span>
               )}
             </h2>
 
-            <p className="text-black leading-relaxed text-sm lg:text-base">
+            {/*  <p className="text-black leading-relaxed text-sm lg:text-base">
               {about.description_one}
             </p>
 
             <p className="text-black leading-relaxed text-sm lg:text-base">
               {about.description_two}
-            </p>
+            </p> */}
+
+            <div className="space-y-4 text-black leading-relaxed">
+              <p>
+                Welcome to Aussentra Legal, your local legal partner in New
+                South Wales. We provide clear, practical, and results-driven
+                legal services across key areas including
+                <strong> conveyancing</strong>, <strong>family law</strong>,{" "}
+                <strong>immigration</strong>,<strong> wills and estates</strong>
+                , <strong>debt recovery</strong>,
+                <strong> probate litigation</strong>, and{" "}
+                <strong>insolvency</strong>.
+              </p>
+
+              <p>
+                Whether you're buying a home, resolving a family dispute,
+                applying for a visa, or managing estate matters, our experienced
+                lawyers are here to guide you every step of the way.
+              </p>
+            </div>
 
             <ul className="space-y-3">
               {about.listItems.map((item, idx) => (
@@ -55,7 +74,7 @@ export default function AboutSection() {
                   <div className="text-[#ac835d] mt-1">
                     <Check className="w-5 h-5" />
                   </div>
-                  <p className="text-gray-800 text-base lg:text-lg">{item}</p>
+                  <p className="text-black text-base lg:text-lg">{item}</p>
                 </li>
               ))}
             </ul>

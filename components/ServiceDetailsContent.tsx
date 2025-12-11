@@ -47,14 +47,14 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections 
       <div className="max-w-4xl mx-auto">
         {sections.map((section, index) => (
           <div key={index} className={section.className || 'mb-12 last:mb-0'}>
-            <h4 className="text-3xl font-semibold text-gray-700 mb-6">
+            <h4 className="text-3xl font-semibold text-black mb-6">
               {section.title}
             </h4>
             
             {section.paragraphs && section.paragraphs?.map((paragraph, pIndex) => (
               <p 
                 key={pIndex} 
-                className="text-gray-600 leading-relaxed mb-5 text-justify font-light"
+                className="text-slate-900 leading-relaxed mb-5 text-justify font-light"
               >
                 {paragraph}
               </p>
@@ -82,7 +82,7 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections 
                       </span>
                     </div>
                     <div className="flex-1">
-                      <p className="text-gray-800 font-medium">{item.text}</p>
+                      <p className="text-black font-semibold">{item.text}</p>
                     </div>
                   </li>
                 ))}

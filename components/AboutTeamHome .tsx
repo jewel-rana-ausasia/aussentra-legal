@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { Scale, FileText, Home, ArrowRight, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { Scale, FileText, Home, ArrowRight, ChevronDown } from "lucide-react";
+import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -12,8 +12,8 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
   DropdownMenuItem,
-} from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 export default function AboutTeamLanding() {
   const [hoveredArea, setHoveredArea] = useState<string | null>(null);
@@ -23,20 +23,20 @@ export default function AboutTeamLanding() {
       "Skilled Migration Visas",
       "Family Sponsorship",
       "Migration Appeals",
-      "Visa Compliance"
+      "Visa Compliance",
     ],
     "Property & Conveyancing": [
       "Residential Conveyancing",
       "Commercial Property",
       "Property Disputes",
-      "Land Titles"
+      "Land Titles",
     ],
     "Commercial & Civil Law": [
       "Contract Drafting",
       "Commercial Disputes",
       "Business Transactions",
-      "Litigation Support"
-    ]
+      "Litigation Support",
+    ],
   };
 
   const topAreas = [
@@ -58,7 +58,7 @@ export default function AboutTeamLanding() {
   ];
 
   return (
-    <section className="bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8 font-playfair">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-14 flex flex-col justify-center items-center">
@@ -83,15 +83,17 @@ export default function AboutTeamLanding() {
               <p className="text-primary font-semibold mb-3">
                 Principal Solicitor & Migration Specialist
               </p>
-              <p className="text-foreground/80 text-sm leading-relaxed">
-                Admitted solicitor with proven expertise in migration,
-                property, and commercial law. Client-focused approach with
-                strong drafting and advocacy skills.
+              <p className="text-black text-sm leading-relaxed">
+                Admitted solicitor with proven expertise in migration, property,
+                and commercial law. Client-focused approach with strong drafting
+                and advocacy skills.
               </p>
             </div>
             <div className="flex-shrink-0 text-left md:text-right bg-primary/5 rounded-lg p-6">
               <p className="text-4xl font-bold text-primary">17+</p>
-              <p className="text-sm text-muted-foreground font-medium">Years Experience</p>
+              <p className="text-sm text-muted-foreground font-medium">
+                Years Experience
+              </p>
             </div>
           </div>
         </div>
@@ -100,13 +102,14 @@ export default function AboutTeamLanding() {
           <h3 className="text-xl font-serif font-bold text-foreground mb-6">
             Practice Areas
           </h3>
-          
+
           {/* Practice Areas Grid with Dropdown Menu */}
           <div className="grid md:grid-cols-3 gap-4">
             {topAreas.map((area) => {
               const Icon = area.icon;
-              const subServices = practiceAreas[area.title as keyof typeof practiceAreas] || [];
-              
+              const subServices =
+                practiceAreas[area.title as keyof typeof practiceAreas] || [];
+
               return (
                 <DropdownMenu key={area.title} modal={false}>
                   <DropdownMenuTrigger asChild>
@@ -120,12 +123,12 @@ export default function AboutTeamLanding() {
                         {area.title}
                         <ChevronDown className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </h4>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-slate-950">
                         {area.description}
                       </p>
                     </button>
                   </DropdownMenuTrigger>
-                  
+
                   <DropdownMenuContent align="start" className="w-56">
                     <DropdownMenuLabel className="font-semibold text-primary">
                       {area.title}
@@ -150,13 +153,13 @@ export default function AboutTeamLanding() {
             <h3 className="text-xl font-serif font-bold mb-2">
               Ready to Discuss Your Legal Needs?
             </h3>
-            <p className="text-primary-foreground/90 text-sm">
+            <p className="text-slate-950 text-sm">
               Get expert guidance tailored to your situation
             </p>
           </div>
           <a
             href="mailto:info@aussentralegal.com.au"
-            className="inline-flex items-center gap-2 bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-primary-foreground text-black px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow whitespace-nowrap"
           >
             Get in Touch
             <ArrowRight className="w-4 h-4" />

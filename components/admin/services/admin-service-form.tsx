@@ -1,24 +1,26 @@
 "use client";
 
 import type React from "react";
-
 import { useEffect, useState } from "react";
 import { Plus, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import SectionEditor from "./section-editor";
-import { toast } from "sonner"; // <-- Sonner toast
+import { toast } from "sonner";
 
 interface Paragraph {
+  id?: string;
   text: string;
 }
 
 interface ListItem {
+  id?: string;
   text: string;
 }
 
 interface Section {
+  id?: string;
   title: string;
   paragraphs: Paragraph[];
   listItems: ListItem[];
@@ -68,7 +70,12 @@ export default function AdminServiceForm({
     slug: "",
     description: "",
     sections: [
-      { title: "", paragraphs: [{ text: "" }], listItems: [{ text: "" }] },
+      {
+        id: crypto.randomUUID(),
+        title: "",
+        paragraphs: [{ id: crypto.randomUUID(), text: "" }],
+        listItems: [{ id: crypto.randomUUID(), text: "" }],
+      },
     ] as Section[],
     cta: { text: "", buttonText: "", link: "" } as CTA,
     meta: { title: "", description: "", keywords: [] } as Meta,
@@ -84,14 +91,31 @@ export default function AdminServiceForm({
     hero: service?.page?.heroImage || null,
   });
 
+  // Populate form with existing service data
   useEffect(() => {
     if (service?.page) {
       setForm({
         title: service.title,
         slug: service.slug,
         description: service.page.description,
-        sections: service.page.sections || [
-          { title: "", paragraphs: [{ text: "" }], listItems: [{ text: "" }] },
+        sections: service.page.sections?.map((sec) => ({
+          id: sec.id,
+          title: sec.title,
+          paragraphs: sec.paragraphs?.map((p) => ({
+            id: p.id,
+            text: p.text,
+          })) || [{ id: crypto.randomUUID(), text: "" }],
+          listItems: sec.listItems?.map((l) => ({
+            id: l.id,
+            text: l.text,
+          })) || [{ id: crypto.randomUUID(), text: "" }],
+        })) || [
+          {
+            id: crypto.randomUUID(),
+            title: "",
+            paragraphs: [{ id: crypto.randomUUID(), text: "" }],
+            listItems: [{ id: crypto.randomUUID(), text: "" }],
+          },
         ],
         cta: service.page.cta || { text: "", buttonText: "", link: "" },
         meta: service.page.meta || { title: "", description: "", keywords: [] },
@@ -122,7 +146,12 @@ export default function AdminServiceForm({
       ...prev,
       sections: [
         ...prev.sections,
-        { title: "", paragraphs: [{ text: "" }], listItems: [{ text: "" }] },
+        {
+          id: crypto.randomUUID(),
+          title: "",
+          paragraphs: [{ id: crypto.randomUUID(), text: "" }],
+          listItems: [{ id: crypto.randomUUID(), text: "" }],
+        },
       ],
     }));
   };
@@ -144,7 +173,7 @@ export default function AdminServiceForm({
 
   const handleSubmit = async () => {
     if (!form.title.trim() || !form.slug.trim()) {
-      toast.error("Title and slug are required"); // <-- Sonner error
+      toast.error("Title and slug are required");
       return;
     }
 
@@ -163,6 +192,7 @@ export default function AdminServiceForm({
         formData.append("heroImage", images.hero);
       }
 
+      // Send sections with IDs
       formData.append("sections", JSON.stringify(form.sections));
       formData.append("cta", JSON.stringify(form.cta));
       formData.append("meta", JSON.stringify(form.meta));
@@ -175,11 +205,11 @@ export default function AdminServiceForm({
       const res = await fetch(url, { method, body: formData });
       if (!res.ok) throw new Error("Failed to save service");
 
-      toast.success(`Service ${service ? "updated" : "created"} successfully`); // <-- Sonner success
+      toast.success(`Service ${service ? "updated" : "created"} successfully`);
       onSuccess();
     } catch (error) {
       console.error(error);
-      toast.error("Failed to save service"); // <-- Sonner error
+      toast.error("Failed to save service");
     } finally {
       setLoading(false);
     }
@@ -187,7 +217,6 @@ export default function AdminServiceForm({
 
   return (
     <div className="flex flex-col h-full overflow-hidden">
-      {/* Content */}
       <div className="flex-1 overflow-y-auto px-6 py-4 space-y-6">
         {/* Basic Info */}
         <div className="space-y-4">
@@ -233,7 +262,7 @@ export default function AdminServiceForm({
               />
               {previews.thumbnail && (
                 <img
-                  src={previews.thumbnail || "/placeholder.svg"}
+                  src={previews.thumbnail}
                   alt="Thumbnail"
                   className="mt-2 h-24 w-full object-cover rounded"
                 />
@@ -251,7 +280,7 @@ export default function AdminServiceForm({
               />
               {previews.hero && (
                 <img
-                  src={previews.hero || "/placeholder.svg"}
+                  src={previews.hero}
                   alt="Hero"
                   className="mt-2 h-24 w-full object-cover rounded"
                 />
@@ -272,15 +301,13 @@ export default function AdminServiceForm({
               size="sm"
               className="gap-2 bg-transparent"
             >
-              <Plus className="w-4 h-4" />
-              Add Section
+              <Plus className="w-4 h-4" /> Add Section
             </Button>
           </div>
-
           <div className="space-y-3">
             {form.sections.map((section, index) => (
               <SectionEditor
-                key={index}
+                key={section.id || index}
                 section={section}
                 index={index}
                 onUpdate={updateSection}

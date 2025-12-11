@@ -5,32 +5,43 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const services = [
-  { title: "Conveyancing", img: "/services/conveyancing-thum.jpg" },
-  { title: "Immigration\nLaw", img: "/services/immigration-law-thum.jpg" },
-  { title: "Debt\nRecovery", img: "/services/wills-thum.jpg" },
-  { title: "Insolvency", img: "/services/insolvency-thum.jpg" },
-  { title: "Family\nLaw", img: "/services/family-law.jpg" },
-  { title: "Wills", img: "/services/wills-thum.jpg" },
-  {
-    title: "Probate\n& Estate",
-    img: "/services/probate-and-estate-thum.jpg",
-  },
-];
+interface Service {
+  title: string;
+  slug: string;
+  image: string;
+  link: string;
+}
 
 export default function ServiceSection() {
+  const [services, setServices] = useState<Service[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(3);
 
-  // Handle responsive slide count
+  // Fetch services from API
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const res = await fetch("/api/admin/services");
+        const data = await res.json();
+        setServices(data.filter((s: Service) => s.slug)); // only items with slugs
+      } catch (error) {
+        console.error("Failed to fetch services:", error);
+      }
+    };
+    fetchServices();
+  }, []);
+
+  // Responsive breakpoints
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) setSlidesPerView(1);
       else if (window.innerWidth < 1024) setSlidesPerView(2);
       else setSlidesPerView(3);
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -45,19 +56,21 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="relative px-5 2xl:px-0 py-10 lg:py-20 bg-white overflow-hidden transition-opacity duration-700 ease-in-out">
+    <section className="relative px-5 2xl:px-0 py-10 lg:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-          {/* Left Content */}
+          {/* Left Side */}
           <div className="space-y-6">
-            <h2 className="text-2xl lg:text-4xl text-center lg:text-left font-bold text-gray-900 leading-tight font-playfair">
+            <h2 className="text-2xl lg:text-4xl text-center lg:text-left font-bold text-black leading-tight font-playfair">
               Our Legal{" "}
               <span className="italic text-primary">Practice Areas</span>
             </h2>
-            <p className="text-gray-600 text-sm lg:text-base text-center lg:text-start">
+
+            <p className="text-black text-sm lg:text-base text-center lg:text-left">
               Our guiding principle is to advocate strongly for your legal
               needs, no matter the jurisdiction.
             </p>
+
             <div className="flex justify-center lg:justify-start">
               <Link
                 href="/services"
@@ -72,51 +85,55 @@ export default function ServiceSection() {
           <div className="lg:col-span-2">
             <div className="relative">
               <div className="flex gap-4 mb-8">
-                {getVisibleSlides().map((item, index) => (
-                  <div
-                    key={`${currentIndex}-${index}`}
-                    className="relative overflow-hidden rounded-lg group flex-1 min-w-0"
-                  >
-                    <Image
-                      src={item.img}
-                      alt={item.title.replace("\n", " ")}
-                      width={800}
-                      height={500}
-                      className="rounded-lg object-cover w-full h-64 md:h-72 lg:h-80 transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-lg"></div>
+                {services.length > 0 &&
+                  getVisibleSlides().map((item, index) => (
+                    <Link
+                      href={`/services/${item.slug}`}
+                      key={`${currentIndex}-${index}`}
+                      className="relative overflow-hidden rounded-lg group flex-1 min-w-0 cursor-pointer"
+                    >
+                      {/* Service Image */}
+                      <div className="relative w-full h-64 md:h-72 lg:h-80 rounded-lg overflow-hidden">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover rounded-lg transition-transform duration-700 group-hover:scale-110"
+                        />
 
-                    <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white z-10">
-                      <div className="text-2xl md:text-2xl whitespace-pre-line leading-tight font-playfair">
-                        {item.title}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-lg"></div>
                       </div>
-                      <a
-                        href="/services"
-                        className="w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white transition-all duration-300 hover:bg-white hover:text-[#ac835d] transform hover:scale-110 flex-shrink-0 ml-4"
-                      >
-                        <ArrowRight className="w-5 h-5" />
-                      </a>
-                    </div>
-                  </div>
-                ))}
+
+                      {/* Text & Arrow */}
+                      <div className="absolute bottom-6 left-3 right-3 flex items-end justify-between text-white z-10">
+                        <div className="text-xl whitespace-pre-line leading-tight font-playfair">
+                          {item.title}
+                        </div>
+
+                        <div className="w-8 h-8 flex items-center justify-center bg-primary rounded-full text-white transition-all duration-300 hover:bg-white hover:text-[#ac835d] transform hover:scale-110 shrink-0">
+                          <ArrowRight className="w-5 h-5" />
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
               </div>
 
-              {/* Pagination dots */}
+              {/* Pagination Dots */}
               <div className="flex justify-center gap-2">
-                {services
-                  .slice(0, Math.ceil(services.length / slidesPerView))
-                  .map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index * slidesPerView)}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                        Math.floor(currentIndex / slidesPerView) === index
-                          ? "bg-primary w-8"
-                          : "bg-gray-300"
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
+                {services.length > 0 &&
+                  services
+                    .slice(0, Math.ceil(services.length / slidesPerView))
+                    .map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => goToSlide(index * slidesPerView)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                          Math.floor(currentIndex / slidesPerView) === index
+                            ? "bg-primary w-8"
+                            : "bg-gray-300"
+                        }`}
+                      />
+                    ))}
               </div>
             </div>
           </div>
