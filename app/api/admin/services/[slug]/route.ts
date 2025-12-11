@@ -2,14 +2,20 @@
 
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
-import path from "path";
-import { promises as fs } from "fs";
+
+// =========================
+// ✅ GET /api/admin/services/[slug]
+// =========================
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  context: { params: Promise<{ slug: string }> }
 ) {
-  const { slug } = params;
+  const { slug } = await context.params;
+
+  if (!slug) {
+    return NextResponse.json({ error: "Slug is required" }, { status: 400 });
+  }
 
   try {
     const service = await prisma.service.findUnique({
@@ -36,7 +42,7 @@ export async function GET(
 
     return NextResponse.json(service);
   } catch (error) {
-    console.error(error);
+    console.error("GET /services/[slug] error:", error);
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 }
@@ -44,7 +50,9 @@ export async function GET(
   }
 }
 
+// =========================
 // ✅ PUT /api/admin/services/[slug]
+// =========================
 
 export async function PUT(
   req: NextRequest,
@@ -52,6 +60,11 @@ export async function PUT(
 ) {
   try {
     const { slug } = await context.params;
+
+    if (!slug) {
+      return NextResponse.json({ error: "Slug is required" }, { status: 400 });
+    }
+
     const formData = await req.formData();
 
     const title = formData.get("title") as string;
@@ -85,14 +98,15 @@ export async function PUT(
       },
     });
 
-    // If page exists, update it; else create
-    let pageId = existingService.page?.id;
+    // No page data – return after updating basic info
     if (!pageData) {
       return NextResponse.json(updatedService);
     }
 
+    // Update or create page
+    let pageId = existingService.page?.id;
+
     if (pageId) {
-      // Update existing page
       await prisma.page.update({
         where: { id: pageId },
         data: {
@@ -102,7 +116,6 @@ export async function PUT(
         },
       });
     } else {
-      // Create new page
       const newPage = await prisma.page.create({
         data: {
           title: pageData.title || "",
@@ -114,18 +127,15 @@ export async function PUT(
       pageId = newPage.id;
     }
 
-    // 1️⃣ Handle sections
+    // 1️⃣ Update sections
     for (const section of pageData.sections || []) {
       if (section.id) {
-        // Existing section → update
         await prisma.section.update({
           where: { id: section.id },
-          data: {
-            title: section.title,
-          },
+          data: { title: section.title },
         });
 
-        // Paragraphs
+        // Update paragraphs
         for (const para of section.paragraphs || []) {
           if (para.id) {
             await prisma.paragraph.update({
@@ -139,7 +149,7 @@ export async function PUT(
           }
         }
 
-        // ListItems
+        // Update list items
         for (const item of section.listItems || []) {
           if (item.id) {
             await prisma.listItem.update({
@@ -153,8 +163,8 @@ export async function PUT(
           }
         }
       } else {
-        // New section → create
-        const newSection = await prisma.section.create({
+        // New section
+        await prisma.section.create({
           data: {
             title: section.title,
             pageId,
@@ -173,9 +183,10 @@ export async function PUT(
       }
     }
 
-    // 2️⃣ Handle CTA
+    // 2️⃣ CTA
     if (pageData.cta) {
       const existingCTA = await prisma.cTA.findUnique({ where: { pageId } });
+
       if (existingCTA) {
         await prisma.cTA.update({
           where: { id: existingCTA.id },
@@ -186,9 +197,10 @@ export async function PUT(
       }
     }
 
-    // 3️⃣ Handle Meta
+    // 3️⃣ Meta
     if (pageData.meta) {
       const existingMeta = await prisma.meta.findUnique({ where: { pageId } });
+
       if (existingMeta) {
         await prisma.meta.update({
           where: { id: existingMeta.id },
@@ -199,7 +211,7 @@ export async function PUT(
       }
     }
 
-    // ✅ Return updated service with nested page
+    // Return updated service
     const fullService = await prisma.service.findUnique({
       where: { slug },
       include: {
@@ -223,14 +235,19 @@ export async function PUT(
   }
 }
 
+// =========================
 // ✅ DELETE /api/admin/services/[slug]
+// =========================
+
 export async function DELETE(
-  _: Request,
-  { params }: { params: { slug: string } }
+  req: Request,
+  context: { params: Promise<{ slug: string }> }
 ) {
+  const { slug } = await context.params;
+
   try {
     const service = await prisma.service.findUnique({
-      where: { slug: params.slug },
+      where: { slug },
       include: { page: true },
     });
 
@@ -238,7 +255,6 @@ export async function DELETE(
       return NextResponse.json({ error: "Service not found" }, { status: 404 });
     }
 
-    // Cascade manually delete related content (Page → Sections → Paragraphs/ListItems)
     if (service.page) {
       const pageId = service.page.id;
 
@@ -254,7 +270,7 @@ export async function DELETE(
       await prisma.page.delete({ where: { id: pageId } });
     }
 
-    await prisma.service.delete({ where: { slug: params.slug } });
+    await prisma.service.delete({ where: { slug } });
 
     return NextResponse.json({ message: "Service deleted successfully" });
   } catch (error) {
