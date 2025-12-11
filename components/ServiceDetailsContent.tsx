@@ -1,5 +1,5 @@
 // components/ServiceDetailsContent.tsx
-import React from 'react';
+import React from "react";
 
 interface ListItem {
   text: string;
@@ -16,7 +16,9 @@ interface ServiceDetailsContentProps {
   sections: ContentSection[] | null | undefined;
 }
 
-const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections }) => {
+const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({
+  sections,
+}) => {
   // Add proper error handling and fallbacks
   if (!sections) {
     return (
@@ -46,37 +48,28 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections 
     <section className="bg-white py-16 px-5 sm:px-6 lg:px-8 font-playfair">
       <div className="max-w-4xl mx-auto">
         {sections.map((section, index) => (
-          <div key={index} className={section.className || 'mb-12 last:mb-0'}>
+          <div key={index} className={section.className || "mb-12 last:mb-0"}>
             <h4 className="text-3xl font-semibold text-black mb-6">
               {section.title}
             </h4>
-            
-            {section.paragraphs && section.paragraphs?.map((paragraph, pIndex) => (
-              <p 
-                key={pIndex} 
-                className="text-slate-900 leading-relaxed mb-5 text-justify font-light"
-              >
-                {paragraph}
-              </p>
-            ))}
-            
+
             {section.listItems && section.listItems.length > 0 && (
               <ul className="space-y-3 mb-8">
                 {section.listItems.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start">
                     <div className="flex-shrink-0 mt-1 mr-4">
                       <span className="w-5 h-5 bg-primary rounded-full flex items-center justify-center">
-                        <svg 
-                          className="w-3 h-3 text-white" 
-                          fill="none" 
-                          stroke="currentColor" 
+                        <svg
+                          className="w-3 h-3 text-white"
+                          fill="none"
+                          stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            strokeWidth={3} 
-                            d="M5 13l4 4L19 7" 
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={3}
+                            d="M5 13l4 4L19 7"
                           />
                         </svg>
                       </span>
@@ -88,6 +81,16 @@ const ServiceDetailsContent: React.FC<ServiceDetailsContentProps> = ({ sections 
                 ))}
               </ul>
             )}
+
+            {section.paragraphs &&
+              section.paragraphs?.map((paragraph, pIndex) => (
+                <p
+                  key={pIndex}
+                  className="text-slate-900 leading-relaxed mb-5 text-justify font-light"
+                >
+                  {paragraph}
+                </p>
+              ))}
           </div>
         ))}
       </div>
