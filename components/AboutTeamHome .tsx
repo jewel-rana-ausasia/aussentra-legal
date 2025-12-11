@@ -58,18 +58,18 @@ export default function AboutTeamLanding() {
   ];
 
   return (
-    <section className="bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8 font-playfair">
+    <section className="bg-background py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-playfair">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-14 flex flex-col justify-center items-center">
-          <div className="flex items-center gap-2 mb-4">
+          {/* <div className="flex items-center gap-2 mb-4">
             <Scale className="w-5 h-5 text-primary" />
             <span className="text-sm font-semibold text-primary uppercase tracking-wide">
               Our Expertise
             </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 text-balance">
-            Expert Legal Guidance
+          </div> */}
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+            Expert Legal <span className="text-primary italic">Guidance</span>
           </h2>
         </div>
 
