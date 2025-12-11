@@ -97,7 +97,7 @@ Whether you’re buying or selling a property, planning your Will, or managing a
     : "/about/about-law-firm.jpg";
 
   return (
-    <div>
+    <div className="font-playfair">
       <BannerHeader
         title="About"
         subtitle="Aussentra Legal"
@@ -108,19 +108,19 @@ Whether you’re buying or selling a property, planning your Will, or managing a
       />
 
       {/* <AboutSection /> */}
-      <section className="relative py-20 px-5 lg:px-0 max-w-7xl mx-auto bg-white about">
+      <section className="relative py-20 px-5 lg:px-0 max-w-7xl mx-auto bg-white about font-playfair">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight font-playfair">
+              <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight font-playfair">
                 {about.title}{" "}
                 {about.subtitle && (
                   <span className="text-primary italic">{about.subtitle}</span>
                 )}
               </h2>
 
-              <p className="text-slate-900 leading-relaxed whitespace-pre-line">
+              <p className="text-black lg:text-lg leading-relaxed whitespace-pre-line">
                 {about.description}
               </p>
 
@@ -130,7 +130,7 @@ Whether you’re buying or selling a property, planning your Will, or managing a
                     <div className="text-[#ac835d] mt-1">
                       <Check className="w-5 h-5" />
                     </div>
-                    <p className="text-gray-800 text-lg">{item}</p>
+                    <p className="text-black font-medium text-lg">{item}</p>
                   </li>
                 ))}
               </ul>
@@ -162,21 +162,21 @@ Whether you’re buying or selling a property, planning your Will, or managing a
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {items.map((item) => (
-              <div key={item.id} className="flex items-start space-x-6 mt-5">
+              <div key={item.id} className="flex items-start space-x-4 mt-5">
                 <div className="flex-shrink-0">
                   <Image
                     src={item.icon}
                     alt={item.title}
                     width={60}
                     height={60}
-                    className="object-contain w-12 h-12"
+                    className="object-contain w-14 h-14"
                   />
                 </div>
-                <div className="cont">
-                  <h5 className="text-[21px] font-semibold font-playfair text-gray-900 mb-2">
+                <div>
+                  <h5 className="lg:text-2xl font-semibold font-playfair text-gray-900 mb-2">
                     {item.title}
                   </h5>
-                  <p className="text-[16px] text-gray-600">
+                  <p className="text-[16px] text-slate-900">
                     {item.description}
                   </p>
                 </div>
@@ -186,7 +186,7 @@ Whether you’re buying or selling a property, planning your Will, or managing a
         </div>
       </section>
 
-      <section className="relative py-20 bg-[#1f1b16] about">
+      <section className="relative py-20 bg-[#1f1b16] about font-playfair">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center p-10 lg:p-0 gap-24">
             {/* Left Image */}
@@ -214,12 +214,12 @@ Whether you’re buying or selling a property, planning your Will, or managing a
               viewport={{ once: true }}
               variants={fadeInRight}
             >
-              <h2 className="text-2xl md:text-4xl font-bold leading-tight text-white">
+              <h2 className="text-2xl md:text-4xl  font-bold leading-tight text-white">
                 {data.title}{" "}
                 <span className="text-primary italic">{data.subtitle}</span>
               </h2>
 
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-200 xl:text-lg leading-relaxed">
                 {data.description}
               </p>
             </motion.div>
