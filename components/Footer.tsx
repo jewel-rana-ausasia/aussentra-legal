@@ -153,7 +153,7 @@ export default function Footer() {
             <div className="space-y-2">
               <h3 className="text-lg lg:text-2xl mb-2">Contact</h3>
               <p className="text-gray-400 text-sm lg:text-base lg:leading-loose">
-                Sydney NSW, Australia
+                Suite 618/368 Sussex St Sydney NSW 2000, Australia
               </p>
               <div className="phone text-gray-400 text-sm lg:text-lg">
                 <a href="tel:+61212345678">+61 123 567 8910</a>

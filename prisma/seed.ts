@@ -1160,7 +1160,7 @@ async function main() {
   const contactData = [
     {
       label: "Address",
-      value: "Sydney NSW, Australia",
+      value: "Suite 618/368 Sussex St Sydney NSW 2000, Australia",
       icon: "FaLocationDot",
     },
     {
