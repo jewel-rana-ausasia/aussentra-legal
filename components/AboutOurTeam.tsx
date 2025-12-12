@@ -77,7 +77,6 @@ const AboutOurTeam = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-20">
-          
           <h2 className="text-5xl md:text-6xl font-bold text-black mb-6 text-balance">
             Expert Legal Guidance You Can Trust
           </h2>
@@ -96,7 +95,9 @@ const AboutOurTeam = () => {
                 <Mail className="w-7 h-7 text-primary" />
               </div>
               <div>
-                <p className="text-sm lg:text-base font-semibold text-primary mb-2">Email</p>
+                <p className="text-sm lg:text-base font-semibold text-primary mb-2">
+                  Email
+                </p>
                 <a
                   href="mailto:info@aussentralegal.com.au"
                   className="text-foreground hover:text-primary font-semibold transition-colors break-all"
@@ -117,7 +118,7 @@ const AboutOurTeam = () => {
                   Location
                 </p>
                 <p className="text-foreground font-semibold">
-                  Suite 618/368 Sussex St, Sydney NSW 2000
+                  618/368 Sussex St, Sydney NSW 2000
                 </p>
               </div>
             </div>
@@ -151,9 +152,7 @@ const AboutOurTeam = () => {
                 </div>
               </div>
               <div className="flex-1">
-                <h3 className="text-4xl font-bold mb-2">
-                  Farhan Shakil
-                </h3>
+                <h3 className="text-4xl font-bold mb-2">Farhan Shakil</h3>
                 <p className="text-lg xl:text-xl text-black mb-4">
                   Principal Solicitor & Migration Specialist
                 </p>
@@ -210,9 +209,7 @@ const AboutOurTeam = () => {
                     <p className="font-semibold text-white mb-1 text-sm lg:text-lg">
                       {cred.qualification}
                     </p>
-                    <p className="text-white text-sm">
-                      {cred.institution}
-                    </p>
+                    <p className="text-white text-sm">{cred.institution}</p>
                   </div>
                 ))}
               </div>

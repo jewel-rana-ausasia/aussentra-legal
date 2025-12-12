@@ -140,7 +140,7 @@ export default function AboutTeamLanding() {
                   {
                     icon: MapPin,
                     label: "Location",
-                    value: "Suite 618/368 Sussex St, Sydney NSW 2000",
+                    value: "618/368 Sussex St, Sydney NSW 2000",
                     href: "https://www.google.com/maps/search/?api=1&query=Suite+618%2F368+Sussex+St%2C+Sydney+NSW+2000",
                   },
                   {
