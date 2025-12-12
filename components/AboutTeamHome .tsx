@@ -18,22 +18,20 @@ export default function AboutTeamLanding() {
 
   const practiceAreas = {
     "Migration Law": [
-      "Skilled Migration Visas",
-      "Family Sponsorship",
-      "Migration Appeals",
-      "Visa Compliance",
+      "Skilled, Partner, Employer-Sponsored & Business Visas",
+      "Visa Appeals, Tribunal Representation & Judicial review",
+      "Sponsorship Compliance & SBS Applications",
+      "AHPRA Registration Support",
     ],
     "Property & Conveyancing": [
-      "Residential Conveyancing",
-      "Commercial Property",
-      "Property Disputes",
-      "Land Titles",
+      "Residential & Commercial Conveyancing",
+      "Title Transfers & Settlements",
+      "Contract Review & Risk Mitigation",
     ],
     "Commercial & Civil Law": [
-      "Contract Drafting",
-      "Commercial Disputes",
-      "Business Transactions",
-      "Litigation Support",
+      "Debt Recovery & Insolvency",
+      "Business Transactions & Contracts",
+      "Family Law & Parenting Matters",
     ],
   };
 
@@ -64,11 +62,11 @@ export default function AboutTeamLanding() {
 
       <div className="max-w-7xl mx-auto relative overflow-hidden">
         {/* Heading */}
-        <div className="mb-10 md:mb-16 text-center animate-fade-in px-2">
+        <div className="mb-6 md:mb-10 text-center animate-fade-in px-2">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">
-            Your Trusted Legal{" "}
+            Your Trusted{" "}
             <span className="bg-gradient-to-r from-[#DAA22D] to-[#b68423] bg-clip-text text-transparent">
-              Partner
+              Legal Partner
             </span>
           </h2>
           <p className="text-base md:text-lg text-black max-w-xl mx-auto">
@@ -76,13 +74,13 @@ export default function AboutTeamLanding() {
           </p>
         </div>
 
-        {/* Profile Card */}
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-12">
+        {/* Full-Width Profile + Contact Card */}
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden mb-12 w-full">
           <div className="bg-gradient-to-r from-[#DAA22D] to-[#b68423] p-[1px]">
-            <div className="bg-white rounded-xl">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 md:gap-10 p-6 md:p-10 lg:p-12">
-
-                {/* Left */}
+            <div className="bg-white rounded-xl p-6 md:p-10 lg:p-12">
+              {/* Top Section: Profile */}
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 md:gap-10">
+                {/* Left: Avatar + Info */}
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 flex-1 w-full">
                   {/* Avatar */}
                   <div className="relative flex-shrink-0">
@@ -92,7 +90,7 @@ export default function AboutTeamLanding() {
                     </div>
                   </div>
 
-                  {/* Text */}
+                  {/* Info */}
                   <div className="flex-1 text-center sm:text-left space-y-3">
                     <h3 className="text-3xl md:text-4xl font-bold text-[#DAA22D]">
                       Farhan Shakil
@@ -107,14 +105,16 @@ export default function AboutTeamLanding() {
                         <span className="font-medium">Sydney, NSW</span>
                       </div>
                       <span className="hidden sm:block text-slate-300">•</span>
-                      <span className="font-medium">Serving Australia-wide</span>
+                      <span className="font-medium">
+                        Serving Australia-wide
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Right */}
-                <div className="flex mx-auto">
-                  <div className="bg-gradient-to-br from-[#DAA22D] to-[#b68423] rounded-2xl px-5 py-3 lg:px-8 lg:py-6 text-center shadow-lg">
+                {/* Right: Experience */}
+                <div className="flex-shrink-0 mx-auto sm:mx-0 mt-6 lg:mt-0">
+                  <div className="bg-gradient-to-br from-[#DAA22D] to-[#b68423] rounded-2xl px-8 py-6 text-center shadow-lg">
                     <p className="text-4xl md:text-5xl font-bold text-white">
                       17+
                     </p>
@@ -123,148 +123,155 @@ export default function AboutTeamLanding() {
                     </p>
                   </div>
                 </div>
+              </div>
 
+              {/* Divider */}
+              <div className="border-t border-slate-200 my-8"></div>
+
+              {/* Contact Section */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {[
+                  {
+                    icon: Mail,
+                    label: "Email",
+                    value: "info@aussentralegal.com.au",
+                    href: "mailto:info@aussentralegal.com.au",
+                  },
+                  {
+                    icon: MapPin,
+                    label: "Location",
+                    value: "Suite 618/368 Sussex St, Sydney NSW 2000",
+                    href: "https://www.google.com/maps/search/?api=1&query=Suite+618%2F368+Sussex+St%2C+Sydney+NSW+2000",
+                  },
+                  {
+                    icon: Clock,
+                    label: "Availability",
+                    value: "Flexible appointments available",
+                  },
+                ].map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="group bg-white shadow-sm rounded-lg p-6 hover:shadow-xl hover:border-[#DAA22D] transition-all duration-300 overflow-hidden"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="p-4 bg-gradient-to-br from-[#DAA22D] to-[#b68423] rounded-xl shadow-lg">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-bold text-primary uppercase mb-2">
+                            {item.label}
+                          </p>
+
+                          {item.href ? (
+                            <a
+                              href={item.href}
+                              target="_blank"
+                              className="text-black font-semibold hover:text-[#DAA22D] break-words block"
+                            >
+                              {item.value}
+                            </a>
+                          ) : (
+                            <p className="text-black font-semibold break-words">
+                              {item.value}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Contact Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-          {[
-            {
-              icon: Mail,
-              label: "Email",
-              value: "info@aussentralegal.com.au",
-              href: "mailto:info@aussentralegal.com.au",
-            },
-            {
-              icon: MapPin,
-              label: "Location",
-              value: "Suite 618/368 Sussex St, Sydney NSW 2000",
-              href: "https://www.google.com/maps/search/?api=1&query=Suite+618%2F368+Sussex+St%2C+Sydney+NSW+2000",
-            },
-            {
-              icon: Clock,
-              label: "Availability",
-              value: "Flexible appointments available",
-            },
-          ].map((item, i) => {
-            const Icon = item.icon;
+        {/* Practice Areas */}
+        <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">
+          Legal Practice Areas
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {topAreas.map((area) => {
+            const Icon = area.icon;
+            const subServices =
+              practiceAreas[area.title as keyof typeof practiceAreas];
+
             return (
               <div
-                key={i}
-                className="group bg-white border border-slate-300 rounded-2xl p-6 hover:shadow-xl hover:border-[#DAA22D] transition-all duration-300 overflow-hidden"
+                key={area.title}
+                className="bg-white border border-slate-300 rounded-2xl p-6 hover:border-[#DAA22D] hover:shadow-xl transition-all"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-4 bg-gradient-to-br from-[#DAA22D] to-[#b68423] rounded-xl shadow-lg">
-                    <Icon className="w-6 h-6 text-white" />
+                {/* Icon + Title */}
+                {/* Icon + Title */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div
+                    className={`p-4 bg-gradient-to-br ${area.color} rounded-xl shadow-lg flex-shrink-0`}
+                  >
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
 
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-black uppercase mb-2">
-                      {item.label}
-                    </p>
+                  <h4 className="font-bold text-lg lg:text-xl text-primary">
+                    {area.title}
+                  </h4>
+                </div>
 
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        className="text-black font-semibold hover:text-[#DAA22D] break-words block"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-black font-semibold break-words">
-                        {item.value}
-                      </p>
-                    )}
-                  </div>
+                {/* <p className="text-black font-medium text-sm lg:text-base mb-4">
+                  {area.description}
+                </p> */}
+
+                {/* STATIC LIST — always visible */}
+                <div className="space-y-2 mt-4">
+                  {subServices.map((service) => (
+                    <div
+                      key={service}
+                      className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#DAA22D22] transition-all"
+                    >
+                      <span className="w-1.5 h-1.5 bg-[#DAA22D] rounded-full" />
+                      <span className="text-black font-medium">
+                        {service}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Practice Areas */}
-        <div className="mb-12">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
-              Practice Areas
-            </h3>
-            <p className="text-black text-base md:text-lg max-w-2xl mx-auto">
-              Comprehensive legal services tailored to your needs
-            </p>
+        {/* Full-Width Practice Areas Card */}
+
+        {/*  <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 md:p-10 mt-12 w-full">
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">
+            Legal Practice Areas
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-4 gap-x-8">
+            {[
+              "Migration Law",
+              "Skilled, Partner, Employer-Sponsored & Business Visas",
+              "Visa Appeals, Tribunal Representation & Judicial Review",
+              "Sponsorship Compliance & SBS Applications",
+              "AHPRA Registration Support",
+              "Property & Conveyancing",
+              "Residential & Commercial Conveyancing",
+              "Title Transfers & Settlements",
+              "Contract Review & Risk Mitigation",
+              "Commercial & Civil Law",
+              "Debt Recovery & Insolvency",
+              "Business Transactions & Contracts",
+              "Family Law & Parenting Matters",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3 group">
+                <span className="w-2 h-2 rounded-full bg-[#DAA22D] mt-2 group-hover:bg-[#b68423] transition-all"></span>
+                <span className="text-slate-700 font-medium group-hover:text-[#DAA22D] transition-all">
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {topAreas.map((area) => {
-              const Icon = area.icon;
-              const subServices =
-                practiceAreas[area.title as keyof typeof practiceAreas];
-              const isOpen = openDropdown === area.title;
-
-              return (
-                <div key={area.title} className="relative w-full">
-                  {/* Main button */}
-                  <button
-                    onClick={() => setOpenDropdown(isOpen ? null : area.title)}
-                    className="w-full bg-white border border-slate-300 rounded-2xl p-6 hover:border-[#DAA22D] hover:shadow-xl transition-all text-left"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div
-                        className={`p-4 bg-gradient-to-br ${area.color} rounded-xl shadow-lg`}
-                      >
-                        <Icon className="w-7 h-7 text-white" />
-                      </div>
-
-                      <ChevronDown
-                        className={`w-5 h-5 transition-all ${
-                          isOpen ? "rotate-180 text-[#DAA22D]" : "text-slate-900"
-                        }`}
-                      />
-                    </div>
-
-                    <h4 className="font-bold text-lg text-slate-900 mb-2">
-                      {area.title}
-                    </h4>
-                    <p className="text-black font-medium text-sm">
-                      {area.description}
-                    </p>
-                  </button>
-
-                  {/* Dropdown */}
-                  {isOpen && (
-                    <>
-                      <div
-                        className="fixed inset-0 z-10"
-                        onClick={() => setOpenDropdown(null)}
-                      />
-
-                      <div className="absolute left-0 right-0 mt-2 z-20 animate-dropdown-in">
-                        <div className="bg-white border border-slate-200 rounded-xl shadow-2xl overflow-hidden">
-                          <div className="p-2">
-                            {subServices.map((service) => (
-                              <button
-                                key={service}
-                                className="w-full text-left px-4 py-3 rounded-lg hover:bg-[#DAA22D22] flex items-center gap-3"
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#DAA22D]" />
-                                <span className="text-slate-700 font-medium hover:text-[#DAA22D]">
-                                  {service}
-                                </span>
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        </div> */}
 
         {/* CTA */}
         <div className="relative group mt-12">
