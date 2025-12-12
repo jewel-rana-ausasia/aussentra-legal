@@ -79,7 +79,7 @@ export default function AboutTeamLanding() {
           <div className="bg-gradient-to-r from-[#DAA22D] to-[#b68423] p-[1px]">
             <div className="bg-white rounded-xl p-6 md:p-10 lg:p-12">
               {/* Top Section: Profile */}
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 md:gap-10">
+              <div className="flex flex-col md:flex-row lg:items-center lg:justify-between gap-6 md:gap-10">
                 {/* Left: Avatar + Info */}
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 flex-1 w-full">
                   {/* Avatar */}
@@ -113,9 +113,9 @@ export default function AboutTeamLanding() {
                 </div>
 
                 {/* Right: Experience */}
-                <div className="flex-shrink-0 mx-auto sm:mx-0 mt-6 lg:mt-0">
-                  <div className="bg-gradient-to-br from-[#DAA22D] to-[#b68423] rounded-2xl px-8 py-6 text-center shadow-lg">
-                    <p className="text-4xl md:text-5xl font-bold text-white">
+                <div className="flex-shrink-0 mx-auto lg:mx-0 mt-6 lg:mt-0">
+                  <div className="bg-gradient-to-br from-[#DAA22D] to-[#b68423] rounded-2xl px-5 py-5 lg:px-8 lg:py-6 text-center shadow-lg">
+                    <p className="text-4xl lg:text-5xl font-bold text-white">
                       17+
                     </p>
                     <p className="text-xs md:text-sm text-white font-semibold uppercase tracking-wide">
