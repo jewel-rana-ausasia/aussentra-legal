@@ -116,18 +116,23 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-8">
             {/* Logo + Description + Social */}
             <div className="space-y-4">
-              <Link href="/" className="mb-5">
-                <Image
-                  src="/aussentra-legal-logo-white.png"
-                  alt="Logo"
-                  width={180}
-                  height={80}
-                />
-              </Link>
+              {/* Logo Wrapper */}
+              <div className="mb-4">
+                <Link href="/">
+                  <Image
+                    src="/aussentra-legal-logo-white.png"
+                    alt="Logo"
+                    width={180}
+                    height={80}
+                  />
+                </Link>
+              </div>
+
               <p className="text-gray-400 text-xs md:text-sm lg:text-base leading-relaxed">
                 Aussentra Legal provides expert legal services across Sydney,
                 guiding you confidently through important decisions.
               </p>
+
               <div className="social-icons mt-4">
                 <ul className="flex space-x-2">
                   <li className="w-8 h-8 lg:w-8 lg:h-8 flex items-center justify-center bg-primary rounded-full hover:translate-y-[-3px] transition-transform">
@@ -146,25 +151,6 @@ export default function Footer() {
                     </a>
                   </li>
                 </ul>
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div className="space-y-2">
-              <h3 className="text-lg lg:text-2xl mb-2">Contact</h3>
-              <p className="text-gray-400 text-sm lg:text-base lg:leading-loose">
-                618/368 Sussex St Sydney NSW 2000
-              </p>
-              <div className="phone text-gray-400 text-sm lg:text-lg">
-                <a href="tel:+61212345678">+61 123 567 8910</a>
-              </div>
-              <div className="mail text-gray-400 text-sm lg:text-lg">
-                <a
-                  href="mailto:info@aussentralegal.com.au?subject=Legal%20Inquiry&body=Hello%20Aussentra%20Legal%2C%20I%20would%20like%20to%20get%20in%20touch%20regarding..."
-                  className="hover:underline cursor-pointer"
-                >
-                  info@aussentralegal.com.au
-                </a>
               </div>
             </div>
 
@@ -200,17 +186,61 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+
+            {/* Contact */}
+            <div className="space-y-2">
+              <h3 className="text-lg lg:text-2xl mb-2">Contact</h3>
+              <p className="text-gray-400 text-sm lg:text-base lg:leading-loose hover:text-primary">
+                618/368 Sussex St Sydney NSW 2000
+              </p>
+              <div className="phone text-gray-400 text-sm lg:text-lg hover:text-primary">
+                <a href="tel:+61212345678">+61 123 567 8910</a>
+              </div>
+              <div className="mail text-gray-400 text-sm lg:text-lg hover:text-primary">
+                <a
+                  href="mailto:info@aussentralegal.com.au?subject=Legal%20Inquiry&body=Hello%20Aussentra%20Legal%2C%20I%20would%20like%20to%20get%20in%20touch%20regarding..."
+                  className="hover:underline cursor-pointer hover:text-primary transition-colors"
+                >
+                  info@aussentralegal.com.au
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="border-t border-[#91765a33] py-6">
-          <div className="container mx-auto px-4 flex justify-center">
-            <p className="text-gray-400 text-xs lg:text-sm text-center">
+          <div className="max-w-7xl mx-auto px-4 xl:px-0 flex flex-col lg:flex-row justify-between items-center gap-3">
+            {/* Copyright */}
+            <p className="text-gray-400 text-xs lg:text-sm text-center lg:text-left">
               Copyright © {currentYear}{" "}
               <span className="text-white">Aussentra Legal</span> | Website by{" "}
               <span className="text-white">Aus Asia Online</span>
             </p>
+
+            {/* Legal Links */}
+            <div className="flex gap-4 text-xs lg:text-sm">
+              <Link
+                href="/terms-and-conditions"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
+                Terms & Conditions
+              </Link>
+
+              <Link
+                href="/disclaimer"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
+                Disclaimer
+              </Link>
+
+              <Link
+                href="/privacy-policy"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
