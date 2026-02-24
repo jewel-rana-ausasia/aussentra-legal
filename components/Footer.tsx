@@ -226,20 +226,6 @@ export default function Footer() {
               >
                 Terms & Conditions
               </Link>
-
-              <Link
-                href="/disclaimer"
-                className="text-gray-400 hover:text-primary transition-colors"
-              >
-                Disclaimer
-              </Link>
-
-              <Link
-                href="/privacy-policy"
-                className="text-gray-400 hover:text-primary transition-colors"
-              >
-                Privacy Policy
-              </Link>
             </div>
           </div>
         </div>
