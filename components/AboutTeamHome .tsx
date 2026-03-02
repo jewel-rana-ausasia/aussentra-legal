@@ -115,11 +115,11 @@ export default function AboutTeamLanding() {
                 {/* Right: Experience */}
                 <div className="flex-shrink-0 mx-auto lg:mx-0 mt-6 lg:mt-0">
                   <div className="bg-gradient-to-br from-[#DAA22D] to-[#b68423] rounded-2xl px-5 py-5 lg:px-8 lg:py-6 text-center shadow-lg">
-                    <p className="text-4xl lg:text-5xl font-bold text-white">
-                      17+
+                    <p className="text-xl lg:text-2xl font-bold text-white">
+                      Decades of Experience
                     </p>
-                    <p className="text-xs md:text-sm text-white font-semibold uppercase tracking-wide">
-                      Years Experience
+                    <p className="text-xs md:text-sm text-white font-semibold tracking-wide mt-1">
+                      in Australian Migration Industry.
                     </p>
                   </div>
                 </div>

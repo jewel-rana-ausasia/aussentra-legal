@@ -226,12 +226,8 @@ Whether you’re buying or selling a property, planning your Will, or managing a
           </div>
         </div>
       </section>
-
-      {/* <CaseStudyBox /> */}
-      {/* <AboutSection2 /> */}
       <OurSuccesses />
       <VideoSection />
-      {/* <Team /> */}
       <AboutOurTeam />
     </div>
   );

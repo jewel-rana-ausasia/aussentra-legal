@@ -12,9 +12,6 @@ interface UserLayoutProps {
 export default function UserLayout({ children }: UserLayoutProps) {
   return (
     <div>
-      {/* Sidebar */}
-
-      {/* Main Content */}
       <div>
         <Navbar />
         {children}

@@ -65,7 +65,7 @@ const AboutOurTeam = () => {
   ];
 
   const keyStrengths = [
-    "17+ years migration experience",
+    "Decades of experience in Australian migration industry",
     "Admitted solicitor with multi-disciplinary practice",
     "Culturally attuned and client-focused",
     "Strong drafting and advocacy skills",
@@ -81,9 +81,9 @@ const AboutOurTeam = () => {
             Expert Legal Guidance You Can Trust
           </h2>
           <p className="text-lg text-black max-w-2xl mx-auto leading-relaxed">
-            With over 17 years of experience in migration law and a proven track
-            record across multiple legal disciplines, we deliver strategic
-            solutions tailored to your needs.
+            With over decades of experience in Australian migration industry and
+            a proven track record across multiple legal disciplines, we deliver
+            strategic solutions tailored to your needs.
           </p>
         </div>
 
@@ -178,9 +178,9 @@ const AboutOurTeam = () => {
               <p className="text-black font-playfair leading-relaxed text-lg">
                 With over{" "}
                 <span className="font-semibold text-primary">
-                  17 years of experience
+                  decades of experience in Australian migration industry
                 </span>{" "}
-                in the migration industry and 2.5 years as a practising
+                and 2.5 years as a practising
                 solicitor, Farhan Shakil offers clients a rare blend of deep
                 regulatory insight and broad legal capability. His practice
                 spans complex migration matters, property transactions, and
