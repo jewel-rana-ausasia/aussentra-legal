@@ -1165,7 +1165,7 @@ async function main() {
     },
     {
       label: "Phone",
-      value: "+61 123 567 8910",
+      value: "0433 480 096",
       icon: "FaPhone",
     },
     {

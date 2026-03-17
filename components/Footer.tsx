@@ -96,10 +96,10 @@ export default function Footer() {
                       Get in touch
                     </p>
                     <a
-                      href="tel:1234567890"
+                      href="tel:0433480096"
                       className="font-semibold text-sm md:text-lg lg:text-xl hover:underline"
                     >
-                      +61 123 456 7890
+                      0433 480 096
                     </a>
                   </div>
                 </div>
@@ -193,8 +193,8 @@ export default function Footer() {
               <p className="text-gray-400 text-sm lg:text-base lg:leading-loose hover:text-primary">
                 618/368 Sussex St Sydney NSW 2000
               </p>
-              <div className="phone text-gray-400 text-sm lg:text-lg hover:text-primary">
-                <a href="tel:+61212345678">+61 123 567 8910</a>
+              <div className="phone text-gray-400 text-sm lg:text-base hover:text-primary">
+                <a href="tel:0433480096">0433 480 096</a>
               </div>
               <div className="mail text-gray-400 text-sm lg:text-lg hover:text-primary">
                 <a
